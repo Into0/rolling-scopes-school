@@ -1,0 +1,74 @@
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/inter-v13-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/fonts/inter-v13-latin-600.woff2') format('woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 10px;
+  --text-dark: #403F3D;
+  --text-light: #E1D4C9;
+  --text-accent: #B0907A;
+  --background-body: #E1D4C9;
+  --background-container: #665F55;
+  --background-backdrop: rgba(64, 63, 61, 0.80);
+  --border-light: #C1B6AD;
+  --border-dark: #665F55;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter';
+  font-weight: 400;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: 7.2rem;
+  line-height: 105%;
+}
+
+h2 {
+  font-size: 6rem;
+  line-height: 125%;
+}
+
+h3 {
+  font-size: 2.4rem;
+  line-height: 125%;
+}
+
+a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 150%;
+  color: var(--text-dark);
+}
+
+button {
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid var(--border-dark);
+}
