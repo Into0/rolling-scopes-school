@@ -39,6 +39,11 @@ html {
   font-weight: 400;
 }
 
+body {
+  padding: 20px 0 40px 0;
+  background-color: var(--background-body);
+}
+
 h1, h2, h3 {
   font-weight: 600;
   color: var(--text-dark);
@@ -64,11 +69,158 @@ a {
   font-weight: 600;
   line-height: 150%;
   color: var(--text-dark);
+  text-decoration: none;
+}
+
+p {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
 }
 
 button {
   justify-content: center;
   align-items: center;
+  border-radius: 10rem;
+  #border: 1px solid var(--border-dark);
+}
+
+.btn {
+  display: flex;
+  width: 200px;
+  padding: 2rem 7.8rem;
+  #justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #E1D4C9;
   border-radius: 100px;
-  border: 1px solid var(--border-dark);
+  background: var(--background-body);
+}
+
+.btn-app-store {
+
+}
+
+.btn-google-play {
+
+}
+
+.btn-icon {
+
+}
+
+.btn-icon_light {
+
+}
+
+.wrapper {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  gap: 4rem;
+  width: 96.9%;
+}
+
+.menu__item {
+  list-style: none;
+  border-bottom: 0.4rem solid transparent;
+  transition: border ease 0.50s;
+}
+
+.menu__item:first-child {
+  margin-left: auto;
+}
+
+.menu__item:last-child {
+  margin-left: auto;
+}
+
+.menu__item:hover {
+  border-bottom: 0.4rem solid;
+}
+
+.menu__link {
+  display:  block;
+  #width: 100%;
+  height: 100%;
+}
+
+.menu__link:last-child {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.hero__wrapper {
+  margin: 20px auto 100px auto;
+  padding:100px 0 0 100px;
+  height: 644px;
+  border-radius: 4rem;
+  background: center / cover no-repeat url(./assets/images/img-hero.jpg), lightgray 50%;
+}
+
+.hero__offer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 42%;
+}
+
+.hero__title {
+
+}
+.title_light {
+  color: var(--text-light);
+}
+
+.title_accent {
+  font-style: italic;
+  color: var(--text-accent);
+}
+
+.hero__p {
+  letter-spacing: -0.1px;
+}
+
+.hero__btn {
+  transition: justify-content ease 0.50s
+}
+
+.hero__btn > img {
+  opacity: 0;
+  transition: opacity ease 0.50s
+}
+
+.hero__btn:hover > img {
+  opacity: 1;
+}
+
+.hero__btn:hover {
+  justify-content: center;
+}
+
+.p_light {
+  color: var(--text-light);
+}
+
+.p_dark {
+  color: var(--text-dark);
 }

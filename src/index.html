@@ -8,11 +8,41 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header>
-    <nav></nav>
+  <header class="header">
+    <div class="header__wrapper wrapper">
+      <img src="./assets/images/logo.png" alt="Coffee House">
+      <nav class="nav">
+        <ul class="menu">
+          <li class="menu__item"><a href="#favorite" class="menu__link">Favorite coffee</a></li>
+          <li class="menu__item"><a href="#about" class="menu__link">About</a></li>
+          <li class="menu__item"><a href="#app" class="menu__link">Mobile app</a></li>
+          <li class="menu__item"><a href="#contact" class="menu__link">Contact us</a></li>
+          <li class="menu__item"><a href="./menu/index.html" class="menu__link">Menu <img src="./assets/icons/coffee-cup.svg" alt="coffe"></a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <main></main>
-  <footer></footer>
+  <div class="hero">
+    <div class="hero__wrapper wrapper">
+      <div class="hero__offer">
+        <h1 class="hero__title title_light">
+          <span class="title_accent">Enjoy</span> premium coffee at our charming cafe
+        </h1>
+        <p class="hero__p p_light">
+          With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.
+        </p>
+        <a href="./menu/index.html" class="hero__btn btn">Menu <img src="./assets/icons/coffee-cup.svg" alt="coffe"></a>
+      </div>
+    </div>
+  </div>
+  <main class="main">
+    <sectin id="favorite"></sectin>
+    <section id="about"></section>
+    <section id="app"></section>
+  </main>
+  <footer id="contact" class="footer">
+
+  </footer>
   <script src="./script.js"></script>
 </body>
 </html>
