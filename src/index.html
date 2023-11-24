@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,7 +11,7 @@
 <body>
   <header class="header">
     <div class="header__wrapper wrapper">
-      <img src="./assets/images/logo.png" alt="Coffee House">
+      <a href="./index.html"><img src="./assets/images/logo.png" alt="Coffee House"></a>
       <nav class="nav">
         <ul class="menu">
           <li class="menu__item"><a href="#favorite" class="menu__link">Favorite coffee</a></li>
@@ -22,26 +23,45 @@
       </nav>
     </div>
   </header>
-  <div class="hero">
-    <div class="hero__wrapper wrapper">
-      <div class="hero__offer">
-        <h1 class="hero__title title_light">
+  <div class="enjoy">
+    <div class="enjoy__wrapper wrapper">
+      <div class="enjoy__offer">
+        <h1 class="enjoy__title title_light">
           <span class="title_accent">Enjoy</span> premium coffee at our charming cafe
         </h1>
-        <p class="hero__p p_light">
+        <p class="enjoy__p p_light">
           With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.
         </p>
-        <a href="./menu/index.html" class="hero__btn btn">Menu <img src="./assets/icons/coffee-cup.svg" alt="coffe"></a>
+        <a href="./menu/index.html" class="enjoy__btn btn">Menu <img src="./assets/icons/coffee-cup.svg" alt="coffe"></a>
       </div>
     </div>
   </div>
   <main class="main">
-    <sectin id="favorite"></sectin>
+    <section id="favorite"></section>
     <section id="about"></section>
     <section id="app"></section>
   </main>
   <footer id="contact" class="footer">
-
+    <div class="footer__wrapper wrapper">
+      <div class="footer__offer">
+        <h2 class="footer__title title_light">
+          Sip, Savor, Smile. <span class="title_accent">It’s coffee time!</span>
+        </h2>
+        <div class="socials">
+          <a href="https://twitter.com/" class="socials__item btn-icon btn-icon_light"><img src="./assets/icons/twitter.svg" alt="twitter"></a>
+          <a href="https://www.instagram.com/" class="socials__item btn-icon btn-icon_light"><img src="./assets/icons/instagram.svg" alt="instagram"></a></a>
+          <a href="https://www.facebook.com/" class="socials__item btn-icon btn-icon_light"><img src="./assets/icons/facebook.svg" alt="facebook"></a></a>
+        </div>
+      </div>
+      <div class="footer__contacts-info">
+        <h3 class="title_light">Contact us</h3>
+        <div class="footer__contacts">
+          <a href="https://maps.app.goo.gl/hA3Lx6vf3UoomJ2U8" target="blank" class="contacts__link"><img src="./assets/icons/pin-alt.svg" alt="pin">8558 Green Rd.,  LA</a>
+          <a href="tel:+1 (603) 555-0123" class="contacts__link"><img src="./assets/icons/phone.svg" alt="phone">+1 (603) 555-0123</a>
+          <a class="contacts__link"><img src="./assets/icons/clock.svg" alt="clock" disable>Mon-Sat: 9:00 AM – 23:00 PM</a>
+        </div>
+      </div>
+    </div>
   </footer>
   <script src="./script.js"></script>
 </body>

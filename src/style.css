@@ -108,7 +108,31 @@ button {
 }
 
 .btn-icon {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+}
 
+.btn-icon_light {
+  border: 1px solid var(--border-light);
+}
+
+.btn-icon_light:hover {
+  border: 1px solid var(--border-light);
+  background-color: var(--background-body);
+}
+
+.btn-icon_light:hover svg {
+  stroke: #2D5BFF;
+
+}
+
+
+.btn-icon_dark {
+  background: var(--background-container);
 }
 
 .btn-icon_light {
@@ -169,7 +193,7 @@ button {
   gap: 0.8rem;
 }
 
-.hero__wrapper {
+.enjoy__wrapper {
   margin: 20px auto 100px auto;
   padding:100px 0 0 100px;
   height: 644px;
@@ -177,14 +201,14 @@ button {
   background: center / cover no-repeat url(./assets/images/img-hero.jpg), lightgray 50%;
 }
 
-.hero__offer {
+.enjoy__offer {
   display: flex;
   flex-direction: column;
   gap: 40px;
   width: 42%;
 }
 
-.hero__title {
+.enjoy__title {
 
 }
 .title_light {
@@ -196,24 +220,24 @@ button {
   color: var(--text-accent);
 }
 
-.hero__p {
+.enjoy__p {
   letter-spacing: -0.1px;
 }
 
-.hero__btn {
+.enjoy__btn {
   transition: justify-content ease 0.50s
 }
 
-.hero__btn > img {
+.enjoy__btn > img {
   opacity: 0;
   transition: opacity ease 0.50s
 }
 
-.hero__btn:hover > img {
+.enjoy__btn:hover > img {
   opacity: 1;
 }
 
-.hero__btn:hover {
+.enjoy__btn:hover {
   justify-content: center;
 }
 
@@ -223,4 +247,44 @@ button {
 
 .p_dark {
   color: var(--text-dark);
+}
+
+.footer__wrapper {
+  display: flex;
+  height: 450px;
+  padding: 100px 0 0 100px;
+  gap: 100px;
+  border-radius: 40px;
+  background: var(--background-container);
+}
+
+.footer__offer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 42%;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__contacts-info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 32px;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacts__link {
+  display: flex;
+  gap: 8px;
+  color: var(--text-light);
 }
