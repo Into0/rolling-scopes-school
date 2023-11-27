@@ -239,6 +239,7 @@ button {
 .enjoy__title {
 
 }
+
 .title_light {
   color: var(--text-light);
 }
@@ -390,10 +391,12 @@ button {
 
 .about__item > img {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -33px;
-  margin: auto;
+  top: 50%;
+  left: 50%;
+  width: 726px;
+  height: 726px;
+  margin-top: -363px;
+  margin-left: -363px;
   transform: scale(1);
   transition: transform ease 0.50s;
 }
