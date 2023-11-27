@@ -254,7 +254,7 @@ button {
 }
 
 .enjoy__btn {
-  transition: justify-content ease 0.50s;
+
 }
 
 .enjoy__btn > img {
@@ -266,8 +266,13 @@ button {
   opacity: 1;
 }
 
-.enjoy__btn:hover {
-  justify-content: center;
+.enjoy__btn > span {
+  margin-left: 0;
+  transition: margin ease 0.50s;
+}
+
+.enjoy__btn:hover > span {
+  margin-left: -15px;
 }
 
 .p_light {
