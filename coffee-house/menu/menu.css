@@ -286,7 +286,7 @@ button {
   flex-wrap: wrap;
   #height: 1052px;
   overflow: hidden;
-  gap: 40px;
+  gap: 40px 0;
 }
 
 .category__item {
