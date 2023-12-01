@@ -122,7 +122,7 @@ button {
 
 .btn-icon {
   display: flex;
-  width: 60px;
+  min-width: 60px;
   height: 60px;
   justify-content: center;
   align-items: center;
@@ -158,7 +158,7 @@ button {
 }
 
 .wrapper {
-  max-width: 1440px;
+  max-width: 1360px;
   width: calc(100% - 80px);
   margin: 0 auto;
 }
@@ -176,6 +176,10 @@ button {
 
 .logo:hover {
   transform:scale(1.1);
+}
+
+#nav__toggle {
+  display: none;
 }
 
 .nav {
@@ -233,7 +237,8 @@ button {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 42%;
+  #width: 42%;
+  width: 530px;
 }
 
 .enjoy__title {
@@ -366,8 +371,11 @@ button {
 
 .about__images {
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  #gap: 40px;
   height: 1060px;
+  overflow: hidden;
 }
 
 .about__col {
@@ -413,8 +421,10 @@ button {
 .mobile-app__wrapper {
   display: flex;
   align-items: center;
-  gap: 100px;
-  height: 630px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  #gap: 100px;
+  #height: 630px;
   margin-bottom: 100px;
 }
 
@@ -422,7 +432,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 46.4%;
+  max-width: 630px;
 }
 
 .mobile-screens > img {
@@ -453,8 +463,9 @@ button {
 
 .footer__wrapper {
   display: flex;
-  height: 450px;
-  padding: 100px 0 0 100px;
+  flex-wrap: wrap;
+  #height: 450px;
+  padding: 100px 0 100px 100px;
   gap: 100px;
   border-radius: 40px;
   background: var(--background-container);
@@ -464,7 +475,8 @@ button {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 42%;
+  #width: 42%;
+  max-width: 530px;
 }
 
 .socials {
@@ -500,4 +512,109 @@ button {
 
 .contacts__link:last-child:hover {
   border-bottom: 0.4rem solid transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 688px;
+  }
+
+  .nav__hamburger {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid var(--border-dark);
+    cursor: pointer;
+   }
+
+  .nav__hamburger > span,
+  .nav__hamburger > span::before,
+  .nav__hamburger > span::after {
+    display: block;
+    position: absolute;
+    background-color: var(--text-dark);
+  }
+
+  .nav__hamburger > span::before {
+    content: '';
+    top: -5px;
+    left: -8px;
+    width: 16px;
+    height: 1px;
+  }
+
+  .nav__hamburger > span::after {
+    content: '';
+    top: 3px;
+    left: -8px;
+    width: 16px;
+    height: 1px;
+  }
+
+  .menu {
+    position: fixed;
+    right: -9999px;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .enjoy__wrapper {
+    padding-left: 60px;
+  }
+
+  .favorite__title {
+    text-align: center;
+  }
+
+  .slider {
+    padding: 0;
+  }
+
+  .about__images {
+    justify-content: center;
+    gap: 40px 0;
+    height: 1220px;
+  }
+
+  .about__col1 > .about__item:last-child{
+    display: none;
+  }
+
+  .about__col2 > .about__item:first-child {
+    display: none;
+  }
+
+  .about__item {
+    width: 688px;
+  }
+
+  .about__item:hover > img {
+    transform: scale(0.95);
+  }
+
+  .mobile-app__wrapper {
+    justify-content: center;
+    gap: 100px 0;
+  }
+
+  .mobile-app__offer{
+    max-width: 100%;
+  }
+
+  .footer__wrapper {
+    padding-left: 60px;
+  }
+
+  .footer__contacts-info {
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 380px) {
+
 }
