@@ -172,7 +172,6 @@ button {
 
 }
 
-
 .wrapper {
   max-width: 1360px;
   width: calc(100% - 80px);
@@ -286,7 +285,8 @@ button {
 
 .tab__item {
   width: auto;
-  padding: 8px 16px 8px 8px;
+  #padding: 8px 16px 8px 8px;
+  padding: 7px 16px 7px 7px;
   justify-content: center;
 }
 .btn {
@@ -295,11 +295,11 @@ button {
 }
 .category {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   #height: 1052px;
   overflow: hidden;
-  gap: 40px 0;
+  gap: 40px;
 }
 
 .category__item {
@@ -466,7 +466,6 @@ button {
   }
 
   .category {
-    justify-content: space-around;
   }
 
   .main__btn {
@@ -488,7 +487,49 @@ button {
     padding-left: 60px;
   }
 
+  .footer__offer {
+    max-width: 568px;
+  }
+
   .footer__contacts-info {
     padding-top: 0;
   }
+}
+
+@media screen and (max-width: 380px) {
+
+  h2 {
+    font-size: 3.2rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+
+  .wrapper {
+    max-width: 688px;
+    width: calc(100% - 32px);
+  }
+
+  .tab {
+    gap: 8px;
+  }
+
+  .tab__item {
+    padding: 7px 15px 7px 7px;
+  }
+
+  .main__title {
+    max-width: 348px;
+  }
+
+  .footer__wrapper {
+    padding: 60px 16px;
+    gap: 40px;
+  }
+
+  .footer__offer {
+    max-width: 316px;
+  }
+
 }
