@@ -17,99 +17,101 @@
         <label class="nav__hamburger" for="nav__toggle">
           <span></span>
         </label>
-        <ul class="menu">
-          <li class="menu__item"><a href="../#favorite" class="menu__link">Favorite coffee</a></li>
-          <li class="menu__item"><a href="../#about" class="menu__link">About</a></li>
-          <li class="menu__item"><a href="../#mobile-app" class="menu__link">Mobile app</a></li>
-          <li class="menu__item"><a href="#contact" class="menu__link">Contact us</a></li>
-          <li class="menu__item link_act"><a href="" class="menu__link">Menu <img src="../assets/icons/coffee-cup.svg" alt="coffe"></a></li>
+        <ul class="nav__menu">
+          <li class="nav__menu-item"><a href="../#favorite" class="nav__menu-link">Favorite coffee</a></li>
+          <li class="nav__menu-item"><a href="../#about" class="nav__menu-link">About</a></li>
+          <li class="nav__menu-item"><a href="../#mobile-app" class="nav__menu-link">Mobile app</a></li>
+          <li class="nav__menu-item"><a href="#contact" class="nav__menu-link">Contact us</a></li>
+          <li class="nav__menu-item link_act"><a href="" class="nav__menu-link">Menu <img src="../assets/icons/coffee-cup.svg" alt="coffe"></a></li>
         </ul>
       </nav>
     </div>
   </header>
   <main class="main">
-    <div class="main__wrapper wrapper">
-      <div class="main__offer">
-        <h2 class="main__title">Behind each of our cups hides an <span class="title_accent">amazing surprise</span></h2>
-        <div class="tab">
-          <button class="tab__item btn btn_dark btn_act"><img src="../assets/icons/tab-coffee.png" alt="coffee">Coffee</button>
-          <button class="tab__item btn btn_dark"> <img src="../assets/icons/tab-tea.png" alt="tea">Tea</button>
-          <button class="tab__item btn btn_dark"> <img src="../assets/icons/tab-dessert.png" alt="dessert">Dessert</button>
+    <section class="menu">
+      <div class="menu__wrapper wrapper">
+        <div class="menu__offer">
+          <h2 class="menu__title">Behind each of our cups hides an <span class="title_accent">amazing surprise</span></h2>
+          <div class="tab">
+            <button class="tab__item btn btn_dark btn_act"><img src="../assets/icons/tab-coffee.png" alt="coffee">Coffee</button>
+            <button class="tab__item btn btn_dark"> <img src="../assets/icons/tab-tea.png" alt="tea">Tea</button>
+            <button class="tab__item btn btn_dark"> <img src="../assets/icons/tab-dessert.png" alt="dessert">Dessert</button>
+          </div>
         </div>
+        <div class="category">
+          <div class="category__item">
+            <div class="category__img"><img src="../assets/images/coffee-1.jpg" alt="coffee 1"></div>
+            <div class="category__text">
+              <h3 class="category__title">Irish coffee</h3>
+              <p class="category__p">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+              <h3 class="category__price">$7.00</h3>
+            </div>
+          </div>
+          <div class="category__item">
+            <div class="category__img"><img src="../assets/images/coffee-2.jpg" alt="coffee 2"></div>
+            <div class="category__text">
+              <h3 class="category__title">Kahlua coffee</h3>
+              <p class="category__p">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+              <h3 class="category__price">$7.00</h3>
+            </div>
+          </div>
+          <div class="category__item">
+            <div class="category__img"><img src="../assets/images/coffee-3.jpg" alt="coffee 3"></div>
+            <div class="category__text">
+              <h3 class="category__title">Honey raf</h3>
+              <p class="category__p">Espresso with frothed milk, cream and aromatic honey</p>
+              <h3 class="category__price">$5.50</h3>
+            </div>
+          </div>
+          <div class="category__item">
+            <div class="category__img"><img src="../assets/images/coffee-4.jpg" alt="coffee 4"></div>
+            <div class="category__text">
+              <h3 class="category__title">Ice cappuccino</h3>
+              <p class="category__p">Cappuccino with soft thick foam in summer version with ice</p>
+              <h3 class="category__price">$5.00</h3>
+            </div>
+          </div>
+          <div class="category__item">
+            <div class="category__img"><img src="../assets/images/coffee-5.jpg" alt="coffee 5"></div>
+            <div class="category__text">
+              <h3 class="category__title">Espresso</h3>
+              <p class="category__p">Classic black coffee</p>
+              <h3 class="category__price">$4.50</h3>
+            </div>
+          </div>
+          <div class="category__item">
+            <div class="category__img"><img src="../assets/images/coffee-6.jpg" alt="coffee 6"></div>
+            <div class="category__text">
+              <h3 class="category__title">Latte</h3>
+              <p class="category__p">Espresso coffee with the addition of steamed milk and dense milk foam</p>
+              <h3 class="category__price">$5.50</h3>
+            </div>
+          </div>
+          <div class="category__item">
+            <div class="category__img"><img src="../assets/images/coffee-7.jpg" alt="coffee 7"></div>
+            <div class="category__text">
+              <h3 class="category__title">Latte macchiato</h3>
+              <p class="category__p">Espresso with frothed milk and chocolate</p>
+              <h3 class="category__price">$5.50</h3>
+            </div>
+          </div>
+          <div class="category__item">
+            <div class="category__img"><img src="../assets/images/coffee-8.jpg" alt="coffee 8"></div>
+            <div class="category__text">
+              <h3 class="category__title">Coffee with cognac</h3>
+              <p class="category__p">Fragrant black coffee with cognac and whipped cream</p>
+              <h3 class="category__price">$6.50</h3>
+            </div>
+          </div>
+        </div>
+        <button class="menu__btn btn-icon btn_dark">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
-      <div class="category">
-        <div class="category__item">
-          <div class="category__img"><img src="../assets/images/coffee-1.jpg" alt="coffee 1"></div>
-          <div class="category__text">
-            <h3 class="category__title">Irish coffee</h3>
-            <p class="category__p">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
-            <h3 class="category__price">$7.00</h3>
-          </div>
-        </div>
-        <div class="category__item">
-          <div class="category__img"><img src="../assets/images/coffee-2.jpg" alt="coffee 2"></div>
-          <div class="category__text">
-            <h3 class="category__title">Kahlua coffee</h3>
-            <p class="category__p">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
-            <h3 class="category__price">$7.00</h3>
-          </div>
-        </div>
-        <div class="category__item">
-          <div class="category__img"><img src="../assets/images/coffee-3.jpg" alt="coffee 3"></div>
-          <div class="category__text">
-            <h3 class="category__title">Honey raf</h3>
-            <p class="category__p">Espresso with frothed milk, cream and aromatic honey</p>
-            <h3 class="category__price">$5.50</h3>
-          </div>
-        </div>
-        <div class="category__item">
-          <div class="category__img"><img src="../assets/images/coffee-4.jpg" alt="coffee 4"></div>
-          <div class="category__text">
-            <h3 class="category__title">Ice cappuccino</h3>
-            <p class="category__p">Cappuccino with soft thick foam in summer version with ice</p>
-            <h3 class="category__price">$5.00</h3>
-          </div>
-        </div>
-        <div class="category__item">
-          <div class="category__img"><img src="../assets/images/coffee-5.jpg" alt="coffee 5"></div>
-          <div class="category__text">
-            <h3 class="category__title">Espresso</h3>
-            <p class="category__p">Classic black coffee</p>
-            <h3 class="category__price">$4.50</h3>
-          </div>
-        </div>
-        <div class="category__item">
-          <div class="category__img"><img src="../assets/images/coffee-6.jpg" alt="coffee 6"></div>
-          <div class="category__text">
-            <h3 class="category__title">Latte</h3>
-            <p class="category__p">Espresso coffee with the addition of steamed milk and dense milk foam</p>
-            <h3 class="category__price">$5.50</h3>
-          </div>
-        </div>
-        <div class="category__item">
-          <div class="category__img"><img src="../assets/images/coffee-7.jpg" alt="coffee 7"></div>
-          <div class="category__text">
-            <h3 class="category__title">Latte macchiato</h3>
-            <p class="category__p">Espresso with frothed milk and chocolate</p>
-            <h3 class="category__price">$5.50</h3>
-          </div>
-        </div>
-        <div class="category__item">
-          <div class="category__img"><img src="../assets/images/coffee-8.jpg" alt="coffee 8"></div>
-          <div class="category__text">
-            <h3 class="category__title">Coffee with cognac</h3>
-            <p class="category__p">Fragrant black coffee with cognac and whipped cream</p>
-            <h3 class="category__price">$6.50</h3>
-          </div>
-        </div>
-      </div>
-      <button class="main__btn btn-icon btn_dark">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </div>
+    </section>
   </main>
   <footer id="contact" class="footer">
     <div class="footer__wrapper wrapper">

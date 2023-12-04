@@ -157,33 +157,32 @@ button {
   width: 100%;
 }
 
-.menu {
+.nav__menu {
   display: flex;
   gap: 4rem;
-  width: 96.9%;
+  min-width: 96.9%;
 }
 
-.menu__item {
+.nav__menu-item {
   list-style: none;
   border-bottom: 0.4rem solid transparent;
   transition: border ease 0.50s;
 }
 
-.menu__item:first-child {
+.nav__menu-item:first-child {
   margin-left: auto;
 }
 
-.menu__item:last-child {
+.nav__menu-item:last-child {
   margin-left: auto;
 }
 
-.menu__link {
+.nav__menu-link {
   display:  block;
-  #width: 100%;
   height: 100%;
 }
 
-.menu__link:last-child {
+.nav__menu-link:last-child {
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
@@ -374,9 +373,9 @@ button {
 .mobile-app__wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 100px;
+  justify-content: space-between;
+  #flex-wrap: wrap;
+  #gap: 100px;
   #height: 630px;
   margin-bottom: 100px;
 }
@@ -463,6 +462,20 @@ button {
     max-width: 688px;
   }
 
+  #nav__toggle:checked ~ .nav__hamburger > span::before {
+    #top: 0;
+    #transform: rotate(45deg);
+  }
+
+  #nav__toggle:checked ~ .nav__hamburger > span::after {
+    #top: 0;
+    #transform: rotate(-45deg);
+  }
+
+  #nav__toggle:checked ~ .nav__menu {
+    #right: 0;
+  }
+
   .nav__hamburger {
     display: flex;
     width: 44px;
@@ -480,6 +493,7 @@ button {
     display: block;
     position: absolute;
     background-color: var(--text-dark);
+    transition: all ease 0.50s;
   }
 
   .nav__hamburger > span::before {
@@ -498,35 +512,43 @@ button {
     height: 1px;
   }
 
-  .menu {
+  .nav__menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--background-body);
     position: fixed;
     right: -9999px;
-    top: 100px;
-    width: 100%;
+    top: 80px;
+    width: 100vw;
     height: 100vh;
-    gap: 6rem;
+    padding-top: 80px;
+    gap: 5.6rem;
     margin: 0;
+    transition: right ease 0.50s;
     z-index: 11;
   }
 
-  .menu__item:first-child {
+  .nav__menu-item:first-child {
     margin: unset;
   }
 
-  .menu__item:last-child {
+  .nav__menu-item:last-child {
     margin: unset;
+    margin-top: 40px;
   }
 
-  #nav__toggle:checked ~ .nav__hamburger {
-
+  .nav__menu-item:last-child img {
+    width: 40px;
   }
 
-  #nav__toggle:checked ~ .menu {
-    #right: 0;
+  .nav__menu-link {
+    font-size: 3.2rem;
+    line-height: 125%;
+  }
+
+  .nav__menu-link:last-child {
+    gap: 1.6rem;
   }
 
   .enjoy__wrapper {
@@ -628,6 +650,10 @@ button {
     letter-spacing: -0.1px;
   }
 
+  .about__title {
+    letter-spacing: normal;
+  }
+
   .about__col {
     width: 348px;
   }
@@ -684,7 +710,7 @@ button {
     transform:scale(1.1);
   }
 
-  .menu__item:hover {
+  .nav__menu-item:hover {
     border-bottom: 0.4rem solid var(--text-dark);
   }
 
