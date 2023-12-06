@@ -188,11 +188,30 @@ button {
   gap: 0.8rem;
 }
 
+.enjoy {
+
+}
+
 .enjoy__wrapper {
+  position: relative;
   margin: 20px auto 100px auto;
   padding:100px 0 100px 100px;
   border-radius: 4rem;
-  background: center / cover no-repeat url(./assets/images/img-hero.jpg), var(--background-backdrop);
+  background-color: var(--background-backdrop);
+  #background: center / cover no-repeat url(./assets/images/img-hero.jpg), var(--background-backdrop);
+  z-index: 0;
+}
+
+.enjoy__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 4rem;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index:-100;
 }
 
 .enjoy__offer {
@@ -385,6 +404,10 @@ button {
   flex-direction: column;
   gap: 40px;
   max-width: 630px;
+}
+
+.mobile-screens {
+
 }
 
 .mobile-screens > img {
