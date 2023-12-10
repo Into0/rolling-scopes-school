@@ -9,6 +9,10 @@ let progressvalue = 0;
 let interval = setInterval(moveProgress, 50);
 let slideInterval = setInterval(nextSlide, 5000);
 
+//////////////////////////////
+
+//////////////////////////////
+
 function prevSlide() {
   SLIDES.style.transform = `translateX(${translateX += 140}%)`;
   if (translateX > 0) {
@@ -35,7 +39,7 @@ setInterval(() => {
     interval_stop();
     interval_start();
   }
-}, 80);
+}, 50);
 
 function interval_start() {
   interval = setInterval(moveProgress, 50);
@@ -46,7 +50,6 @@ function interval_stop() {
   interval = clearInterval(interval);
   slideInterval = clearInterval(slideInterval);
 };
-
 
 SLIDENEXT.addEventListener('click', nextSlide);
 SLIDEPREV.addEventListener('click', prevSlide);
