@@ -50,12 +50,13 @@
           Choose your <span class="title_accent">favorite</span> coffee
         </h2>
         <div class="slider">
-          <button class="btn-icon btn-icon_dark">
+          <button class="slider__btn slider__btn-prev btn-icon btn-icon_dark">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18.5 12H6M6 12L12 6M6 12L12 18" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <div class="slider__slide">
+          <div class="slider__view">
+          <div class="slider__slides">
             <div class="slider__item">
               <div class="slider__img">
                 <img src="./assets/images/coffee-slider-1.png" alt="coffee 1">
@@ -66,17 +67,38 @@
                 <h3>$5.50</h3>
               </div>
             </div>
+            <div class="slider__item">
+              <div class="slider__img">
+                <img src="./assets/images/coffee-slider-2.png" alt="coffee 2">
+              </div>
+              <div class="slider__text">
+                <h3>Caramel Macchiato</h3>
+                <p>Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.</p>
+                <h3>$5.00</h3>
+              </div>
+            </div>
+            <div class="slider__item">
+              <div class="slider__img">
+                <img src="./assets/images/coffee-slider-3.png" alt="coffee 3">
+              </div>
+              <div class="slider__text">
+                <h3>Ice coffee</h3>
+                <p>A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</p>
+                <h3>$4.50</h3>
+              </div>
+            </div>
           </div>
-          <button class="btn-icon btn-icon_dark">
+          </div>
+          <button class="slider__btn slider__btn-next btn-icon btn-icon_dark">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
         </div>
-        <ul class="pagination">
-          <li class="pagination__item pagination__item_act"></li>
-          <li class="pagination__item"></li>
-          <li class="pagination__item"></li>
+        <div class="progress">
+          <progress class="progress__item" value="0" max="100"></progress>
+          <progress class="progress__item" value="0" max="100"></progress>
+          <progress class="progress__item" value="0" max="100"></progress>
         </ul>
       </div>
     </section>

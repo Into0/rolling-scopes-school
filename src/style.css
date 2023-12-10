@@ -276,11 +276,16 @@ button {
   width: 100%;
 }
 
-.slider__slide {
-  display: flex;
-  justify-content: center;
-  width: 1152px;
+.slider__view {
+  width: 480px;
   overflow: hidden;
+}
+
+.slider__slides {
+  display: flex;
+  gap: 195px;
+  transform: translate(0);
+  transition: transform ease 0.50s;
 }
 
 .slider__item {
@@ -315,20 +320,37 @@ button {
   max-width: 480px;
 }
 
-.pagination {
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 4px;
+}
+
+progress[value]::-webkit-progress-bar {
+  border-radius: 100px;
+  background-color: var(--border-light);
+}
+
+progress[value]::-webkit-progress-value {
+  border-radius: 100px;
+  background-color: var(--border-dark);
+}
+
+.progress {
   display: flex;
   gap: 12px;
   list-style-type: none;
 }
 
-.pagination__item {
+.progress__item {
   width: 40px;
   height: 4px;
   border-radius: 100px;
   background: var(--border-light);
 }
 
-.pagination__item_act {
+.progress__item_act {
   background: var(--border-dark);
 }
 
@@ -486,17 +508,17 @@ button {
   }
 
   #nav__toggle:checked ~ .nav__hamburger > span::before {
-    #top: 0;
-    #transform: rotate(45deg);
+    top: 0;
+    transform: rotate(45deg);
   }
 
   #nav__toggle:checked ~ .nav__hamburger > span::after {
-    #top: 0;
-    #transform: rotate(-45deg);
+    top: 0;
+    transform: rotate(-45deg);
   }
 
   #nav__toggle:checked ~ .nav__menu {
-    #right: 0;
+    right: 0;
   }
 
   .nav__hamburger {
