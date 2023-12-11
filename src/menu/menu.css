@@ -244,6 +244,7 @@ button {
 
 .alert {
   display: flex;
+  align-items: flex-start;
   gap: 8px;
   padding: 12px 0;
 }
@@ -495,6 +496,11 @@ button {
 }
 
 @media screen and (max-width: 768px) {
+
+  .popup__text {
+    width: 346px;
+  }
+
   .wrapper {
     max-width: 688px;
   }
@@ -596,6 +602,10 @@ button {
     width: auto;
   }
 
+  .tab {
+    flex-wrap: wrap;
+  }
+
   .category {
   }
 
@@ -631,6 +641,15 @@ button {
 
   h3 {
     font-size: 2.4rem;
+  }
+
+  .popup__img {
+    display: none;
+  }
+
+  .popup__text {
+    width: 310px;
+    padding-left: 0;
   }
 
   .wrapper {

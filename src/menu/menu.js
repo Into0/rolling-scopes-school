@@ -78,7 +78,7 @@ function showPopup() {
 
 CATEGORY.onclick = function(event) {
   if (!event.target.closest('.category__item')) return;
-  productsId = +event.target.closest('.category__item').dataset.id;
+  productsId = event.target.closest('.category__item').dataset.id;
   generatePopup(products);
   showPopup();
 };
