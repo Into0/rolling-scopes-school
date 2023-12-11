@@ -1,6 +1,8 @@
 const response = await fetch('../assets/products.json');
 const products = await response.json();
 
+const NAV_TOGGLE = document.querySelector('#nav__toggle');
+const NAV_LINK = document.querySelectorAll('.nav__menu-link');
 const OVERLAY = document.querySelector('.overlay');
 const POPUP = document.querySelector('.popup');
 const CATEGORY = document.querySelector('.category');
@@ -11,6 +13,14 @@ let productsId;
 
 //////////////////////////////
 
+function showMenu() {
+  if (NAV_TOGGLE.checked) {
+    document.documentElement.style.overflow = 'hidden';
+  } else {
+    document.documentElement.style.overflow = 'visible';
+  }
+}
+
 function showOverlay() {
   OVERLAY.classList.add('overlay__show');
   document.documentElement.style.overflow = 'hidden';
@@ -19,6 +29,7 @@ function showOverlay() {
 function hideOverlay() {
   OVERLAY.classList.remove('overlay__show');
   POPUP.classList.remove('popup__show');
+  NAV_TOGGLE.checked = false;
   document.documentElement.style.overflow = 'visible';
 }
 
@@ -89,3 +100,9 @@ POPUP.onclick = function(event) {
 };
 
 OVERLAY.addEventListener('click', hideOverlay);
+
+NAV_LINK.forEach((elem) => {
+  elem.addEventListener('click', hideOverlay);
+});
+
+NAV_TOGGLE.addEventListener('change', showMenu);

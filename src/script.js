@@ -1,3 +1,8 @@
+const NAV_TOGGLE = document.querySelector('#nav__toggle');
+const NAV_LINK = document.querySelectorAll('.nav__menu-link');
+
+const OVERLAY = document.querySelector('.overlay');
+
 const SLIDER = document.querySelector('.slider');
 const SLIDEPREV = document.querySelector('.slider__btn-prev');
 const SLIDENEXT = document.querySelector('.slider__btn-next');
@@ -12,6 +17,23 @@ let slideInterval = setInterval(nextSlide, 5000);
 //////////////////////////////
 
 //////////////////////////////
+
+function showMenu() {
+  if (NAV_TOGGLE.checked) {
+    document.documentElement.style.overflow = 'hidden';
+  } else {
+    document.documentElement.style.overflow = 'visible';
+  }
+}
+
+function showOverlay() {
+  document.documentElement.style.overflow = 'hidden';
+}
+
+function hideOverlay() {
+  NAV_TOGGLE.checked = false;
+  document.documentElement.style.overflow = 'visible';
+}
 
 function prevSlide() {
   SLIDES.style.transform = `translateX(${translateX += 140}%)`;
@@ -53,3 +75,9 @@ function interval_stop() {
 
 SLIDENEXT.addEventListener('click', nextSlide);
 SLIDEPREV.addEventListener('click', prevSlide);
+
+NAV_LINK.forEach((elem) => {
+  elem.addEventListener('click', hideOverlay);
+});
+
+NAV_TOGGLE.addEventListener('change', showMenu);

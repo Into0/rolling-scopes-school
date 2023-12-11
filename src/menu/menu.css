@@ -506,17 +506,17 @@ button {
   }
 
   #nav__toggle:checked ~ .nav__hamburger > span::before {
-    #top: 0;
-    #transform: rotate(45deg);
+    top: 0;
+    transform: rotate(45deg);
   }
 
   #nav__toggle:checked ~ .nav__hamburger > span::after {
-    #top: 0;
-    #transform: rotate(-45deg);
+    top: 0;
+    transform: rotate(-45deg);
   }
 
   #nav__toggle:checked ~ .nav__menu {
-    #right: 0;
+    right: 0;
   }
 
    .nav__hamburger {
