@@ -6,6 +6,7 @@ const NAV_LINK = document.querySelectorAll('.nav__menu-link');
 const OVERLAY = document.querySelector('.overlay');
 const POPUP = document.querySelector('.popup');
 const CATEGORY = document.querySelector('.category');
+const CATEGORY_ITEM = document.querySelectorAll('.category__item');
 
 let productsId;
 
@@ -83,6 +84,26 @@ function showPopup() {
   }
 }
 
+function generateCategoryItem(products) {
+  for (let i = 0; i < CATEGORY_ITEM.length; i += 1) {
+    let item = CATEGORY_ITEM[i];
+    productsId = i;
+    item.innerHTML = `
+      <div class="category__img"><img src="${products[productsId].img}" alt="coffee 1"></div>
+      <div class="category__text">
+        <h3 class="category__title">${products[productsId].name}</h3>
+        <p class="category__p">${products[productsId].description}</p>
+        <h3 class="category__price">$${products[productsId].price}</h3>
+      </div>`;
+    }
+}
+
+function switchCategory() {
+
+}
+
+generateCategoryItem(products);
+
 //////////////////////////////
 
 //////////////////////////////
@@ -106,3 +127,7 @@ NAV_LINK.forEach((elem) => {
 });
 
 NAV_TOGGLE.addEventListener('change', showMenu);
+
+window.addEventListener("resize", function(event) {
+  NAV_TOGGLE.checked = false;
+});

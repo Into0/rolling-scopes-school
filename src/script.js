@@ -81,3 +81,7 @@ NAV_LINK.forEach((elem) => {
 });
 
 NAV_TOGGLE.addEventListener('change', showMenu);
+
+window.addEventListener("resize", function(event) {
+  NAV_TOGGLE.checked = false;
+});

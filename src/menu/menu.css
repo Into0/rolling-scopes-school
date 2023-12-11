@@ -404,6 +404,7 @@ button {
   border-radius: 40px;
   border: 1px solid var(--border-light);
   width: 310px;
+  height: 506px;
   cursor: pointer;
 }
 
