@@ -6,4 +6,64 @@
 
 :root {
   font-size: 10px;
+  --Orange: #D64937;
+  --Silver: #DCDCDC;
+  --Blue-Dark: #1B1B32;
+  --Puter: #2D2D2D;
+  background-color: var(--Puter);
+}
+
+img {
+  display: block;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: calc(100% - 4rem);
+  height: 100vh;
+  padding: 2rem 0 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 4rem;
+  overflow: hidden;
+}
+
+.disable {
+
+}
+
+.btn {
+  width: 60px;
+  height: 40px;
+  padding: 0 10px;
+  background-color: #3D3D3D;
+  border: 0;
+  border-radius: 2px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #fff;
+  outline: 0;
+  cursor: pointer;
+  transition: 0.1s;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #535353;
+}
+
+.gallow__img > img {
+  width: 353px;
+  height: 581px;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  min-width: 580px;
+  max-width: 580px;
 }
