@@ -1,0 +1,63 @@
+[
+  {
+    "id": "0",
+    "word": "pictures",
+    "hint": "what do you take with a camera?"
+  },
+
+  {
+    "id": "1",
+    "word": "grocery",
+    "hint": "where do you buy food?"
+  },
+
+  {
+    "id": "2",
+    "word": "library",
+    "hint": "where do you borrow a book?"
+  },
+
+  {
+    "id": "3",
+    "word": "pond",
+    "hint": "where does a frog swim?"
+  },
+
+   {
+    "id": "4",
+    "word": "climb",
+    "hint": "what do you do on a ladder?"
+  },
+
+  {
+    "id": "5",
+    "word": "beach",
+    "hint": "where do you find shells?"
+  },
+
+   {
+    "id": "6",
+    "word": "shoes",
+    "hint": "what do you wear on your feet?"
+  },
+
+   {
+    "id": "7",
+    "word": "sleep",
+    "hint": "what do you do in bed?"
+  },
+
+   {
+    "id": "8",
+    "word": "sit",
+    "hint": "what do you do in a chair?"
+  },
+
+   {
+    "id": "9",
+    "word": "spoon",
+    "hint": "what do you eat cereal with?"
+  }
+
+
+]
