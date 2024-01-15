@@ -63,14 +63,18 @@ img {
 
 .wrapper {
   margin: 0 auto;
-  width: calc(100% - 4rem);
+  width: calc(100% - 5rem);
   height: 100vh;
-  padding: 2rem 0 2rem 0;
+  #padding: 2rem 0 2rem 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 4rem;
+  #gap: 4rem;
   overflow: hidden;
+}
+
+.hangman__wrapper {
+
 }
 
 .hide {
@@ -105,16 +109,28 @@ img {
   background-color: #535353;
 }
 
+.popup__btn {
+  width: auto;
+}
+
+.gallow {
+  position: relative;
+}
+
 .gallow__img > img {
+  #max-width: 100%;
+  #height: auto;
   #width: 353px;
   #height: 581px;
 }
 
 .gallow__man {
+  position: absolute;
+  left: 62%;
+  top: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   width: 167px;
   height: 370px;
 }
@@ -163,10 +179,6 @@ img {
   gap: 20px 0;
 }
 
-.popup__btn {
-  width: auto;
-}
-
 .word__field {
   display: flex;
   flex-direction: column;
@@ -206,6 +218,117 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   gap: 5px;
-  min-width: 580px;
+  #min-width: 580px;
   max-width: 580px;
 }
+
+
+@media screen and (max-width: 950px) {
+  .gallow__img {
+    transform: scale(0.8);
+  }
+
+  .gallow__man {
+    transform: scale(0.8);
+    left: 54%;
+    top: 24%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .btn {
+    font-size: 1.4rem;
+    width: 50px;
+    height: 30px;
+  }
+
+  .popup__btn {
+    width: auto;
+  }
+
+   .word__field {
+    font-size: 1.8rem;
+  }
+
+ .gallow__img {
+    transform: scale(0.6);
+  }
+
+  .gallow__man {
+    transform: scale(0.6);
+    left: 48%;
+    top: 22%;
+  }
+  .word__secret-char {
+    width: 50px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+
+  .hangman__wrapper {
+    flex-wrap: wrap;
+  }
+
+  .gallow {
+    height: 348px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: inherit;
+  }
+
+  .gallow__man {
+    top: 4%;
+  }
+
+}
+
+@media screen and (max-width: 430px) {
+  .hangman__wrapper {
+    flex-wrap: wrap;
+  }
+
+  .gallow {
+    height: 290px;
+  }
+
+  .word__field {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+    width: 40px;
+    height: 20px;
+  }
+
+  .keyboard {
+    gap: 3px;
+  }
+
+  .popup__btn {
+    width: auto;
+  }
+
+  .gallow__img {
+    transform: scale(0.5);
+  }
+
+  .gallow__man {
+    transform: scale(0.5);
+    left: 44%;
+    top: -6%;
+  }
+
+  .word__secret {
+    gap: 10px;
+  }
+
+  .word__secret-char {
+    width: 40px;
+    height: 20px;
+  }
+}
+

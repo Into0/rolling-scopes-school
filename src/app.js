@@ -74,7 +74,7 @@ function generateElements() {
 for (let i = 1; i <= 6; i += 1) {
     let img = document.createElement('img');
     img.src = `./assets/man${i}.svg`;
-    img.alt = 'gallow';
+    img.alt = 'gallow man';
     img.classList = `man-img man-img${i}`;
     man.append(img);
   }
@@ -84,7 +84,6 @@ for (let i = 1; i <= 6; i += 1) {
   wrapper.append(gallow, word);
   gallow.append(gallowImg, man);
   gallowImg.append(img);
-  manItem.append(img);
   word.append(field, keyboard);
   field.append(secret, hint, guesses);
 
