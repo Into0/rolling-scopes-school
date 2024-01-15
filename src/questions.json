@@ -1,0 +1,128 @@
+[
+  {
+    "id": "0",
+    "word": "pictures",
+    "hint": "what do you take with a camera?"
+  },
+
+  {
+    "id": "1",
+    "word": "grocery",
+    "hint": "where do you buy food?"
+  },
+
+  {
+    "id": "2",
+    "word": "library",
+    "hint": "where do you borrow a book?"
+  },
+
+  {
+    "id": "3",
+    "word": "pond",
+    "hint": "where does a frog swim?"
+  },
+
+   {
+    "id": "4",
+    "word": "climb",
+    "hint": "what do you do on a ladder?"
+  },
+
+  {
+    "id": "5",
+    "word": "beach",
+    "hint": "where do you find shells?"
+  },
+
+   {
+    "id": "6",
+    "word": "shoes",
+    "hint": "what do you wear on your feet?"
+  },
+
+   {
+    "id": "7",
+    "word": "sleep",
+    "hint": "what do you do in bed?"
+  },
+
+   {
+    "id": "8",
+    "word": "sit",
+    "hint": "what do you do in a chair?"
+  },
+
+   {
+    "id": "9",
+    "word": "spoon",
+    "hint": "what do you eat cereal with?"
+  },
+
+  {
+    "id": "10",
+    "word": "school",
+    "hint": "where do you learn to read?"
+  },
+
+  {
+    "id": "11",
+    "word": "sweep",
+    "hint": "what do you do with a broom?"
+  },
+
+  {
+    "id": "12",
+    "word": "farm",
+    "hint": "where does a goat live?"
+  },
+
+  {
+    "id": "13",
+    "word": "nest",
+    "hint": "where does a bird lay eggs?"
+  },
+
+  {
+    "id": "14",
+    "word": "crib",
+    "hint": "where does a baby sleep?"
+  },
+
+  {
+    "id": "15",
+    "word": "talk",
+    "hint": "what do you do on the telephone?"
+  },
+
+  {
+    "id": "16",
+    "word": "write",
+    "hint": "what do you do with a pencil?"
+  },
+
+  {
+    "id": "17",
+    "word": "throw",
+    "hint": "what does a pitcher do to a baseball?"
+  },
+
+  {
+    "id": "18",
+    "word": "drink",
+    "hint": "what do you do with milk?"
+  },
+
+  {
+    "id": "19",
+    "word": "bank",
+    "hint": "where do you save money?"
+  },
+
+  {
+    "id": "20",
+    "word": "face",
+    "hint": "where does makeup go?"
+  }
+
+]
