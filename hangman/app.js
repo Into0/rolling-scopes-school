@@ -51,27 +51,28 @@ function generateElements() {
   popup.append(popupText, answer, butn);
 
   main.className='hangman';
-    wrapper.className = 'hangman__wrapper wrapper';
-      gallow.className = 'gallow';
-        gallowImg.className = 'gallow__img';
-          img.src = './assets/gallows.svg';
-          img.alt = 'gallow';
-        man.className = 'gallow__man';
-      word.className = 'word';
-        field.className = 'word__field'
-          secret.className = 'word__secret';
-          hint.className = 'word__hint';
-          hint.innerText = 'Hint: ' + wordHint;
-          guesses.className = 'word__guesses';
-          guesses.innerText = `0 / 6`;
-        keyboard.className = 'keyboard';
-          alphabet.forEach((key) => {
-            const button = document.createElement('button');
-            button.className = 'keyboard__btn btn';
-            button.innerText = key;
-            keyboard.append(button);
-          });
-for (let i = 1; i <= 6; i += 1) {
+  wrapper.className = 'hangman__wrapper wrapper';
+  gallow.className = 'gallow';
+  gallowImg.className = 'gallow__img';
+  img.src = './assets/gallows.svg';
+  img.alt = 'gallow';
+  man.className = 'gallow__man';
+  word.className = 'word';
+  field.className = 'word__field'
+  secret.className = 'word__secret';
+  hint.className = 'word__hint';
+  hint.innerText = 'Hint: ' + wordHint;
+  guesses.className = 'word__guesses';
+  guesses.innerText = `0 / 6`;
+  keyboard.className = 'keyboard';
+  alphabet.forEach((key) => {
+    const button = document.createElement('button');
+    button.className = 'keyboard__btn btn';
+    button.innerText = key;
+    keyboard.append(button);
+  });
+
+  for (let i = 1; i <= 6; i += 1) {
     let img = document.createElement('img');
     img.src = `./assets/man${i}.svg`;
     img.alt = 'gallow man';
