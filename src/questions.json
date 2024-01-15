@@ -57,7 +57,72 @@
     "id": "9",
     "word": "spoon",
     "hint": "what do you eat cereal with?"
-  }
+  },
 
+  {
+    "id": "10",
+    "word": "school",
+    "hint": "where do you learn to read?"
+  },
+
+  {
+    "id": "11",
+    "word": "sweep",
+    "hint": "what do you do with a broom?"
+  },
+
+  {
+    "id": "12",
+    "word": "farm",
+    "hint": "where does a goat live?"
+  },
+
+  {
+    "id": "13",
+    "word": "nest",
+    "hint": "where does a bird lay eggs?"
+  },
+
+  {
+    "id": "14",
+    "word": "crib",
+    "hint": "where does a baby sleep?"
+  },
+
+  {
+    "id": "15",
+    "word": "talk",
+    "hint": "what do you do on the telephone?"
+  },
+
+  {
+    "id": "16",
+    "word": "write",
+    "hint": "what do you do with a pencil?"
+  },
+
+  {
+    "id": "17",
+    "word": "throw",
+    "hint": "what does a pitcher do to a baseball?"
+  },
+
+  {
+    "id": "18",
+    "word": "drink",
+    "hint": "what do you do with milk?"
+  },
+
+  {
+    "id": "19",
+    "word": "bank",
+    "hint": "where do you save money?"
+  },
+
+  {
+    "id": "20",
+    "word": "face",
+    "hint": "where does makeup go?"
+  }
 
 ]
