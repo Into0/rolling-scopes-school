@@ -2,6 +2,7 @@
   {
     "id": "0",
     "lvl": "easy",
+    "size": "5",
     "name": "skull",
     "nonogram": [
       [0,1,1,1,0],
@@ -14,6 +15,7 @@
   {
     "id": "1",
     "lvl": "easy",
+    "size": "5",
     "name": "smile",
     "nonogram": [
       [1,1,0,1,1],
@@ -26,6 +28,7 @@
     {
     "id": "2",
     "lvl": "easy",
+    "size": "5",
     "name": "sharp",
     "nonogram": [
       [0,1,0,1,0],
@@ -38,6 +41,7 @@
     {
     "id": "3",
     "lvl": "easy",
+    "size": "5",
     "name": "cross",
     "nonogram": [
       [0,1,1,1,0],
@@ -50,6 +54,7 @@
     {
     "id": "4",
     "lvl": "easy",
+    "size": "5",
     "name": "snowflake",
     "nonogram": [
       [1,0,1,0,1],
