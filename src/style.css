@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 10px;
+  --Orange: #d64937;
+  --Silver: #dcdcdc;
+  --Blue-Dark: #1b1b32;
+  --Puter: #2d2d2d;
+  background-color: var(--Puter);
+  font-family: sans-serif;
+}
+
+img {
+  display: block;
+}
