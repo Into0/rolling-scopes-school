@@ -2,6 +2,7 @@
 
 const response = await fetch('./nonograms.json');
 const nonograms = await response.json();
+
 let id;
 let nono;
 let clue;
@@ -51,9 +52,9 @@ function startGame(id) {
   clueArrTop = clue.slice(0, clue.length / 2);
   clueArrLeft = clue.slice(clue.length / 2, clue.length);
 
-  genNono(nono, nonoField, 'row', 'click');
-  genNono(clueArrTop, clueTop, 'row', '', true);
-  genNono(clueArrLeft, clueLeft, 'coll', '', true);
+  genNono(nono, nonoField, 'row', '', 'click', true);
+  genNono(clueArrTop, clueTop, 'row', true);
+  genNono(clueArrLeft, clueLeft, 'coll', true);
 
   document.body.append(wrapper);
   wrapper.append(clueLeft);
@@ -86,13 +87,13 @@ const rows = (parent) => {
   });
 }
 
-function genNono(arr, parent, elemClass, eventType, text) {
+function genNono(arr, parent, elemClass, text, eventType, menu) {
   arr.forEach((element) => {
     const row = genElem('div', elemClass);
     parent.append(row);
     element.forEach((data) => {
       const cell = genElem('div', 'cell', { secret: data });
-      if (text == true && data > 0) cell.textContent = data;
+      if (text === true && data > 0) cell.textContent = data;
       row.append(cell);
       cell.addEventListener(eventType, function abc(event)  {
       if (event.target.secret && !event.target.classList.contains('color')) { correct += 1; }
@@ -105,6 +106,12 @@ function genNono(arr, parent, elemClass, eventType, text) {
       };
       event.target.classList.contains('color') ? event.target.classList.remove('color') : event.target.classList.add('color');
     });
+      if (menu === true) {
+        cell.addEventListener('contextmenu', (event) => {
+          event.preventDefault();
+          event.target.classList.contains('cross') ? event.target.classList.remove('cross') : event.target.classList.add('cross');
+        });
+      }
     });
   });
 }
@@ -139,6 +146,7 @@ genButtons();
 
 function showSolution() {
   Array.from(nonoField.querySelectorAll('.cell')).forEach((element) => {
+    element.classList.remove('cross');
     if (element['secret']) {
       element.classList.add('color');
     } else {
@@ -153,6 +161,7 @@ function showSolution() {
 function resetGame() {
   Array.from(document.querySelectorAll('.cell')).forEach((element) => {
     element.classList.remove('color');
+    element.classList.remove('cross');
   });
   nonoField.style.removeProperty('pointer-events', 'none');
   correct = 0;

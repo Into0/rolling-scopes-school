@@ -77,6 +77,31 @@ img {
   background-color: var(--Orange);
 }
 
+.cross {
+  position: relative;
+  overflow: hidden
+}
+
+.cross:before, .cross:after {
+  position: absolute;
+  content: '';
+  background: var(--Orange);
+  height: 2px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.cross:after {
+  content: '';
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 .btns {
   position: absolute;
   top: 2%;
