@@ -17,9 +17,10 @@
 
 #app {
   display: flex;
-  height: 100vh;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 img {
@@ -32,18 +33,22 @@ img {
   align-items: flex-end;
 }
 
-.nono {
-  display: flex;
-  flex-direction: column;
-}
-
 .clue-left {
   display: flex;
   margin-right: 5px;
 }
 
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
 .clue-top {
   margin-bottom: 5px;
+}
+
+.nono {
+  cursor: pointer;
 }
 
 .row {
@@ -62,7 +67,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
+  width: 35px;
   font-size: 1.6rem;
   aspect-ratio: 1;
   border: 1px solid var(--Orange);
@@ -70,4 +75,28 @@ img {
 
 .color {
   background-color: var(--Orange);
+}
+
+.btns {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  height: 40px;
+  padding: 0 10px;
+  background-color: #3d3d3d;
+  border: 0;
+  border-radius: 2px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--Orange);
+  outline: 0;
+  cursor: pointer;
+  transition: 0.1s;
+  text-transform: uppercase;
 }
