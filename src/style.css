@@ -31,6 +31,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  position: relative;
 }
 
 .clue-left {
@@ -42,6 +43,29 @@ img {
   border: none;
   border-bottom: 1px solid;
   border-top: 1px solid;
+}
+
+select {
+  #appearance: none;
+  #-webkit-appearance: none;
+  width: 120px;
+  font-size: 1.15rem;
+  padding: 10px;
+  background-color: #3d3d3d;
+  border: 0;
+  color: var(--orange);
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 10%;
+  left: 2%;
 }
 
 .field {
@@ -61,6 +85,13 @@ img {
 
 .nono {
   cursor: pointer;
+}
+
+.nono-name {
+  position: absolute;
+  left: 0;
+  top: 2%;
+  font-size: 1.6rem;
 }
 
 .row {

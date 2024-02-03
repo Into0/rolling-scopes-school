@@ -7,23 +7,20 @@ let id;
 let nono;
 let clue;
 let steps;
+let name;
 
 let field;
 let nonoField;
 let clueLeft;
 let clueTop;
 let wrapper;
+let gameName;
 
 let clueArrTop;
 let clueArrLeft;
 
 let correct = 0;
 let incorrect = 0;
-
-const random = (key) => {
-  let keys = Object.keys(key);
-  return key[parseInt(keys.length * Math.random(), 0)];
-};
 
 function genElem(tag, name, attr) {
   tag = document.createElement(tag);
@@ -32,22 +29,20 @@ function genElem(tag, name, attr) {
   return tag;
 }
 
-function appendElem(parent, child, name, attr) {
-  child = genElem(child, name, attr);
-  return parent.append(child);
-}
-
-function startGame() {
+function startGame(id) {
   wrapper = genElem('div', 'wrapper');
   clueLeft = genElem('div', 'clue-left');
   field = genElem('div', 'field');
   clueTop = genElem('div', 'clue-top');
   nonoField = genElem('div', 'nono');
+  gameName = genElem('div', 'nono-name');
 
-  id = randomId(nonograms);
   nono = nonograms[id].nonogram;
   clue = nonograms[id].clue;
   steps = nonograms[id].steps
+  name = nonograms[id].name
+
+  gameName.textContent = name;
 
   clueArrTop = clue.slice(0, clue.length / 2);
   clueArrLeft = clue.slice(clue.length / 2, clue.length);
@@ -60,10 +55,11 @@ function startGame() {
   wrapper.append(clueLeft);
   wrapper.append(field);
   field.prepend(clueTop);
+  clueTop.prepend(gameName);
   field.append(nonoField);
 }
 
-startGame();
+startGame(0);
 
 
 /*
@@ -182,7 +178,7 @@ function resetGame() {
 
 function randomGame() {
   wrapper.remove();
-  startGame();
+  startGame(randomId(nonograms));
   resetGame();
 }
 
@@ -211,45 +207,71 @@ function showPopup() {
 }
 
 
-/*
+function selectLvl() {
+  const select = genElem('div', 'select');
+  const lvl = genElem('select', 'select-lvl', { name: 'lvl' });
+  const game = genElem('select', 'select-game', { name: 'game' });
 
-const genNono = nono.forEach((element) => {
-  const row = document.createElement('div');
-  row.classList.add('row');
-  document.body.append(row);
-  element.forEach((data) => {
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    Object.assign(cell, { secret: data });
-    row.append(cell);
-    cell.innerText = data;
-    cell.addEventListener('click', (event) => {
-      event.target.secret ? console.log('true') : console.log('false');
-      event.target.classList.contains('color') ? event.target.classList.remove('color') : event.target.classList.add('color');
-    });
-    cell.addEventListener('contextmenu', (event) => {
-      event.preventDefault();
-    });
+  Array.from(['easy', 'medium', 'hard']).forEach((element) => {
+    const lvlOptions = genElem('option', 'lvl-option');
+    lvl.append(lvlOptions);
+    lvlOptions.textContent = element;
   });
-});
 
-nonoHint.forEach((element) => {
+  for (let i = 0; i < nonograms.length; i += 1) {
+    const gameOptions = genElem('option', 'game-option');
+    if (nonograms[i].lvl === 'easy') {
+      game.append(gameOptions);
+      gameOptions.textContent = nonograms[i].name;
+    }
+  }
 
-  const row = document.createElement('div');
-  row.classList.add('row');
-  document.body.append(row);
-  let hintRow = nonoHint.length / 2;
-  const col = document.createElement('div');
-    col.classList.add('row');
+  lvl.addEventListener('change', (event) => {
+    game.innerHTML = '';
+    if (event.target.selectedOptions[0].value === 'easy') {
+      for (let i = 0; i < nonograms.length; i += 1) {
+        const gameOptions = genElem('option', 'game-option');
+        if (nonograms[i].lvl === 'easy') {
+          game.append(gameOptions);
+          gameOptions.textContent = nonograms[i].name;
+        }
+      }
+    }
 
+    if (event.target.selectedOptions[0].value === 'medium') {
+      const gameOptions = genElem('option', 'game-option');
+      for (let i = 0; i < nonograms.length; i += 1) {
+        const gameOptions = genElem('option', 'game-option');
+        if (nonograms[i].lvl === 'medium') {
+          game.append(gameOptions);
+          gameOptions.textContent = nonograms[i].name;
+        }
+      }
+    }
 
-  element.forEach((data) => {
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    row.append(cell);
-    row.append(col);
-    cell.innerText = data;
+    if (event.target.selectedOptions[0].value === 'hard') {
+      for (let i = 0; i < nonograms.length; i += 1) {
+        const gameOptions = genElem('option', 'game-option');
+        if (nonograms[i].lvl === 'hard') {
+          game.append(gameOptions);
+          gameOptions.textContent = nonograms[i].name;
+        }
+      }
+    }
   });
-});
 
-*/
+  game.addEventListener('change', (event) => {
+    for (let i = 0; i < nonograms.length; i += 1) {
+      if (event.target.selectedOptions[0].value === nonograms[i].name) {
+        wrapper.remove();
+        startGame(i);
+      }
+    }
+  });
+
+  document.body.append(select);
+  select.append(lvl);
+  select.append(game);
+}
+
+selectLvl()
