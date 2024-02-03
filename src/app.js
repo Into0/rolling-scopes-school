@@ -37,7 +37,7 @@ function appendElem(parent, child, name, attr) {
   return parent.append(child);
 }
 
-function startGame(id) {
+function startGame() {
   wrapper = genElem('div', 'wrapper');
   clueLeft = genElem('div', 'clue-left');
   field = genElem('div', 'field');
@@ -63,7 +63,7 @@ function startGame(id) {
   field.append(nonoField);
 }
 
-startGame()
+startGame();
 
 
 /*
@@ -101,15 +101,27 @@ function genNono(arr, parent, elemClass, text, eventType, menu) {
       if (!event.target.secret && !event.target.classList.contains('color')) { incorrect += 1; }
       if (!event.target.secret && event.target.classList.contains('color')) { incorrect -= 1; }
       if (correct === steps && incorrect === 0) {
-        alert('Great! You have solved the nonogram!');
         nonoField.style.setProperty('pointer-events', 'none');
+        showPopup();
       };
-      event.target.classList.contains('color') ? event.target.classList.remove('color') : event.target.classList.add('color');
+      if (event.target.classList.contains('color')) {
+        event.target.classList.remove('color');
+      } else {
+        event.target.classList.add('color');
+        event.target.classList.remove('cross');
+      }
+
     });
       if (menu === true) {
         cell.addEventListener('contextmenu', (event) => {
           event.preventDefault();
-          event.target.classList.contains('cross') ? event.target.classList.remove('cross') : event.target.classList.add('cross');
+          if (event.target.classList.contains('cross')) {
+            event.target.classList.remove('cross');
+          } else {
+            event.target.classList.add('cross');
+            event.target.classList.remove('color');
+          }
+
         });
       }
     });
@@ -171,13 +183,32 @@ function resetGame() {
 function randomGame() {
   wrapper.remove();
   startGame();
-  resetGame()
+  resetGame();
 }
 
 function randomId(arr) {
   return parseInt(arr.length * Math.random());
 }
 
+function showPopup() {
+  const overlay = genElem('div', 'overlay');
+  const popup = genElem('div', 'popup');
+  const text = genElem('span', 'popup__text');
+
+  overlay.classList.add('overlay__show');
+  popup.classList.add('popup__show');
+  document.documentElement.style.overflow = 'hidden';
+
+  document.body.append(overlay);
+  overlay.append(popup);
+  popup.append(text);
+  text.textContent = 'Great! You have solved the nonogram!';
+
+  overlay.addEventListener('click', (event) => {
+    overlay.classList.remove('overlay__show');
+    popup.classList.remove('popup__show');
+  });
+}
 
 
 /*
