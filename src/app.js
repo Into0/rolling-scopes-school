@@ -96,7 +96,7 @@ function genNono(arr, parent, elemClass, text, eventType, menu) {
       if (event.target.secret && event.target.classList.contains('color')) { correct -= 1; }
       if (!event.target.secret && !event.target.classList.contains('color')) { incorrect += 1; }
       if (!event.target.secret && event.target.classList.contains('color')) { incorrect -= 1; }
-      if (correct === steps && incorrect === 0) {
+      if (correct === steps && !incorrect > 0) {
         nonoField.style.setProperty('pointer-events', 'none');
         showPopup();
       };
@@ -113,11 +113,19 @@ function genNono(arr, parent, elemClass, text, eventType, menu) {
           event.preventDefault();
           if (event.target.classList.contains('cross')) {
             event.target.classList.remove('cross');
-          } else {
+          } else if (event.target.secret && event.target.classList.contains('color')) {
+            event.target.classList.remove('color');
+            event.target.classList.add('cross');
+            correct -= 1;
+          } else if (!event.target.secret && event.target.classList.contains('color')) {
+            event.target.classList.remove('color');
+            event.target.classList.add('cross');
+            incorrect -= 1;
+          }
+           else {
             event.target.classList.add('cross');
             event.target.classList.remove('color');
           }
-
         });
       }
     });
