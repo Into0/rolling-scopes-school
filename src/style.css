@@ -10,6 +10,7 @@
   --Silver: #dcdcdc;
   --Blue-Dark: #1b1b32;
   --Puter: #2d2d2d;
+  --Shadow-Gray: #3d3d3d;
   background-color: var(--Puter);
   font-family: sans-serif;
   color: var(--Orange);
@@ -51,7 +52,7 @@ select {
   width: 120px;
   font-size: 1.15rem;
   padding: 10px;
-  background-color: #3d3d3d;
+  background-color: var(--Shadow-Gray);
   border: 0;
   color: var(--orange);
   cursor: pointer;
@@ -156,7 +157,7 @@ select {
 .btn {
   height: 40px;
   padding: 0 10px;
-  background-color: #3d3d3d;
+  background-color: var(--Shadow-Gray);
   border: 0;
   border-radius: 2px;
   font-family: "Open Sans", sans-serif;
@@ -210,4 +211,12 @@ select {
 .popup__show {
   top: 0;
   opacity: 1;
+}
+
+.theme-switcher {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 2%;
+  right: 2%;
 }

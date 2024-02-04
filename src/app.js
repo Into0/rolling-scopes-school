@@ -211,6 +211,7 @@ function selectLvl() {
   const select = genElem('div', 'select');
   const lvl = genElem('select', 'select-lvl', { name: 'lvl' });
   const game = genElem('select', 'select-game', { name: 'game' });
+  const optionHolder = genElem('option', 'option-holder');
 
   Array.from(['easy', 'medium', 'hard']).forEach((element) => {
     const lvlOptions = genElem('option', 'lvl-option');
@@ -221,8 +222,10 @@ function selectLvl() {
   for (let i = 0; i < nonograms.length; i += 1) {
     const gameOptions = genElem('option', 'game-option');
     if (nonograms[i].lvl === 'easy') {
+      game.prepend(optionHolder);
       game.append(gameOptions);
       gameOptions.textContent = nonograms[i].name;
+      optionHolder.textContent = 'select...';
     }
   }
 
@@ -232,8 +235,10 @@ function selectLvl() {
       for (let i = 0; i < nonograms.length; i += 1) {
         const gameOptions = genElem('option', 'game-option');
         if (nonograms[i].lvl === 'easy') {
+          game.prepend(optionHolder);
           game.append(gameOptions);
           gameOptions.textContent = nonograms[i].name;
+          optionHolder.textContent = 'select...';
         }
       }
     }
@@ -243,8 +248,10 @@ function selectLvl() {
       for (let i = 0; i < nonograms.length; i += 1) {
         const gameOptions = genElem('option', 'game-option');
         if (nonograms[i].lvl === 'medium') {
+          game.prepend(optionHolder);
           game.append(gameOptions);
           gameOptions.textContent = nonograms[i].name;
+          optionHolder.textContent = 'select...';
         }
       }
     }
@@ -253,8 +260,10 @@ function selectLvl() {
       for (let i = 0; i < nonograms.length; i += 1) {
         const gameOptions = genElem('option', 'game-option');
         if (nonograms[i].lvl === 'hard') {
+          game.prepend(optionHolder);
           game.append(gameOptions);
           gameOptions.textContent = nonograms[i].name;
+          optionHolder.textContent = 'select...';
         }
       }
     }
@@ -275,3 +284,29 @@ function selectLvl() {
 }
 
 selectLvl()
+
+function shangeColor() {
+  const btnLight = genElem('button', 'btn');
+  const btnDark = genElem('button', 'btn');
+  const themeSwitcher = genElem('div', 'theme-switcher');
+
+  btnLight.textContent = 'Light';
+  btnDark.textContent = 'Dark';
+
+  btnLight.addEventListener('click', (event) => {
+    document.documentElement.style.setProperty('--Orange', '#2d2d2d');
+    document.documentElement.style.setProperty('--Puter', '#dcdcdc');
+    document.documentElement.style.setProperty('--Shadow-Gray', '#C7C7C7');
+  });
+
+  btnDark.addEventListener('click', (event) => {
+    document.documentElement.style.setProperty('--Orange', '#d64937');
+    document.documentElement.style.setProperty('--Puter', '#2d2d2d');
+    document.documentElement.style.setProperty('--Shadow-Gray', '#3d3d3d');
+  });
+
+  document.body.append(themeSwitcher);
+  themeSwitcher.append(btnLight, btnDark);
+}
+
+shangeColor()
