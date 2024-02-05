@@ -22,6 +22,8 @@ let clueArrLeft;
 let correct = 0;
 let incorrect = 0;
 
+let sound = new Audio();
+
 function genElem(tag, name, attr) {
   tag = document.createElement(tag);
   name = tag.classList.add(name);
@@ -91,26 +93,29 @@ function genNono(arr, parent, elemClass, text, eventType, menu) {
       const cell = genElem('div', 'cell', { secret: data });
       if (text === true && data > 0) cell.textContent = data;
       row.append(cell);
-      cell.addEventListener(eventType, function abc(event)  {
-      if (event.target.secret && !event.target.classList.contains('color')) { correct += 1; }
-      if (event.target.secret && event.target.classList.contains('color')) { correct -= 1; }
-      if (!event.target.secret && !event.target.classList.contains('color')) { incorrect += 1; }
-      if (!event.target.secret && event.target.classList.contains('color')) { incorrect -= 1; }
-      if (correct === steps && !incorrect > 0) {
-        nonoField.style.setProperty('pointer-events', 'none');
-        showPopup();
-      };
-      if (event.target.classList.contains('color')) {
-        event.target.classList.remove('color');
-      } else {
-        event.target.classList.add('color');
-        event.target.classList.remove('cross');
-      }
+      cell.addEventListener(eventType, (event) => {
+        if (event.target.secret && !event.target.classList.contains('color')) { correct += 1; }
+        if (event.target.secret && event.target.classList.contains('color')) { correct -= 1; }
+        if (!event.target.secret && !event.target.classList.contains('color')) { incorrect += 1; }
+        if (!event.target.secret && event.target.classList.contains('color')) { incorrect -= 1; }
+        if (correct === steps && !incorrect > 0) {
+          nonoField.style.setProperty('pointer-events', 'none');
+          showPopup();
+        };
+        if (event.target.classList.contains('color')) {
+          event.target.classList.remove('color');
+          playSound('./assets/click.mp3');
+        } else {
+          event.target.classList.add('color');
+          event.target.classList.remove('cross');
+          playSound('./assets/click1.mp3');
+        }
+      });
 
-    });
       if (menu === true) {
         cell.addEventListener('contextmenu', (event) => {
           event.preventDefault();
+          playSound('./assets/cross.mp3');
           if (event.target.classList.contains('cross')) {
             event.target.classList.remove('cross');
           } else if (event.target.secret && event.target.classList.contains('color')) {
@@ -212,6 +217,8 @@ function showPopup() {
     overlay.classList.remove('overlay__show');
     popup.classList.remove('popup__show');
   });
+
+  playSound('./assets/win.mp3');
 }
 
 
@@ -318,3 +325,8 @@ function shangeColor() {
 }
 
 shangeColor()
+
+function playSound(file) {
+  sound = new Audio(file);
+  sound.play();
+}
