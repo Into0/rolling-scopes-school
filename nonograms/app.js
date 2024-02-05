@@ -15,6 +15,11 @@ let clueLeft;
 let clueTop;
 let wrapper;
 let gameName;
+let soundMut;
+let soundCheck;
+let soundLabel;
+
+let mute = 0;
 
 let clueArrTop;
 let clueArrLeft;
@@ -104,18 +109,18 @@ function genNono(arr, parent, elemClass, text, eventType, menu) {
         };
         if (event.target.classList.contains('color')) {
           event.target.classList.remove('color');
-          playSound('./assets/click.mp3');
+          if (mute === 0) playSound('./assets/click.mp3');
         } else {
           event.target.classList.add('color');
           event.target.classList.remove('cross');
-          playSound('./assets/click1.mp3');
+          if (mute === 0) playSound('./assets/click1.mp3');
         }
       });
 
       if (menu === true) {
         cell.addEventListener('contextmenu', (event) => {
           event.preventDefault();
-          playSound('./assets/cross.mp3');
+          if (mute === 0) playSound('./assets/cross.mp3');
           if (event.target.classList.contains('cross')) {
             event.target.classList.remove('cross');
           } else if (event.target.secret && event.target.classList.contains('color')) {
@@ -218,7 +223,7 @@ function showPopup() {
     popup.classList.remove('popup__show');
   });
 
-  playSound('./assets/win.mp3');
+  if (mute === 0) playSound('./assets/win.mp3');
 }
 
 
@@ -313,12 +318,14 @@ function shangeColor() {
     document.documentElement.style.setProperty('--Orange', '#2d2d2d');
     document.documentElement.style.setProperty('--Puter', '#dcdcdc');
     document.documentElement.style.setProperty('--Shadow-Gray', '#C7C7C7');
+    document.documentElement.style.setProperty('--Davy-Grey', '#848484');
   });
 
   btnDark.addEventListener('click', (event) => {
     document.documentElement.style.setProperty('--Orange', '#d64937');
     document.documentElement.style.setProperty('--Puter', '#2d2d2d');
     document.documentElement.style.setProperty('--Shadow-Gray', '#3d3d3d');
+    document.documentElement.style.setProperty('--Davy-Grey', '#535353');
   });
 
   document.body.append(themeSwitcher);
@@ -331,3 +338,24 @@ function playSound(file) {
   sound = new Audio(file);
   sound.play();
 }
+
+function muteSound() {
+  soundMut = genElem('div', 'sound-mut');
+  soundLabel = genElem('label', 'sound-label', { for : 'sound' });
+  soundCheck = genElem('input', 'sound', { type: 'checkbox', name: 'sound' });
+  soundLabel.textContent = 'mute sound';
+
+  soundLabel.classList.add('btn');
+
+  document.body.append(soundMut);
+  soundMut.append(soundLabel);
+  soundLabel.append(soundCheck);
+
+  soundCheck.addEventListener('change', (event) => {
+    if (event.target.checked) { mute = 1 };
+    if (!event.target.checked) { mute = 0 };
+  });
+
+}
+
+muteSound()

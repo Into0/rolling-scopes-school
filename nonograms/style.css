@@ -11,6 +11,8 @@
   --Blue-Dark: #1b1b32;
   --Puter: #2d2d2d;
   --Shadow-Gray: #3d3d3d;
+  --Davy-Grey: #535353;
+  --Steel-Wool: #777777;
   background-color: var(--Puter);
   font-family: sans-serif;
   color: var(--Orange);
@@ -113,6 +115,7 @@ select {
   font-size: 1.6rem;
   aspect-ratio: 1;
   border: 1px solid var(--Orange);
+  transition: 0.5s;
 }
 
 .color {
@@ -121,7 +124,7 @@ select {
 
 .cross {
   position: relative;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .cross:before, .cross:after {
@@ -167,6 +170,11 @@ select {
   cursor: pointer;
   transition: 0.1s;
   text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: var(--Davy-Grey);
+
 }
 
 .overlay {
@@ -219,6 +227,34 @@ select {
   top: 2%;
   right: 2%;
 }
+
+.sound-mut {
+  position: absolute;
+  top: 10%;
+  right: 2%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+label:hover {
+
+}
+
+label:has(> input:checked){
+  background-color: var(--Davy-Grey);
+ }
 
 @media screen and (max-width: 1200px) {
   .cell {
