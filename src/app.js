@@ -288,6 +288,7 @@ function selectLvl() {
     for (let i = 0; i < nonograms.length; i += 1) {
       if (event.target.selectedOptions[0].value === nonograms[i].name) {
         wrapper.remove();
+        resetGame();
         startGame(i);
       }
     }
