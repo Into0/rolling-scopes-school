@@ -11,6 +11,7 @@ Here is a collection of badges I earned from completing Microsoft Learn's TypeSc
 5. **Declare and Instantiate Classes in TypeScript**: [Badge](https://learn.microsoft.com/en-us/users/into0/achievements/wace5chn)
 6. **Generics in TypeScript**: [Badge](https://learn.microsoft.com/en-us/users/into0/achievements/yvht7ppr)
 7. **Work with External Libraries in TypeScript**: [Badge](https://learn.microsoft.com/en-us/users/into0/achievements/aqw5qel7)
+8. **Organize Code with Namespaces in TypeScript**: [Badge](https://learn.microsoft.com/en-us/users/into0/achievements/cwtvnbj9)
 
 ## Reflections
 
@@ -21,3 +22,4 @@ Here is a collection of badges I earned from completing Microsoft Learn's TypeSc
 - Learn benefits of using classes, learn about class constructor, methods, properties. This helps me to better understand OOP, and write clean reusable code in future.
 - Learn about genericss, and difference any and generic. This helps to provide type checking if i want creating reusable and flexible components.
 - Learn how to organize code using modules, integrate and utilize external libraries in TypeScript projects. This helps to split code to diferrent files for for easy maintace, this also stick to DRY princeples.
+- Learned about namespaces, how to use them and difference about modules, this helps me to write reusable clean code, also for new project need to choice somthing one namespaces or modules, because dont recomends to use both.
