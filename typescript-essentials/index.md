@@ -9,6 +9,7 @@ Here is a collection of badges I earned from completing Microsoft Learn's TypeSc
 3. **Implement Interfaces in TypeScript**: [Badge](https://learn.microsoft.com/en-us/users/into0/achievements/fzu2juvx)
 4. **Develop Typed Functions in TypeScript**: [Badge](https://learn.microsoft.com/en-us/users/into0/achievements/9nsfbsqu)
 5. **Declare and Instantiate Classes in TypeScript**: [Badge](https://learn.microsoft.com/en-us/users/into0/achievements/wace5chn)
+6. **Generics in TypeScript**: [Badge](https://learn.microsoft.com/en-us/users/into0/achievements/yvht7ppr)
 
 ## Reflections
 
@@ -17,3 +18,4 @@ Here is a collection of badges I earned from completing Microsoft Learn's TypeSc
 - Learn what is interface in TypeScript. How to combinate them. Helps easier understand OOP in future.
 - Learn benefits of using types in functions, more about interface and type aliases. This helps to make scalable function arguments.
 - Learn benefits of using classes, learn about class constructor, methods, properties. This helps me to better understand OOP, and write clean reusable code in future.
+- Learn about genericss, and difference any and generic. This helps to provide type checking if i want creating reusable and flexible components.
