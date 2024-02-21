@@ -1,16 +1,5 @@
 import './news.css';
-
-interface NewsItem {
-  urlToImage: string;
-  author: string;
-  source: {
-    name: string;
-  };
-  publishedAt: string;
-  title: string;
-  description: string;
-  url: string;
-}
+import { NewsItem } from '../../../types/index';
 
 class News {
   draw(data: NewsItem[]): void {
@@ -30,7 +19,7 @@ class News {
       newsMetaPhotoElement.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
 
       const newsMetaAuthorElement = newsClone.querySelector('.news__meta-author') as HTMLElement;
-      newsMetaAuthorElement.textContent = item.author || item.source.name;
+      newsMetaAuthorElement.textContent = item.author || item.name;
 
       const newsMetaDateElement = newsClone.querySelector('.news__meta-date') as HTMLElement;
       newsMetaDateElement.textContent = item.publishedAt.slice(0, 10).split('-').reverse().join('-');
@@ -39,7 +28,7 @@ class News {
       newsDescriptionTitleElement.textContent = item.title;
 
       const newsDescriptionSourceElement = newsClone.querySelector('.news__description-source') as HTMLElement;
-      newsDescriptionSourceElement.textContent = item.source.name;
+      newsDescriptionSourceElement.textContent = item.name;
 
       const newsDescriptionContentElement = newsClone.querySelector('.news__description-content') as HTMLElement;
       newsDescriptionContentElement.textContent = item.description;
