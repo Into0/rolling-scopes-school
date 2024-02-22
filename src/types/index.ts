@@ -1,13 +1,19 @@
-export interface NewsItem {
+interface Source {
   id: string;
   name: string;
+}
+
+interface Article {
+  source: Source;
+  author: string;
+  title: string;
   description: string;
   url: string;
-  category: string;
-  language: string;
-  country: string;
   urlToImage: string;
-  author: string;
   publishedAt: string;
-  title: string;
+  content: string;
+}
+
+export interface NewsItem {
+  article: Article;
 }

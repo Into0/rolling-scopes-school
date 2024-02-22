@@ -6,14 +6,14 @@ class Sources {
     const fragment = document.createDocumentFragment();
     const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
-    data.forEach((item) => {
+    data.forEach((item): void => {
       const sourceClone = sourceItemTemp.content.cloneNode(true) as DocumentFragment;
 
       const sourcesItemNameElement = sourceClone.querySelector('.source__item-name') as HTMLElement;
-      sourcesItemNameElement.textContent = item.name;
+      sourcesItemNameElement.textContent = item.article.source.name;
 
       const sourcesItemElement = sourceClone.querySelector('.source__item') as HTMLElement;
-      sourcesItemElement.setAttribute('data-source-id', item.id);
+      sourcesItemElement.setAttribute('data-source-id', item.article.source.id);
 
       fragment.append(sourceClone);
     });

@@ -16,25 +16,25 @@ class News {
       if (idx % 2) newsItemElement.classList.add('alt');
 
       const newsMetaPhotoElement = newsClone.querySelector('.news__meta-photo') as HTMLElement;
-      newsMetaPhotoElement.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
+      newsMetaPhotoElement.style.backgroundImage = `url(${item.article.urlToImage || 'img/news_placeholder.jpg'})`;
 
       const newsMetaAuthorElement = newsClone.querySelector('.news__meta-author') as HTMLElement;
-      newsMetaAuthorElement.textContent = item.author || item.name;
+      newsMetaAuthorElement.textContent = item.article.author || item.article.source.name;
 
       const newsMetaDateElement = newsClone.querySelector('.news__meta-date') as HTMLElement;
-      newsMetaDateElement.textContent = item.publishedAt.slice(0, 10).split('-').reverse().join('-');
+      newsMetaDateElement.textContent = item.article.publishedAt.slice(0, 10).split('-').reverse().join('-');
 
       const newsDescriptionTitleElement = newsClone.querySelector('.news__description-title') as HTMLElement;
-      newsDescriptionTitleElement.textContent = item.title;
+      newsDescriptionTitleElement.textContent = item.article.title;
 
       const newsDescriptionSourceElement = newsClone.querySelector('.news__description-source') as HTMLElement;
-      newsDescriptionSourceElement.textContent = item.name;
+      newsDescriptionSourceElement.textContent = item.article.source.name;
 
       const newsDescriptionContentElement = newsClone.querySelector('.news__description-content') as HTMLElement;
-      newsDescriptionContentElement.textContent = item.description;
+      newsDescriptionContentElement.textContent = item.article.description;
 
       const newsReadMoreLinkElement = newsClone.querySelector('.news__read-more a') as HTMLAnchorElement;
-      newsReadMoreLinkElement.href = item.url;
+      newsReadMoreLinkElement.href = item.article.url;
 
       fragment.append(newsClone);
     });
