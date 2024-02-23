@@ -1,9 +1,14 @@
-interface Source {
+export interface Source {
   id: string;
   name: string;
+  description: string;
+  url: string;
+  category: string;
+  language: string;
+  country: string;
 }
 
-interface Article {
+export interface Article {
   source: Source;
   author: string;
   title: string;
@@ -14,6 +19,7 @@ interface Article {
   content: string;
 }
 
-export interface NewsItem {
-  article: Article;
+export interface NewsApi {
+  articles: Article[];
+  sources: Source[];
 }

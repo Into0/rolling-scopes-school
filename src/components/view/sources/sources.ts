@@ -1,8 +1,8 @@
 import './sources.css';
-import { NewsItem } from '../../../types/index';
+import { Source } from '../../../types/index';
 
 class Sources {
-  draw(data: NewsItem[]): void {
+  draw(data: Source[]): void {
     const fragment = document.createDocumentFragment();
     const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
@@ -10,10 +10,10 @@ class Sources {
       const sourceClone = sourceItemTemp.content.cloneNode(true) as DocumentFragment;
 
       const sourcesItemNameElement = sourceClone.querySelector('.source__item-name') as HTMLElement;
-      sourcesItemNameElement.textContent = item.article.source.name;
+      sourcesItemNameElement.textContent = item.name;
 
       const sourcesItemElement = sourceClone.querySelector('.source__item') as HTMLElement;
-      sourcesItemElement.setAttribute('data-source-id', item.article.source.id);
+      sourcesItemElement.setAttribute('data-source-id', item.id);
 
       fragment.append(sourceClone);
     });
