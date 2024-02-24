@@ -23,3 +23,16 @@ export interface NewsApi {
   articles: Article[];
   sources: Source[];
 }
+
+export interface LoaderOptions {
+  [key: string]: string | number | boolean;
+}
+
+export interface EndpointOptions {
+  endpoint: string;
+  options?: LoaderOptions;
+}
+
+export interface CallbackFunction<T> {
+  (data: T): void;
+}
