@@ -14,22 +14,76 @@ header h1 {
 }
 
 footer {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	border-top: 2px solid #30c5ff;
 }
+
+.footer-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	max-width: 1140px;
+	margin: 0 auto;
+}
+.github {
+	display: block;
+	width: 120px;
+	height: 45px;
+	padding-left: 45px;
+	background-image: url("img/github.svg");
+	background-size: 35px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	line-height: 45px;
+	color: #cbd5de;
+	font-size: 16px;
+	font-family: "Open Sans", sans-serif;
+	transition: 0.3s;
+}
+.github:hover {
+	color: #fff;
+}
+.rss {
+	display: block;
+	position: relative;
+	font-family: "Open Sans", sans-serif;
+	height: 32px;
+	background-image: url("img/rss.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-right: 111px;
+}
+.rss-year {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 21px;
+	letter-spacing: -2px;
+	color: #cbd5de;
+	line-height: 0.9;
+	font-weight: bold;
+	transition: 0.3s;
+}
+.rss:hover .rss-year {
+	right: -5px;
+	letter-spacing: 0;
+}
+
 footer .copyright {
     font-size: 14px;
     color: #333;
     text-align: center;
 }
+
 footer .copyright a {
     color: #444;
 }
+
 footer .copyright a:hover {
     color: #555;
 }
+
 footer .copyright:before {
     content: '©';
 }
