@@ -1,1 +1,1 @@
-# rolling-scopes-school
+# movie-app-code-review
