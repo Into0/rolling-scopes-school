@@ -159,11 +159,6 @@ a {
   transition: ease 0.5s;
 }
 
-.nav__menu-item:hover > .nav__menu-link {
-  color: var(--primary);
-  background-color: var(--primary-10);
-}
-
 .caption {
   font-family: Allura;
   font-size: 24px;
@@ -177,4 +172,13 @@ a {
   font-size: 80px;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+@media (hover: hover) {
+
+  .nav__menu-item:hover > .nav__menu-link {
+  color: var(--primary);
+  background-color: var(--primary-10);
+}
+
 }
