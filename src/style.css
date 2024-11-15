@@ -1,0 +1,129 @@
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/montserrat.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/fonts/montserrat-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* allura-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Allura';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/allura.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 10px;
+  font-family: Montserrat;
+  --primary: #FF4646;
+  --primary-10: rgba(255, 70, 70, 0.10);
+  --dark: #181C29;
+  --static-white: #FFF;
+  --static-white-20: rgba(255, 255, 255, 0.20);
+  --static-white-40: rgba(255, 255, 255, 0.40);
+  --tag-purple: #4361FF;
+  --tag-pink: #FF43F7;
+  --tag-green: #06A44F;
+  --content-background: rgba(24, 28, 41, 0.80);
+  --overlay: #ECF3F8;
+}
+
+h1 {
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 600;
+  line-height:  150%;
+  letter-spacing:  18%;
+  text-transform: uppercase;
+}
+
+h2,
+.action-large {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 600;
+  line-height:  152%;
+  letter-spacing:  16;%
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  line-height:  152%;
+  letter-spacing:  8%;
+  text-transform: uppercase;
+}
+
+h4,
+.action-small {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 600;
+  line-height:  130%;
+  letter-spacing:  5%;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height:  148%;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.caption {
+  font-family: Allura;
+  font-size: 24px;
+  font-weight: 400;
+  line-height:  100%;
+  letter-spacing:  5%;
+}
+
+.slider-text {
+  font-family: Montserrat;
+  font-size: 80px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.logo {
+  display: flex;
+  padding: 8px 20px;
+}
+
+.logo > img {
+  width: 24px;
+  height: 24px;
+}
+
+.nav__menu-item {
+  padding: 12px 20px;
+}
