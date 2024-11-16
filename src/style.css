@@ -65,7 +65,7 @@ h2,
   font-size: 24px;
   font-weight: 600;
   line-height: 152%;
-  letter-spacing: 16%;
+  letter-spacing: 3.84px;
   text-transform: uppercase;
 }
 
@@ -74,7 +74,7 @@ h3 {
   font-size: 16px;
   font-weight: 600;
   line-height: 152%;
-  letter-spacing: 8%;
+  letter-spacing: 1.28px;
   text-transform: uppercase;
 }
 
@@ -164,7 +164,7 @@ a {
   font-size: 24px;
   font-weight: 400;
   line-height: 100%;
-  letter-spacing: 5%;
+  letter-spacing: 1.2px;
 }
 
 .slider-text {
@@ -174,11 +174,79 @@ a {
   text-transform: uppercase;
 }
 
+.footer {
+  padding: 0 8px;
+}
+
+.footer__wrapper {
+  flex-direction: column;
+  padding: 60px 0;
+  gap: 60px;
+}
+
+.footer__cards {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__cards-item {
+  list-style: none;
+  width: 100%;
+}
+
+.footer__cards-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--overlay);
+  transition: ease 0.5s;
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+}
+
+.social__item {
+  list-style: none;
+}
+
+.social__link {
+  display: block;
+  padding: 8px;
+}
+
+.made {
+  transition: ease 0.5s;
+}
+
 @media (hover: hover) {
 
   .nav__menu-item:hover > .nav__menu-link {
-  color: var(--primary);
-  background-color: var(--primary-10);
+    color: var(--primary);
+    background-color: var(--primary-10);
+}
+
+  .footer__cards-item:hover > .footer__cards-link {
+    color: var(--primary);
+}
+
+  .made:hover {
+    color: var(--primary);
+}
+
+  .social__item:hover > .social__link {
+    filter: invert(53%) sepia(76%) saturate(1875%) hue-rotate(324deg) brightness(91%) contrast(124%);
 }
 
 }
