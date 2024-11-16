@@ -174,6 +174,73 @@ a {
   text-transform: uppercase;
 }
 
+.gifts {
+  padding: 0 8px;
+  background: url(./assets/img/bg-snow.png) lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--primary);
+}
+
+.gifts__wrapper {
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  gap: 20px;
+}
+
+.gifts__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--static-white);
+}
+
+.gifts__cards {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.gifts__cards-item {
+  list-style: none;
+}
+
+.gifts__cards-link {
+  display: block;
+  height: 342px;
+  width: 310px;
+  border-radius: 20px;
+  background-color: #ECF3F8;
+}
+
+.gifts__cards-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 112px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--static-white);
+}
+
+.tag-purple {
+  color: var(--tag-purple);
+}
+
+.tag-pink {
+  color: var(--tag-pink);
+}
+
+.tag-green {
+  color: var(--tag-green);
+}
+
+.gifts__cards-text > h3 {
+  transition: color ease 0.5s
+}
+
 .footer {
   padding: 0 8px;
 }
@@ -201,6 +268,7 @@ a {
   gap: 12px;
   padding: 20px;
   border-radius: 20px;
+  text-align: center;
   background-color: var(--overlay);
   transition: ease 0.5s;
 }
@@ -235,6 +303,10 @@ a {
   .nav__menu-item:hover > .nav__menu-link {
     color: var(--primary);
     background-color: var(--primary-10);
+}
+
+  .gifts__cards-item:hover .gifts__cards-text h3 {
+    color: var(--primary);
 }
 
   .footer__cards-item:hover > .footer__cards-link {
