@@ -50,6 +50,10 @@ html {
   scroll-behavior: smooth;
 }
 
+button {
+  cursor: pointer;
+}
+
 h1 {
   font-family: Montserrat;
   font-size: 32px;
@@ -102,6 +106,16 @@ img {
 a {
   text-decoration: none;
   color: var(--dark);
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 32px;
+  border: 0;
+  border-radius: 20px;
+  background-color: var(--dark);
 }
 
 .wrapper {
@@ -167,11 +181,73 @@ a {
   letter-spacing: 1.2px;
 }
 
+.slider {
+  padding: 0 8px;
+  background: url(./assets/img/bg-snow.png) lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--primary);
+  overflow: hidden;
+}
+
+.slider__wrapper {
+  flex-direction: column;
+  padding: 60px 0;
+  gap: 20px;
+}
+
+.slider__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--static-white);
+}
+
+.slider__buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.slider__btn {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 1px solid var(--static-white);
+  background-color: transparent;
+  transition: ease 0.5s;
+}
+
+.slider__btn[disabled] {
+  border: 1px solid var(--static-white-40);
+  cursor: default;
+  pointer-events: none;
+}
+
+.slider__slides {
+  display: flex;
+  gap: 20px;
+}
+
+.slider__slides-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.slider__slides-item > img {
+  border-radius: 20px;
+}
+
 .slider-text {
   font-family: Montserrat;
   font-size: 80px;
   font-weight: 600;
+  line-height: normal;
   text-transform: uppercase;
+  color: var(--static-white);
+  letter-spacing: 0.2px;
 }
 
 .gifts {
@@ -218,7 +294,7 @@ a {
 .gifts__cards-text {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   height: 112px;
   padding: 20px;
   border-radius: 20px;
@@ -303,22 +379,30 @@ a {
   .nav__menu-item:hover > .nav__menu-link {
     color: var(--primary);
     background-color: var(--primary-10);
-}
+  }
+
+  .slider__btn:hover {
+    background-color: var(--static-white);
+  }
+
+  .slider__btn:hover > img{
+    filter: invert(53%) sepia(76%) saturate(1875%) hue-rotate(324deg) brightness(91%) contrast(124%);
+  }
 
   .gifts__cards-item:hover .gifts__cards-text h3 {
     color: var(--primary);
-}
+  }
 
   .footer__cards-item:hover > .footer__cards-link {
     color: var(--primary);
-}
+  }
 
   .made:hover {
     color: var(--primary);
-}
+  }
 
   .social__item:hover > .social__link {
     filter: invert(53%) sepia(76%) saturate(1875%) hue-rotate(324deg) brightness(91%) contrast(124%);
-}
+  }
 
 }
