@@ -116,6 +116,8 @@ a {
   border: 0;
   border-radius: 20px;
   background-color: var(--dark);
+  color: var(--static-white);
+  transition: ease 0.5s;
 }
 
 .wrapper {
@@ -256,6 +258,57 @@ a {
   pointer-events: none;
 }
 
+.cta {
+  padding: 0 8px;
+  background: url(./assets/img/bg-snow.png), url(./assets/img/bg-forest.png) lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--primary);
+}
+
+.cta__wrapper {
+  padding: 120px 0;
+  justify-content: center;
+}
+
+.cta__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  gap: 20px;
+  width: 426px;
+  text-align: center;
+  color: var(--static-white);
+}
+
+.cta__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px 12px 12px;
+  border-radius: 20px;
+  background-color: var(--static-white-40);
+}
+
+.timer__item {
+  width: 80px;
+}
+
+.separator {
+  height: 20px;
+  border: 1px solid var(--static-white-40);
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
 .gifts {
   padding: 0 8px;
   background: url(./assets/img/bg-snow.png) lightgray 50%;
@@ -381,6 +434,11 @@ a {
 }
 
 @media (hover: hover) {
+
+  .btn:hover {
+    color: var(--dark);
+    background-color: var(--static-white);
+  }
 
   .nav__menu-item:hover > .nav__menu-link {
     color: var(--primary);
