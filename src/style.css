@@ -204,28 +204,13 @@ a {
   color: var(--static-white);
 }
 
-.slider__buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-}
-
-.slider__btn {
-  width: 56px;
-  height: 56px;
-  padding: 0;
-  border: 1px solid var(--static-white);
-  background-color: transparent;
-  transition: ease 0.5s;
-}
-
-.slider__btn[disabled] {
-  border: 1px solid var(--static-white-40);
-  cursor: default;
-  pointer-events: none;
+.slider__view {
+  width: 1358px;
+  overflow: hidden;
 }
 
 .slider__slides {
+  transform: translateX(0);
   display: flex;
   gap: 20px;
 }
@@ -248,6 +233,27 @@ a {
   text-transform: uppercase;
   color: var(--static-white);
   letter-spacing: 0.2px;
+}
+
+.slider__buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.slider__btn {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 1px solid var(--static-white);
+  background-color: transparent;
+  transition: ease 0.5s;
+}
+
+.slider__btn[disabled] {
+  border: 1px solid var(--static-white-40);
+  cursor: default;
+  pointer-events: none;
 }
 
 .gifts {
@@ -280,7 +286,7 @@ a {
 }
 
 .gifts__cards-item {
-  list-style: none;
+
 }
 
 .gifts__cards-link {
