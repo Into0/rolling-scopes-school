@@ -1,0 +1,564 @@
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/montserrat.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/fonts/montserrat-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* allura-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Allura';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/allura.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 10px;
+  font-family: Montserrat;
+  --primary: #FF4646;
+  --primary-10: rgba(255, 70, 70, 0.10);
+  --dark: #181C29;
+  --static-white: #FFF;
+  --static-white-20: rgba(255, 255, 255, 0.20);
+  --static-white-40: rgba(255, 255, 255, 0.40);
+  --tag-purple: #4361FF;
+  --tag-pink: #FF43F7;
+  --tag-green: #06A44F;
+  --content-background: rgba(24, 28, 41, 0.80);
+  --overlay: #ECF3F8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 5.52px;
+  text-transform: uppercase;
+}
+
+h2,
+.action-large {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: 3.84px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: 1.28px;
+  text-transform: uppercase;
+}
+
+h4,
+.action-small {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 148%;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+section {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 32px;
+  border: 0;
+  border-radius: 20px;
+  background-color: var(--dark);
+  color: var(--static-white);
+  transition: ease 0.5s;
+}
+
+.wrapper {
+  display: flex;
+  max-width: 1276px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 0 8px;
+  background-color: var(--static-white);
+}
+
+.header__wrapper {
+  padding: 12px 0;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+}
+
+.logo > img {
+  width: 24px;
+  height: 24px;
+}
+
+.logo > span {
+  margin-left: 8px;
+}
+
+.nav {
+
+}
+
+#nav__toggle {
+  display: none;
+}
+
+.nav__menu {
+  display: flex;
+}
+
+.nav__menu-item {
+  list-style: none;
+  margin-left: 8px;
+}
+
+.nav__menu-link {
+  display: block;
+  padding: 12px 20px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  transition: ease 0.5s;
+}
+
+.hero {
+  padding: 0 8px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: url(./assets/img/bg-snow.png) 50%, url(./assets/img/bg-ball.png) lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--primary);
+}
+
+.hero__wrapper {
+  padding: 60px 0;
+  justify-content: center;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 60px 0;
+  max-width: 426px;
+  text-align: center;
+  color: var(--static-white);
+}
+
+.caption {
+  font-family: Allura;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 1.2px;
+}
+
+.about {
+  padding: 0 8px;
+  background: url(./assets/img/bg-snow.png) lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--primary);
+}
+
+.about__wrapper {
+  padding: 60px 0;
+}
+
+.about__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 20px;
+  background-color: var(--static-white);
+}
+
+.about__text {
+  padding: 0 60px;
+}
+
+.about__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 60px 0;
+  max-width: 426px;
+}
+
+.about__text-container > .caption {
+ color: var(--primary);
+}
+
+.about__image {
+  width: 638px;
+  height: 528px;
+  border-radius: 20px;
+  background: url(./assets/img/santa.png) lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.about__image > img {
+}
+
+.slider {
+  padding: 0 8px;
+  background: url(./assets/img/bg-snow.png) lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--primary);
+  overflow: hidden;
+}
+
+.slider__wrapper {
+  flex-direction: column;
+  padding: 60px 0;
+  gap: 20px;
+}
+
+.slider__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--static-white);
+}
+
+.slider__view {
+  width: 1358px;
+  overflow: hidden;
+}
+
+.slider__slides {
+  transform: translateX(0);
+  display: flex;
+  gap: 20px;
+}
+
+.slider__slides-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.slider__slides-item > img {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  background-color: lightgray;
+}
+
+.slider-text {
+  font-family: Montserrat;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  color: var(--static-white);
+  letter-spacing: 0.2px;
+}
+
+.slider__buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.slider__btn {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 1px solid var(--static-white);
+  background-color: transparent;
+  transition: ease 0.5s;
+}
+
+.slider__btn[disabled] {
+  border: 1px solid var(--static-white-40);
+  cursor: default;
+  pointer-events: none;
+}
+
+.cta {
+  padding: 0 8px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: url(./assets/img/bg-snow.png) 50%, url(./assets/img/bg-forest.png) lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--primary);
+}
+
+.cta__wrapper {
+  padding: 120px 0;
+  justify-content: center;
+}
+
+.cta__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  gap: 20px;
+  max-width: 426px;
+  text-align: center;
+  color: var(--static-white);
+}
+
+.cta__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px 12px 12px;
+  border-radius: 20px;
+  background-color: var(--static-white-40);
+}
+
+.timer__item {
+  width: 80px;
+}
+
+.separator {
+  height: 20px;
+  border: 1px solid var(--static-white-40);
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.gifts {
+  padding: 0 8px;
+  background: url(./assets/img/bg-snow.png) lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--primary);
+}
+
+.gifts__wrapper {
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  gap: 19px;
+}
+
+.gifts__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--static-white);
+}
+
+.gifts__cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gifts__cards-item {
+
+}
+
+.gifts__cards-link {
+  display: block;
+  height: 342px;
+  width: 310px;
+  border-radius: 20px;
+  background-color: #ECF3F8;
+}
+
+.gifts__cards-text {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  height: 112px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--static-white);
+}
+
+.tag-purple {
+  color: var(--tag-purple);
+}
+
+.tag-pink {
+  color: var(--tag-pink);
+}
+
+.tag-green {
+  color: var(--tag-green);
+}
+
+.gifts__cards-text > h3 {
+  transition: color ease 0.5s
+}
+
+.footer {
+  padding: 0 8px;
+  background-color: var(--static-white);
+}
+
+.footer__wrapper {
+  flex-direction: column;
+  padding: 60px 0;
+  gap: 60px;
+}
+
+.footer__cards {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__cards-item {
+  list-style: none;
+  width: 100%;
+}
+
+.footer__cards-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: var(--overlay);
+  transition: ease 0.5s;
+}
+
+.footer__cards-link > span {
+  letter-spacing: 3.7px;
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+}
+
+.social__item {
+  list-style: none;
+}
+
+.social__link {
+  display: block;
+  padding: 8px;
+}
+
+.made {
+  transition: ease 0.5s;
+}
+
+@media (hover: hover) {
+
+  .btn:hover {
+    color: var(--dark);
+    background-color: var(--static-white);
+  }
+
+  .nav__menu-item:hover > .nav__menu-link {
+    color: var(--primary);
+    background-color: var(--primary-10);
+  }
+
+  .slider__btn:hover {
+    background-color: var(--static-white);
+  }
+
+  .slider__btn:hover > img{
+    filter: invert(53%) sepia(76%) saturate(1875%) hue-rotate(324deg) brightness(91%) contrast(124%);
+  }
+
+  .gifts__cards-item:hover .gifts__cards-text h3 {
+    color: var(--primary);
+  }
+
+  .footer__cards-item:hover > .footer__cards-link {
+    color: var(--primary);
+  }
+
+  .made:hover {
+    color: var(--primary);
+  }
+
+  .social__item:hover > .social__link {
+    filter: invert(53%) sepia(76%) saturate(1875%) hue-rotate(324deg) brightness(91%) contrast(124%);
+  }
+
+}
