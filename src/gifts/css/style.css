@@ -140,7 +140,7 @@ section {
 }
 
 .header {
-
+  background-color: var(--static-white);
 }
 
 .header__wrapper {
@@ -289,7 +289,7 @@ section {
 }
 
 .footer {
-
+  background-color: var(--static-white);
 }
 
 .footer__wrapper {

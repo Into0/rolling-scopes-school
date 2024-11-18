@@ -133,6 +133,7 @@ section {
 
 .header {
   padding: 0 8px;
+  background-color: var(--static-white);
 }
 
 .header__wrapper {
@@ -464,6 +465,7 @@ section {
 
 .footer {
   padding: 0 8px;
+  background-color: var(--static-white);
 }
 
 .footer__wrapper {
