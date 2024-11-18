@@ -201,7 +201,7 @@ section {
   align-items: center;
   gap: 12px;
   padding: 60px 0;
-  width: 426px;
+  max-width: 426px;
   text-align: center;
   color: var(--static-white);
 }
@@ -212,6 +212,55 @@ section {
   font-weight: 400;
   line-height: 100%;
   letter-spacing: 1.2px;
+}
+
+.about {
+  padding: 0 8px;
+  background: url(./assets/img/bg-snow.png) lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--primary);
+}
+
+.about__wrapper {
+  padding: 60px 0;
+}
+
+.about__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 20px;
+  background-color: var(--static-white);
+}
+
+.about__text {
+  padding: 0 60px;
+}
+
+.about__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 60px 0;
+  max-width: 426px;
+}
+
+.about__text-container > .caption {
+ color: var(--primary);
+}
+
+.about__image {
+  width: 638px;
+  height: 528px;
+  border-radius: 20px;
+  background: url(./assets/img/santa.png) lightgray 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.about__image > img {
 }
 
 .slider {
@@ -310,7 +359,7 @@ section {
   align-items: center;
   padding: 60px 0;
   gap: 20px;
-  width: 426px;
+  max-width: 426px;
   text-align: center;
   color: var(--static-white);
 }
