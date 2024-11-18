@@ -406,7 +406,7 @@ section {
   flex-direction: column;
   align-items: center;
   padding: 60px 0;
-  gap: 20px;
+  gap: 19px;
 }
 
 .gifts__header {
@@ -439,7 +439,7 @@ section {
 .gifts__cards-text {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 9px;
   height: 112px;
   padding: 20px;
   border-radius: 20px;
@@ -492,6 +492,10 @@ section {
   text-align: center;
   background-color: var(--overlay);
   transition: ease 0.5s;
+}
+
+.footer__cards-link > span {
+  letter-spacing: 3.7px;
 }
 
 .footer__social {
