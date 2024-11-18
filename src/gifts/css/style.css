@@ -188,7 +188,7 @@ section {
   transition: ease 0.5s;
 }
 
-.nav__menu-link[disabled] {
+.nav__menu-link_act{
   cursor: default;
   pointer-events: none;
   color: var(--primary);
