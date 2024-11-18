@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas Shop</title>
+  <link rel="icon" href="../favicon.ico">
+  <link rel="preload" href="../assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/allura.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../modern-normalize.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__wrapper wrapper">
+      <a class="logo" href="../">
+        <img src="../assets/icons/snowflake.svg" alt="snowflake" height="24" width="24">
+        <span class="action-small">the gifts</span>
+      </a>
+      <nav class="nav">
+        <input id="nav__toggle" type="checkbox">
+        <label class="nav__hamburger" for="nav__toggle">
+          <span></span>
+        </label>
+        <ul class="nav__menu action-small">
+          <li class="nav__menu-item"><a href="./gifts/" class="nav__menu-link" disabled>Gifts</a></li>
+          <li class="nav__menu-item"><a href="../#about" class="nav__menu-link">About</a></li>
+          <li class="nav__menu-item"><a href="../#gifts" class="nav__menu-link">Best</a></li>
+          <li class="nav__menu-item"><a href="#footer" class="nav__menu-link">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="gifts">
+    <div class="gifts__bg"></div>
+    <div class="gifts__wrapper wrapper">
+      <h1>Achieve health, harmony, and inner strength</h1>
+      <div class="tabs">
+        <button id="default" class="tabs__btn btn action-small" onclick="openAll(event, 'all')" type="button"  disabled>All</button>
+        <button class="tabs__btn btn action-small" onclick="openWork(event, 'work')" type="button">for work</button>
+        <button class="tabs__btn btn action-small" onclick="openHealth(event, 'health')" type="button">for health</button>
+        <button class="tabs__btn btn action-small" onclick="openHarmony(event, 'harmony')" type="button">for harmony</button>
+      </div>
+      <div class="gifts__cards">
+        <div id="work" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-work.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-purple">For work</h4>
+              <h3>Console.log Guru</h3>
+            </div>
+          </a>
+        </div>
+        <div id="health" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-health.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-green">For health</h4>
+              <h3>Step Master</h3>
+            </div>
+          </a>
+        </div>
+        <div id="work" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-work.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-purple">For work</h4>
+              <h3>Bug Magnet</h3>
+            </div>
+          </a>
+        </div>
+        <div id="work" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-work.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-purple">For work</h4>
+              <h3>Shortcut Cheater</h3>
+            </div>
+          </a>
+        </div>
+
+        <div id="health" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-health.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-green">For healt</h4>
+              <h3>Posture Levitation</h3>
+            </div>
+          </a>
+        </div>
+        <div id="harmony" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-harmony.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-pink">For harmony</h4>
+              <h3>Bug Acceptance Guru</h3>
+            </div>
+          </a>
+        </div>
+        <div id="health" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-health.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-green">For healt</h4>
+              <h3>Snack Resister</h3>
+            </div>
+          </a>
+        </div>
+        <div id="harmony" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-harmony.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-pink">For harmony</h4>
+              <h3>Error Laugher</h3>
+            </div>
+          </a>
+        </div>
+
+        <div id="health" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-health.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-green">For health</h4>
+              <h3>Hydration Bot</h3>
+            </div>
+          </a>
+        </div>
+        <div id="work" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-work.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-purple">For work</h4>
+              <h3>Merge Master</h3>
+            </div>
+          </a>
+        </div>
+        <div id="harmony" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-harmony.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-pink">For harmony</h4>
+              <h3>Joy Charger</h3>
+            </div>
+          </a>
+        </div>
+        <div id="harmony" class="gifts__cards-item">
+          <a href="#" class="gifts__cards-link">
+            <img src="../assets/img/gift-for-harmony.png" alt="gift" height="230" width="310">
+            <div class="gifts__cards-text">
+              <h4 class="tag-pink">For harmony</h4>
+              <h3>Spontaneous Coding Philosopher</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer" class="footer">
+    <div class="footer__wrapper wrapper">
+      <ul class="footer__cards">
+        <li class="footer__cards-item">
+          <a href="tel:+375(29)111-22-33" class="footer__cards-link">
+            <img src="../assets/icons/santa-claus.svg" alt="santa" height="80" width="80">
+            <span class="action-large">+375 (29) 111-22-33</span>
+            <h3>Call Us</h3>
+          </a>
+        </li>
+        <li class="footer__cards-item">
+          <a href="https://maps.app.goo.gl/hA3Lx6vf3UoomJ2U8" target="blank" class="footer__cards-link">
+            <img src="../assets/icons/christmas-tree.svg" alt="tree" height="80" width="80">
+            <span class="action-large">Magic forest</span>
+            <h3>meet us</h3>
+          </a>
+        </li>
+        <li class="footer__cards-item">
+          <a href="mailto:gifts@magic.com" class="footer__cards-link">
+            <img src="../assets/icons/snake.svg" alt="snake" height="80" width="80">
+            <span class="action-large">gifts@magic.com</span>
+            <h3>write us</h3>
+          </a>
+        </li>
+      </ul>
+      <div class="footer__social">
+        <ul class="social">
+          <li class="social__item">
+            <a href="https://telegram.org" class="social__link">
+              <img src="../assets/icons/telegram.svg" alt="telegram" height="24" width="24">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="https://facebook.com" class="social__link">
+              <img src="../assets/icons/facebook.svg" alt="facebook" height="24" width="24">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="https://instagram.com" class="social__link">
+              <img src="../assets/icons/instagram.svg" alt="instagram" height="24" width="24">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="https://x.com" class="social__link">
+              <img src="../assets/icons/X.svg" alt="x" height="24" width="24">
+            </a>
+          </li>
+        </ul>
+        <p class="copyright">© Copyright 2025, All Rights Reserved</p>
+        <a href="https://rs.school" class="made caption">Made in Rolling Scopes School</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
