@@ -240,6 +240,7 @@ section {
 
 .about__text {
   padding: 0 60px;
+  padding-right: 64px;
 }
 
 .about__text-container {
@@ -515,6 +516,29 @@ section {
 
 .made {
   transition: ease 0.5s;
+}
+
+@media screen and (max-width: 1291px) {
+  .gifts__cards {
+    max-width: 952px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .footer__cards{
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 654px) {
+  .about__container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about__text {
+    padding: 0 20px;
+  }
 }
 
 @media (hover: hover) {
