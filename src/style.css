@@ -183,7 +183,7 @@ section {
   padding: 12px 20px;
   border-radius: 12px;
   letter-spacing: 0.5px;
-  transition: ease 0.5s;
+  transition: background ease 0.5s, color ease 0.5s;
 }
 
 .hero {
