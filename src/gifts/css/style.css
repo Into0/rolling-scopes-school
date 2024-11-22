@@ -1,27 +1,34 @@
 /* montserrat-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  src: url('../../assets/fonts/montserrat.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../../assets/fonts/montserrat.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* montserrat-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  src: url('../../assets/fonts/montserrat-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../../assets/fonts/montserrat-600.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* allura-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Allura';
   font-style: normal;
   font-weight: 400;
-  src: url('../../assets/fonts/allura.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../../assets/fonts/allura.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 * {
@@ -154,18 +161,16 @@ section {
   padding: 8px 20px;
 }
 
-.logo > img {
+.logo>img {
   width: 24px;
   height: 24px;
 }
 
-.logo > span {
+.logo>span {
   margin-left: 8px;
 }
 
-.nav {
-
-}
+.nav {}
 
 #nav__toggle {
   display: none;
@@ -188,7 +193,7 @@ section {
   transition: ease 0.5s;
 }
 
-.nav__menu-link_act{
+.nav__menu-link_act {
   cursor: default;
   pointer-events: none;
   color: var(--primary);
@@ -250,9 +255,7 @@ section {
   gap: 12px;
 }
 
-.gifts__cards-item {
-
-}
+.gifts__cards-item {}
 
 .gifts__cards-link {
   display: block;
@@ -284,7 +287,7 @@ section {
   color: var(--tag-green);
 }
 
-.gifts__cards-text > h3 {
+.gifts__cards-text>h3 {
   transition: color ease 0.5s
 }
 
@@ -320,7 +323,7 @@ section {
   transition: ease 0.5s;
 }
 
-.footer__cards-link > span {
+.footer__cards-link>span {
   letter-spacing: 3.7px;
 }
 
@@ -356,7 +359,7 @@ section {
     background-color: var(--static-white);
   }
 
-  .nav__menu-item:hover > .nav__menu-link {
+  .nav__menu-item:hover>.nav__menu-link {
     color: var(--primary);
     background-color: var(--primary-10);
   }
@@ -370,7 +373,7 @@ section {
     background-color: var(--static-white);
   }
 
-  .slider__btn:hover > img{
+  .slider__btn:hover>img {
     filter: invert(53%) sepia(76%) saturate(1875%) hue-rotate(324deg) brightness(91%) contrast(124%);
   }
 
@@ -378,7 +381,7 @@ section {
     color: var(--primary);
   }
 
-  .footer__cards-item:hover > .footer__cards-link {
+  .footer__cards-item:hover>.footer__cards-link {
     color: var(--primary);
   }
 
@@ -386,7 +389,7 @@ section {
     color: var(--primary);
   }
 
-  .social__item:hover > .social__link {
+  .social__item:hover>.social__link {
     filter: invert(53%) sepia(76%) saturate(1875%) hue-rotate(324deg) brightness(91%) contrast(124%);
   }
 
