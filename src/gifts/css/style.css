@@ -200,10 +200,17 @@ section {
   background-color: var(--primary-10);
 }
 
-.gifts {
+.main {
   border-radius: 20px;
+  background-image: url(../../assets/img/bg-garland.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
   background-color: var(--primary);
-  position: relative;
+}
+
+.gifts {
+
 }
 
 .gifts__wrapper {
@@ -212,7 +219,6 @@ section {
   gap: 20px;
   padding: 60px 8px;
   position: relative;
-  z-index: 1;
 }
 
 .gifts__wrapper h1 {
@@ -220,15 +226,6 @@ section {
   color: var(--static-white);
   max-width: 426px;
   letter-spacing: 6px;
-}
-
-.gifts__bg {
-  background: url(../../assets/img/bg-garland.png) 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 200px;
-  width: 100%;
-  position: absolute;
 }
 
 .tabs {
@@ -352,19 +349,25 @@ section {
   transition: ease 0.5s;
 }
 
+@media screen and (max-width: 1060px) {
+  .footer__cards {
+    flex-wrap: wrap;
+  }
+}
+
 @media screen and (max-width: 768px) {
 
-  #nav__toggle:checked ~ .nav__hamburger > span::before {
+  #nav__toggle:checked~.nav__hamburger>span::before {
     top: 0;
     transform: rotate(45deg);
   }
 
-  #nav__toggle:checked ~ .nav__hamburger > span::after {
+  #nav__toggle:checked~.nav__hamburger>span::after {
     top: 0;
     transform: rotate(-45deg);
   }
 
-  #nav__toggle:checked ~ .nav__menu {
+  #nav__toggle:checked~.nav__menu {
     right: 0;
   }
 
@@ -376,18 +379,18 @@ section {
     align-items: center;
     border-radius: 100px;
     cursor: pointer;
-   }
+  }
 
-  .nav__hamburger > span,
-  .nav__hamburger > span::before,
-  .nav__hamburger > span::after {
+  .nav__hamburger>span,
+  .nav__hamburger>span::before,
+  .nav__hamburger>span::after {
     display: block;
     position: absolute;
     background-color: var(--dark);
     transition: all ease 0.50s;
   }
 
-  .nav__hamburger > span::before {
+  .nav__hamburger>span::before {
     content: '';
     top: -5px;
     left: -10px;
@@ -395,7 +398,7 @@ section {
     height: 1px;
   }
 
-  .nav__hamburger > span::after {
+  .nav__hamburger>span::after {
     content: '';
     top: 3px;
     left: -10px;
@@ -428,6 +431,19 @@ section {
     font-size: 24px;
     line-height: 152%;
     letter-spacing: 4px;
+  }
+  
+  .main {
+    background-size: 101% auto;
+  }
+}
+
+@media screen and (max-width: 492px) {
+  .tabs {
+    gap: 0;
+  } 
+  .tabs__btn {
+    padding: 12px 8px;;
   }
 }
 
