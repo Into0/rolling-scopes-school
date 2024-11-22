@@ -132,6 +132,10 @@ section {
   transition: ease 0.5s;
 }
 
+.page {
+  min-width: 350px;
+}
+
 .wrapper {
   display: flex;
   max-width: 1292px;
@@ -617,6 +621,10 @@ section {
 
   .about__text {
     padding: 0 20px;
+  }
+  
+  .cta__container > h2 {
+    letter-spacing: 3.7px;
   }
 }
 
