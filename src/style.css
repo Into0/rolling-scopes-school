@@ -148,7 +148,7 @@ section {
   transition: opacity ease 0.5s;
 }
 
-.overlay__show {
+.overlay-show {
   top: 0;
   opacity: 1;
 }
@@ -165,7 +165,7 @@ section {
   transition: ease opacity 0.5s;
 }
 
-.modal__show {
+.modal-show {
   top: 0;
   opacity: 1;
 }
