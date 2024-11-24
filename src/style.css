@@ -49,8 +49,8 @@
   --tag-purple: #4361FF;
   --tag-pink: #FF43F7;
   --tag-green: #06A44F;
-  --content-background: rgba(24, 28, 41, 0.80);
-  --overlay: #ECF3F8;
+  --overlay: rgba(24, 28, 41, 0.80);
+  --content-background: #ECF3F8;
 }
 
 html {
@@ -139,12 +139,12 @@ section {
 .overlay {
   position: fixed;
   z-index: 10;
-  top: -9999px;
+  #top: -9999px;
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--content-background);
-  opacity: 0;
+  background: var(--overlay);
+  opacity: 1;
   transition: opacity ease 0.5s;
 }
 
@@ -154,18 +154,14 @@ section {
 }
 
 .modal {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  max-width: 400px;
+  width: 400px;
   position: fixed;
   z-index: 11;
-  top: -9999px;
+  #top: -9999px;
   left: 0;
   transform: translate(calc(50vw - 50%), calc(50vh - 50%));
-  border-radius: 20px;
-  background-color: var(--overlay);
-  opacity: 0;
+  opacity: 1;
   transition: ease opacity 0.5s;
 }
 
@@ -188,19 +184,11 @@ section {
 
 .modal__img {
   width: 100%;
-  height: 230px;
-  background: url(./assets/img/gift-for-work.png) 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .modal-text {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   gap: 20px;
-  padding: 20px;
-  border-radius: 20px;
-  background-color: var(--static-white);
 }
 
 .modal-text__top {
@@ -223,11 +211,11 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  #gap: 12px;
+  gap: 12px;
 }
 
 .modal-powers-row>p:first-child {
-  width: 184px;
+  width: 100%;
 }
 
 .row-snowflake {
@@ -472,6 +460,39 @@ section {
   color: var(--static-white);
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: var(--content-background);
+}
+
+.card-img-work {
+  background: url(./assets/img/gift-for-work.png) 50%;
+}
+
+.card-img-health {
+  background: url(./assets/img/gift-for-health.png) 50%;
+}
+
+.card-img-harmony {
+  background: url(./assets/img/gift-for-harmony.png) 50%;
+}
+
+.card-img {
+  height: 230px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--static-white);
+}
+
 .gifts__cards {
   display: flex;
   justify-content: center;
@@ -479,24 +500,16 @@ section {
   gap: 12px;
 }
 
-.gifts__cards-item {}
-
-.gifts__cards-link {
-  display: block;
-  height: 342px;
+.gifts__cards-item {
   width: 310px;
-  border-radius: 20px;
-  background-color: #ECF3F8;
+  cursor: pointer;
 }
 
+.gifts__cards-img {}
+
 .gifts__cards-text {
-  display: flex;
-  flex-direction: column;
   gap: 9px;
   height: 112px;
-  padding: 20px;
-  border-radius: 20px;
-  background-color: var(--static-white);
 }
 
 .tag-purple {
@@ -594,7 +607,7 @@ section {
   padding: 20px;
   border-radius: 20px;
   text-align: center;
-  background-color: var(--overlay);
+  background-color: var(--content-background);
   transition: ease 0.5s;
 }
 
@@ -679,7 +692,7 @@ section {
     top: -5px;
     left: -10px;
     width: 20px;
-    height: 1px;
+    height: 2px;
   }
 
   .nav__hamburger>span::after {
@@ -687,7 +700,7 @@ section {
     top: 3px;
     left: -10px;
     width: 20px;
-    height: 1px;
+    height: 2px;
   }
 
   .nav__menu {
@@ -698,7 +711,7 @@ section {
     background-color: var(--static-white);
     position: fixed;
     right: -9999px;
-    top: 64px;
+    top: 63px;
     padding-bottom: 60px;
     width: 100vw;
     min-height: 100vh;
@@ -719,6 +732,10 @@ section {
 }
 
 @media screen and (max-width: 654px) {
+  .modal {
+    width: 364px;
+  }
+
   .about__container {
     flex-wrap: wrap;
     justify-content: center;
