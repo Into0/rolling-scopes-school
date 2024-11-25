@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,95 @@
   <link rel="stylesheet" href="./modern-normalize.min.css">
   <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+
+<body class="page">
+  <div class="overlay"></div>
+  <div class="modal card">
+    <div class="close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <path d="M30 10L10 30" stroke="#181C29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M10 10L30 30" stroke="#181C29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span></span>
+    </div>
+    <div class="modal__img card-img card-img-work"></div>
+    <div class="modal-text card-text">
+      <div class="modal-text__top">
+        <h4 class="tag-purple">For work</h4>
+        <h3>Console.log Guru</h3>
+        <p>Uses console.log like a crystal ball to find any issue.</p>
+      </div>
+      <div class="modal-text__bottom">
+        <h4>Adds superpowers to:</h4>
+        <div class="modal-powers">
+          <div class="modal-powers-row">
+            <p>Live</p>
+            <p>+500</p>
+            <ul class="row-snowflake">
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+            </ul>
+          </div>
+          <div class="modal-powers-row">
+            <p>Create</p>
+            <p>+500</p>
+            <ul class="row-snowflake">
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+            </ul>
+          </div>
+          <div class="modal-powers-row">
+            <p>Love</p>
+            <p>+200</p>
+            <ul class="row-snowflake">
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item snowflake-opacity"><img src="./assets/icons/snowflake.svg" alt=""
+                  height="16" width="16"></li>
+              <li class="row-snowflake__item snowflake-opacity"><img src="./assets/icons/snowflake.svg" alt=""
+                  height="16" width="16"></li>
+              <li class="row-snowflake__item snowflake-opacity"><img src="./assets/icons/snowflake.svg" alt=""
+                  height="16" width="16"></li>
+            </ul>
+          </div>
+          <div class="modal-powers-row">
+            <p>Dream</p>
+            <p>+400</p>
+            <ul class="row-snowflake">
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item"><img src="./assets/icons/snowflake.svg" alt="" height="16" width="16">
+              </li>
+              <li class="row-snowflake__item snowflake-opacity"><img src="./assets/icons/snowflake.svg" alt=""
+                  height="16" width="16"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <header class="header">
     <div class="header__wrapper wrapper">
       <a class="logo" href="./">
@@ -32,146 +121,141 @@
       </nav>
     </div>
   </header>
-  <section class="hero">
-    <div class="hero__wrapper wrapper">
-      <div class="hero__container">
-        <span class="caption">Merry Christmas</span>
-        <h1>Gift yourself the magic of new possibilities</h1>
-        <a class="btn action-small" href="./gifts/">Explore Magical Gifts</a>
-        <span class="caption">and Happy New Year</span>
-      </div>
-    </div>
-  </section>
-  <section id="about" class="about">
-    <div class="about__wrapper wrapper">
-      <div class="about__container">
-        <div class="about__text">
-          <div class="about__text-container">
-            <span class="caption">About</span>
-            <h2>Unleash your inner superhero!</h2>
-            <p>This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique gifts that will help you improve your life.</p>
-          </div>
-        </div>
-        <div class="about__image">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="santa">
+  <main class="main">
+    <section class="hero">
+      <div class="hero__wrapper wrapper">
+        <div class="hero__container">
+          <span class="caption">Merry Christmas</span>
+          <h1>Gift yourself the magic of new possibilities</h1>
+          <a class="btn action-small" href="./gifts/">Explore Magical Gifts</a>
+          <span class="caption">and Happy New Year</span>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="slider">
-    <div class="slider__wrapper wrapper">
-      <div class="slider__header">
-        <span class="caption">Become Happier!</span>
-        <h2>in the new 2025</h2>
-      </div>
-      <div class="slider__view">
-        <div class="slider__slides">
-          <div class="slider__slides-item">
-            <span class="slider-text">live</span>
-            <img src="./assets/img/snowman.png" alt="snowman" height="200" width="200">
+    </section>
+    <section id="about" class="about">
+      <div class="about__wrapper wrapper">
+        <div class="about__container">
+          <div class="about__text">
+            <div class="about__text-container">
+              <span class="caption">About</span>
+              <h2>Unleash your inner superhero!</h2>
+              <p>This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique
+                gifts that will help you improve your life.</p>
+            </div>
           </div>
-          <div class="slider__slides-item">
-            <span class="slider-text">create</span>
-            <img src="./assets/img/christmas-trees.png" alt="christmas trees" height="200" width="200">
-          </div>
-          <div class="slider__slides-item">
-            <span class="slider-text">Love</span>
-            <img src="./assets/img/christmas-tree-ball.png" alt="christmas tree ball" height="200" width="200">
-          </div>
-          <div class="slider__slides-item">
-            <span class="slider-text">dream</span>
-            <img src="./assets/img/fairytale-house.png" alt="fairytale house" height="200" width="200">
+          <div class="about__image">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="santa">
           </div>
         </div>
       </div>
-      <div class="slider__buttons">
-        <button class="slider__btn btn" type="button" disabled>
-          <img src="./assets/icons/arrow-left.svg" alt="arrow left" height="24" width="24">
-        </button>
-        <button class="slider__btn btn" type="button">
-          <img src="./assets/icons/arrow-right.svg" alt="arrow righ" height="24" width="24">
-        </button>
+    </section>
+    <section class="slider">
+      <div class="slider__wrapper wrapper">
+        <div class="slider__header">
+          <span class="caption">Become Happier!</span>
+          <h2>in the new 2025</h2>
+        </div>
+        <div class="slider__view">
+          <div class="slider__slides">
+            <div class="slider__slides-item">
+              <span class="slider-text">live</span>
+              <img src="./assets/img/snowman.png" alt="snowman" height="200" width="200">
+            </div>
+            <div class="slider__slides-item">
+              <span class="slider-text">create</span>
+              <img src="./assets/img/christmas-trees.png" alt="christmas trees" height="200" width="200">
+            </div>
+            <div class="slider__slides-item">
+              <span class="slider-text">Love</span>
+              <img src="./assets/img/christmas-tree-ball.png" alt="christmas tree ball" height="200" width="200">
+            </div>
+            <div class="slider__slides-item">
+              <span class="slider-text">dream</span>
+              <img src="./assets/img/fairytale-house.png" alt="fairytale house" height="200" width="200">
+            </div>
+          </div>
+        </div>
+        <div class="slider__buttons">
+          <button class="slider__btn btn" type="button" disabled>
+            <img src="./assets/icons/arrow-left.svg" alt="arrow left" height="24" width="24">
+          </button>
+          <button class="slider__btn btn" type="button">
+            <img src="./assets/icons/arrow-right.svg" alt="arrow righ" height="24" width="24">
+          </button>
+        </div>
       </div>
-    </div>
-  </section>
-  <section id="gifts" class="gifts">
-    <div class="gifts__wrapper wrapper">
-      <div class="gifts__header">
-        <span class="caption">Best Gifts</span>
-        <h2>especially for you</h2>
-      </div>
-      <div class="gifts__cards">
-        <div class="gifts__cards-item">
-          <a href="#" class="gifts__cards-link">
-            <img src="./assets/img/gift-for-work.png" alt="gift" height="230" width="310">
-            <div class="gifts__cards-text">
+    </section>
+    <section id="gifts" class="gifts">
+      <div class="gifts__wrapper wrapper">
+        <div class="gifts__header">
+          <span class="caption">Best Gifts</span>
+          <h2>especially for you</h2>
+        </div>
+        <div class="gifts__cards">
+          <div class="gifts__cards-item card">
+            <div class="gifts__cards-img card-img card-img-work"></div>
+            <div class="gifts__cards-text card-text">
               <h4 class="tag-purple">For work</h4>
               <h3>Console.log Guru</h3>
+            </div>
           </div>
-        </a>
-      </div>
-        <div class="gifts__cards-item">
-          <a href="#" class="gifts__cards-link">
-            <img src="./assets/img/gift-for-health.png" alt="gift" height="230" width="310">
-            <div class="gifts__cards-text">
+          <div class="gifts__cards-item card">
+            <div class="gifts__cards-img card-img card-img-health"></div>
+            <div class="gifts__cards-text card-text">
               <h4 class="tag-green">For health</h4>
               <h3>Hydration Bot</h3>
             </div>
-        </a>
-      </div>
-        <div class="gifts__cards-item">
-          <a href="#" class="gifts__cards-link">
-            <img src="./assets/img/gift-for-work.png" alt="gift" height="230" width="310">
-            <div class="gifts__cards-text">
+          </div>
+          <div class="gifts__cards-item card">
+            <div class="gifts__cards-img card-img card-img-work"></div>
+            <div class="gifts__cards-text card-text">
               <h4 class="tag-purple">For work</h4>
               <h3>Merge Master</h3>
             </div>
-          </a>
-        </div>
-        <div class="gifts__cards-item">
-          <a href="#" class="gifts__cards-link">
-            <img src="./assets/img/gift-for-harmony.png" alt="gift" height="230" width="310">
-            <div class="gifts__cards-text">
+          </div>
+          <div class="gifts__cards-item card">
+            <div class="gifts__cards-img card-img card-img-harmony"></div>
+            <div class="gifts__cards-text card-text">
               <h4 class="tag-pink">For harmony</h4>
               <h3>Spontaneous Coding Philosopher</h3>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="cta">
-    <div class="cta__wrapper wrapper">
-      <div class="cta__container">
-        <h2>Ready to start your journey to a better version of yourself?</h2>
-        <a class="btn action-small" href="./gifts/">Explore Magical Gifts</a>
-        <div class="cta__text">
-          <span class="caption">The New Year is Coming Soon...</span>
-          <div class="timer">
-            <div class="timer__item">
-              <h2>47</h2>
-              <h4>days</h4>
-            </div>
-            <hr class="separator">
-            <div class="timer__item">
-              <h2>5</h2>
-              <h4>hours</h4>
-            </div>
-            <hr class="separator">
-            <div class="timer__item">
-              <h2>34</h2>
-              <h4>minutes</h4>
-            </div>
-            <hr class="separator">
-            <div class="timer__item">
-              <h2>12</h2>
-              <h4>seconds</h4>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section class="cta">
+      <div class="cta__wrapper wrapper">
+        <div class="cta__container">
+          <h2>Ready to start your journey to a better version of yourself?</h2>
+          <a class="btn action-small" href="./gifts/">Explore Magical Gifts</a>
+          <div class="cta__text">
+            <span class="caption">The New Year is Coming Soon...</span>
+            <div class="timer">
+              <div class="timer__item">
+                <h2>47</h2>
+                <h4>days</h4>
+              </div>
+              <hr class="separator">
+              <div class="timer__item">
+                <h2>5</h2>
+                <h4>hours</h4>
+              </div>
+              <hr class="separator">
+              <div class="timer__item">
+                <h2>34</h2>
+                <h4>minutes</h4>
+              </div>
+              <hr class="separator">
+              <div class="timer__item">
+                <h2>12</h2>
+                <h4>seconds</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
   <footer id="footer" class="footer">
     <div class="footer__wrapper wrapper">
       <ul class="footer__cards">
@@ -221,10 +305,11 @@
           </li>
         </ul>
         <p class="copyright">© Copyright 2025, All Rights Reserved</p>
-        <a href="https://rs.school" class="made caption" target="blank">Made in Rolling Scopes School</a>
+        <a href="https://rs.school" target="blank" class="made caption">Made in Rolling Scopes School</a>
       </div>
     </div>
   </footer>
   <script src="./script.js"></script>
 </body>
+
 </html>
