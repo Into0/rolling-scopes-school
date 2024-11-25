@@ -483,6 +483,11 @@ section {
 
 @media screen and (max-width: 768px) {
 
+  .logo {
+    position: relative;
+    z-index: 12;
+  }
+
   #nav__toggle:checked~.nav__hamburger>span::before {
     top: 0;
     transform: rotate(45deg);
@@ -503,6 +508,8 @@ section {
     height: 40px;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 12;
     border-radius: 100px;
     cursor: pointer;
   }
@@ -540,8 +547,7 @@ section {
     background-color: var(--static-white);
     position: fixed;
     right: -9999px;
-    top: 63px;
-    padding-bottom: 60px;
+    top: 0;
     width: 100vw;
     min-height: 100vh;
     gap: 8px;
