@@ -724,6 +724,7 @@ section {
     position: fixed;
     right: -9999px;
     top: 0;
+    padding-top: 64px;
     width: 100vw;
     min-height: 100vh;
     gap: 8px;
