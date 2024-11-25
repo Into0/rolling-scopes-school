@@ -120,6 +120,10 @@ section {
   margin: 0 auto;
 }
 
+.stop-scroll {
+  overflow: hidden;
+}
+
 .btn {
   display: flex;
   justify-content: center;
@@ -294,7 +298,7 @@ section {
 
 .nav__menu-link_act {
   cursor: default;
-  pointer-events: none;
+  #pointer-events: none;
   color: var(--primary);
   background-color: var(--primary-10);
 }

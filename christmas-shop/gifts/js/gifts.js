@@ -1,6 +1,6 @@
 "use strict";
 
-const response = await fetch('./assets/gifts.json');
+const response = await fetch('../assets/gifts.json');
 const gifts = await response.json();
 
 const OVERLAY = document.querySelector('.overlay');
