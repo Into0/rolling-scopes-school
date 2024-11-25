@@ -1,6 +1,6 @@
 "use strict";
 
-const response = await fetch('./assets/gifts.json');
+const response = await fetch('../assets/gifts.json');
 const gifts = await response.json();
 
 const NAV_TOGGLE = document.querySelector('#nav__toggle');
