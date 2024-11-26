@@ -304,6 +304,8 @@ section {
 }
 
 .main {
+  max-width: 1440px;
+  margin: 0 auto;
   border-radius: 20px;
   background-image: url(../../assets/img/bg-garland.png);
   background-repeat: no-repeat;
