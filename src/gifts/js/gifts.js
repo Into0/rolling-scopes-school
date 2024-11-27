@@ -4,9 +4,12 @@ const response = await fetch('../assets/gifts.json');
 const gifts = await response.json();
 
 const OVERLAY = document.querySelector('.overlay');
+const MODAL = document.querySelector('.modal');
 
 const NAV_TOGGLE = document.querySelector('#nav__toggle');
 const NAV_LINK = document.querySelectorAll('.nav__menu-link');
+
+const GIFTS_CARDS = document.querySelector('.gifts__cards');
 
 const BTN_UP = document.querySelector('.btn-up');
 
@@ -53,6 +56,32 @@ function checkScroll() {
 function toPageTop() {
   document.documentElement.scrollTop = 0;
 }
+
+function genElem(tag, name) {
+  tag = document.createElement(tag);
+  name = tag.className = `${name}`;
+  return tag;
+}
+
+function genCards(obj) {
+  for (let i = 0; i < obj.length; i += 1) {
+     let giftId = i;
+     let cat = obj[giftId].category.toLowerCase().split(' ');
+
+     const CARD = genElem('div', 'gifts__cards-item card');
+     CARD.dataset.id = giftId + 1;
+     GIFTS_CARDS.append(CARD);
+
+     CARD.innerHTML = `
+      <div class="gifts__cards-img card-img card-img-${cat[1]}"></div>
+      <div class="gifts__cards-text card-text">
+        <h4 class="card-${cat[1]}">${obj[giftId].category}</h3>
+        <h3>${obj[giftId].name}</h3>
+      </div>`;
+    }
+}
+
+genCards(gifts);
 
 //////////////////////////////
 
