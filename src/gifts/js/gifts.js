@@ -8,6 +8,8 @@ const OVERLAY = document.querySelector('.overlay');
 const NAV_TOGGLE = document.querySelector('#nav__toggle');
 const NAV_LINK = document.querySelectorAll('.nav__menu-link');
 
+const BTN_UP = document.querySelector('.btn-up');
+
 //////////////////////////////
 
 //////////////////////////////
@@ -39,6 +41,19 @@ function hideMenu() {
   enableScroll();
 }
 
+function checkScroll() {
+  if (document.documentElement.scrollTop >= 300) { 
+    BTN_UP.classList.add('btn-up_show') 
+  };
+  if (document.documentElement.scrollTop < 300) { 
+    BTN_UP.classList.remove('btn-up_show') 
+  };
+}
+
+function toPageTop() {
+  document.documentElement.scrollTop = 0;
+}
+
 //////////////////////////////
 
 //////////////////////////////
@@ -50,6 +65,10 @@ NAV_TOGGLE.addEventListener('change', showMenu);
 NAV_LINK.forEach((elem) => {
   elem.addEventListener('click', hideMenu);
 });
+
+BTN_UP.addEventListener('click', toPageTop);
+
+window.onscroll = () => { checkScroll() };
 
 window.addEventListener('resize', function(event) {
   NAV_TOGGLE.checked = false;
