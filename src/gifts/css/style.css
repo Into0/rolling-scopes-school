@@ -136,6 +136,23 @@ section {
   transition: ease 0.5s;
 }
 
+.btn-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--primary);
+  border-radius: 100px;
+  background-color: var(--static-white);
+  transition: ease 0.5s;
+  position: fixed;
+  right: 10px;
+  bottom: -110%;
+  z-index: 9;
+  opacity: 0;
+}
+
 .caption {
   font-family: Allura;
   font-size: 24px;
@@ -570,23 +587,6 @@ section {
 
   .main {
     background-size: 101% auto;
-  }
-
-  .btn-up {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 56px;
-    height: 56px;
-    border: 1px solid var(--primary);
-    border-radius: 100px;
-    background-color: var(--static-white);
-    transition: ease 0.5s;
-    position: fixed;
-    right: 10px;
-    bottom: -110%;
-    z-index: 9;
-    opacity: 0;
   }
   
   .btn-up_show {
