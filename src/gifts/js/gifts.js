@@ -123,26 +123,26 @@ BTN_UP.addEventListener('click', toPageTop);
 
 BTN_ALL.addEventListener('click', (event) => {
   hideCards();
+  event.target.disabled = true;
   showCards(CARDS_ALL);
-  event.target.disabled = true
 });
 
 BTN_WORK.addEventListener('click', (event) => {
   hideCards();
+  event.target.disabled = true;
   showCards(CARDS_WORK);
-  event.target.disabled = true
 });
 
 BTN_HEALTH.addEventListener('click', (event) => {
   hideCards();
+  event.target.disabled = true;
   showCards(CARDS_HEALTH);
-  event.target.disabled = true
 });
 
 BTN_HARMONY.addEventListener('click', (event) => {
   hideCards();
+  event.target.disabled = true;
   showCards(CARDS_HARMONY);
-  event.target.disabled = true
 });
 
 window.onscroll = () => { checkScroll() };

@@ -470,6 +470,7 @@ section {
   flex-direction: column;
   border-radius: 20px;
   background-color: var(--content-background);
+  animation: fadeEffect 1s;
 }
 
 .card-img-work {
@@ -644,6 +645,11 @@ section {
 
 .made {
   transition: ease 0.5s;
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 @media screen and (max-width: 1291px) {
