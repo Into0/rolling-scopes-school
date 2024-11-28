@@ -9,6 +9,12 @@ const MODAL = document.querySelector('.modal');
 const NAV_TOGGLE = document.querySelector('#nav__toggle');
 const NAV_LINK = document.querySelectorAll('.nav__menu-link');
 
+const TABS_BTN = document.querySelectorAll('.tabs__btn');
+const BTN_ALL = document.querySelector('.tabs__btn-all');
+const BTN_WORK = document.querySelector('.tabs__btn-work');
+const BTN_HEALTH = document.querySelector('.tabs__btn-health');
+const BTN_HARMONY = document.querySelector('.tabs__btn-harmony');
+
 const GIFTS_CARDS = document.querySelector('.gifts__cards');
 
 const BTN_UP = document.querySelector('.btn-up');
@@ -57,6 +63,10 @@ function toPageTop() {
   document.documentElement.scrollTop = 0;
 }
 
+function random(arr) {
+  return arr.sort((a, b) => 0.5 - Math.random());
+}
+
 function genElem(tag, name) {
   tag = document.createElement(tag);
   name = tag.className = `${name}`;
@@ -68,20 +78,34 @@ function genCards(obj) {
      let giftId = i;
      let cat = obj[giftId].category.toLowerCase().split(' ');
 
-     const CARD = genElem('div', 'gifts__cards-item card');
+     const CARD = genElem('div', `gifts__cards-item card card-${cat[1]}`);
      CARD.dataset.id = giftId + 1;
      GIFTS_CARDS.append(CARD);
 
      CARD.innerHTML = `
       <div class="gifts__cards-img card-img card-img-${cat[1]}"></div>
       <div class="gifts__cards-text card-text">
-        <h4 class="card-${cat[1]}">${obj[giftId].category}</h3>
+        <h4 class="card--${cat[1]}">${obj[giftId].category}</h3>
         <h3>${obj[giftId].name}</h3>
       </div>`;
     }
 }
 
-genCards(gifts);
+genCards(random(gifts));
+
+const CARDS_ALL = document.querySelectorAll('.gifts__cards-item');
+const CARDS_WORK = document.querySelectorAll('.card-work');
+const CARDS_HEALTH = document.querySelectorAll('.card-health');
+const CARDS_HARMONY = document.querySelectorAll('.card-harmony');
+
+function hideCards() {
+  CARDS_ALL.forEach((element) => { element.style.display = 'none'} );
+  TABS_BTN.forEach((element) => { element.disabled = false; });
+}
+
+function showCards(category) {
+  category.forEach((element) => { element.style.display = 'flex'} );
+}
 
 //////////////////////////////
 
@@ -96,6 +120,30 @@ NAV_LINK.forEach((elem) => {
 });
 
 BTN_UP.addEventListener('click', toPageTop);
+
+BTN_ALL.addEventListener('click', (event) => {
+  hideCards();
+  showCards(CARDS_ALL);
+  event.target.disabled = true
+});
+
+BTN_WORK.addEventListener('click', (event) => {
+  hideCards();
+  showCards(CARDS_WORK);
+  event.target.disabled = true
+});
+
+BTN_HEALTH.addEventListener('click', (event) => {
+  hideCards();
+  showCards(CARDS_HEALTH);
+  event.target.disabled = true
+});
+
+BTN_HARMONY.addEventListener('click', (event) => {
+  hideCards();
+  showCards(CARDS_HARMONY);
+  event.target.disabled = true
+});
 
 window.onscroll = () => { checkScroll() };
 

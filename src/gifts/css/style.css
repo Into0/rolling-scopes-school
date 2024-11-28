@@ -417,15 +417,15 @@ section {
   height: 112px;
 }
 
-.card-work {
+.card--work {
   color: var(--tag-purple);
 }
 
-.card-harmony {
+.card--harmony {
   color: var(--tag-pink);
 }
 
-.card-health {
+.card--health {
   color: var(--tag-green);
 }
 
