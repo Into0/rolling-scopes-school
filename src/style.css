@@ -503,6 +503,7 @@ section {
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
+  min-height: 342px;
 }
 
 .gifts__cards-item {
@@ -517,15 +518,15 @@ section {
   height: 112px;
 }
 
-.tag-purple {
+.card--work {
   color: var(--tag-purple);
 }
 
-.tag-pink {
+.card--harmony {
   color: var(--tag-pink);
 }
 
-.tag-green {
+.card--health {
   color: var(--tag-green);
 }
 
