@@ -10,7 +10,6 @@ const NAV_LINK = document.querySelectorAll('.nav__menu-link');
 
 const SLIDER_VIEW = document.querySelector('.slider__view');
 const SLIDER_SLIDES = document.querySelector('.slider__slides');
-const SLIDES = document.querySelector('.slider__slides');
 const SLIDER_BTN_LEFT = document.querySelector('.slider__btn-left');
 const SLIDER_BTN_RIGTH = document.querySelector('.slider__btn-right');
 
@@ -65,19 +64,19 @@ function genElem(tag, name) {
 }
 
 //////////////////////////////
-
+// SLIDER
 //////////////////////////////
 
 function prevSlide() {
   let steps;
-  if (document.body.offsetWidth <= 768 ) { steps = 6 };
-  if (document.body.offsetWidth > 768 ) { steps = 3 };
+  if (document.body.offsetWidth <= 768) { steps = 6 };
+  if (document.body.offsetWidth > 768) { steps = 3 };
 
   const stepSize = Math.ceil((SLIDER_SLIDES.clientWidth - SLIDER_VIEW.clientWidth) / steps);
-  SLIDES.style.transform = `translateX(${slidesTransX += stepSize}px)`;
+  SLIDER_SLIDES.style.transform = `translateX(${slidesTransX += stepSize}px)`;
 
   SLIDER_BTN_RIGTH.disabled = false;
-  
+
   if (slidesTransX === 0) {
     SLIDER_BTN_LEFT.disabled = true;
   }
@@ -85,11 +84,11 @@ function prevSlide() {
 
 function nextSlide() {
   let steps;
-  if (document.body.offsetWidth <= 768 ) { steps = 6 };
-  if (document.body.offsetWidth > 768 ) { steps = 3 };
+  if (document.body.offsetWidth <= 768) { steps = 6 };
+  if (document.body.offsetWidth > 768) { steps = 3 };
 
   const stepSize = Math.ceil((SLIDER_SLIDES.clientWidth - SLIDER_VIEW.clientWidth) / steps);
-  SLIDES.style.transform = `translateX(${slidesTransX -= stepSize}px)`;
+  SLIDER_SLIDES.style.transform = `translateX(${slidesTransX -= stepSize}px)`;
 
   SLIDER_BTN_LEFT.disabled = false;
 
@@ -98,7 +97,7 @@ function nextSlide() {
   }
 }
 //////////////////////////////
-
+// CARDS
 //////////////////////////////
 
 function genCards(obj) {
@@ -122,7 +121,7 @@ function genCards(obj) {
 genCards(random(gifts));
 
 //////////////////////////////
-
+// TIMER
 //////////////////////////////
 
 function nextYearCounter() {
@@ -152,7 +151,7 @@ function nextYearCounter() {
 nextYearCounter();
 
 //////////////////////////////
-
+// EVENTS
 //////////////////////////////
 
 OVERLAY.addEventListener('click', hideOverlay);
@@ -169,7 +168,7 @@ SLIDER_BTN_RIGTH.addEventListener('click', nextSlide);
 window.addEventListener('resize', function (event) {
   NAV_TOGGLE.checked = false;
   enableScroll();
-  SLIDES.style.transform = `translateX(0)`;
+  SLIDER_SLIDES.style.transform = `translateX(0)`;
   slidesTransX = 0;
   SLIDER_BTN_RIGTH.disabled = false;
   SLIDER_BTN_LEFT.disabled = true;

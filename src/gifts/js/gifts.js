@@ -50,6 +50,20 @@ function hideMenu() {
   enableScroll();
 }
 
+function random(arr) {
+  return arr.sort((a, b) => 0.5 - Math.random());
+}
+
+function genElem(tag, name) {
+  tag = document.createElement(tag);
+  name = tag.className = `${name}`;
+  return tag;
+}
+
+//////////////////////////////
+// TO TOP BTN
+//////////////////////////////
+
 function checkScroll() {
   if (document.documentElement.scrollTop >= 300) { 
     BTN_UP.classList.add('btn-up_show') 
@@ -63,15 +77,9 @@ function toPageTop() {
   document.documentElement.scrollTop = 0;
 }
 
-function random(arr) {
-  return arr.sort((a, b) => 0.5 - Math.random());
-}
-
-function genElem(tag, name) {
-  tag = document.createElement(tag);
-  name = tag.className = `${name}`;
-  return tag;
-}
+//////////////////////////////
+// CARDS
+//////////////////////////////
 
 function genCards(obj) {
   for (let i = 0; i < obj.length; i += 1) {
@@ -93,6 +101,10 @@ function genCards(obj) {
 
 genCards(random(gifts));
 
+//////////////////////////////
+// TABS
+//////////////////////////////
+
 const CARDS_ALL = document.querySelectorAll('.gifts__cards-item');
 const CARDS_WORK = document.querySelectorAll('.card-work');
 const CARDS_HEALTH = document.querySelectorAll('.card-health');
@@ -108,7 +120,7 @@ function showCards(category) {
 }
 
 //////////////////////////////
-
+// EVENTS
 //////////////////////////////
 
 OVERLAY.addEventListener('click', hideOverlay);
