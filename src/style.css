@@ -390,14 +390,16 @@ section {
 }
 
 .slider__view {
-  width: 1358px;
-  overflow: hidden;
+  width: 100%;
+  #overflow: hidden;
 }
 
 .slider__slides {
   transform: translateX(0);
   display: flex;
   gap: 20px;
+  width: fit-content;
+  transition: transform ease 0.5s;
 }
 
 .slider__slides-item {
@@ -785,7 +787,7 @@ section {
     background-color: var(--static-white);
   }
 
-  .slider__btn:hover>img {
+  .slider__btn:hover>svg {
     filter: invert(53%) sepia(76%) saturate(1875%) hue-rotate(324deg) brightness(91%) contrast(124%);
   }
 
