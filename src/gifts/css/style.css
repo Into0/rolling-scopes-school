@@ -572,13 +572,14 @@ section {
     justify-content: center;
     background-color: var(--static-white);
     position: fixed;
-    right: -9999px;
+    right: -110%;
     top: 0;
     padding-top: 64px;
+    min-width: 350px;
     width: 100vw;
     min-height: 100vh;
     gap: 8px;
-    transition: right ease 0.50s;
+    transition: right ease 0.2s;
     z-index: 11;
   }
 
