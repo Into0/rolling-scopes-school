@@ -216,6 +216,7 @@ section {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+  text-transform: capitalize;
 }
 
 .modal-powers-row>p:first-child {
