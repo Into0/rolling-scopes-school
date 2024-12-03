@@ -244,4 +244,5 @@ window.onscroll = () => { checkScroll() };
 window.addEventListener('resize', function(event) {
   NAV_TOGGLE.checked = false;
   enableScroll();
+  hideOverlay();
 });

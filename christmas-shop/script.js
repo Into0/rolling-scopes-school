@@ -345,6 +345,7 @@ GIFTS_CARDS.childNodes.forEach((elem) => {
 window.addEventListener('resize', (event) => {
   NAV_TOGGLE.checked = false;
   enableScroll();
+  hideOverlay();
   SLIDER_SLIDES.style.transform = `translateX(0)`;
   slidesTransX = 0;
   SLIDER_BTN_RIGTH.disabled = false;
