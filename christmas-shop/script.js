@@ -292,7 +292,7 @@ genCards(random(gifts));
 
 function nextYearCounter() {
   const nextYear = new Date().getFullYear() + 1;
-  const newYear = new Date(`January 1, ${nextYear} 00:00:00`);
+  const newYear = Date.UTC(`${nextYear}`);
   const curYear = new Date();
   const timeLeft = newYear - curYear;
 
