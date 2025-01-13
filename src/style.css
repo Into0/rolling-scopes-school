@@ -13,6 +13,7 @@
   --Shadow-Gray: #3d3d3d;
   --overlay: rgba(24, 28, 41, 0.80);
   background-color: var(--Puter);
+  color:  var(--Orange);
   font-family: sans-serif;
 }
 
@@ -42,6 +43,10 @@ select {
   cursor: pointer;
   outline: none;
   text-transform: uppercase;
+}
+
+select:disabled {
+  pointer-events: none;
 }
 
 .overlay {
@@ -88,7 +93,7 @@ select {
   min-width: 60px;
   height: 40px;
   padding: 0 10px;
-  background-color: #3d3d3d;
+  background-color: var(--Shadow-Gray);
   border: 0;
   border-radius: 2px;
   font-family: "Open Sans", sans-serif;
@@ -96,16 +101,23 @@ select {
   font-weight: 300;
   color: var(--Orange);
   outline: 0;
-  cursor: pointer;
   transition: ease 0.5s;
   text-transform: uppercase;
   opacity: 1;
   visibility: visible;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn:active {
+  background-color: var(--Orange);
 }
 
 .btn:disabled, .btn[disabled], .btn:disabled:hover {
   pointer-events: none;
-  background-color: var(--Orange);
+  cursor: default;
+  background-color: var(--Shadow-Gray);
 }
 
 .game-btns {
@@ -127,6 +139,14 @@ select {
   left: 2%;
 }
 
+.rounds-counter {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  font-size: 2rem;
+}
 
 .wrapper {
   margin: 0 auto;
@@ -135,8 +155,33 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 40px;
   overflow: hidden;
+}
+
+.field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border: 0;
+  border-bottom: 4px solid var(--Shadow-Gray);
+  color: var(--Orange);
+  max-width: 580px;
+  height: 80px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--Puter);
+  resize: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.field__item {
+  width: 60px;
+  height: 40px;
 }
 
 .keyboard {
@@ -169,6 +214,18 @@ select {
   opacity: 0;
   visibility: hidden;
   transition: all ease 0.5s;
+  pointer-events: none;
+}
+
+.highlight {
+  background-color: var(--Orange);
+}
+
+.disable {
+  pointer-events: none;
+}
+
+.disable-all * {
   pointer-events: none;
 }
 

@@ -1,4 +1,11 @@
-"use strict";
+//////////////////////////////
+
+let round = 1;
+let roundLength = round * 2;
+let clickCount = 0;
+
+let lvlKeyIndex = [];
+let lvlKeyValue = [];
 
 //////////////////////////////
 
@@ -23,13 +30,19 @@ const selectLvl = createElement({
   att: ["name", "lvl"]
 });
 
+const roundsCounter = createElement({
+  tag: "div",
+  text: `Round: ${round}`,
+  classes: ["rounds-counter", "hide"],
+});
+
 const wrapper = createElement({
   tag: "div",
   text: "",
   classes: ["wrapper"],
 });
 
-gameTag.append(gameBtns, selectLvl, wrapper);
+gameTag.append(gameBtns, selectLvl, roundsCounter, wrapper);
 
 const btnStart = createElement({
   tag: "button",
@@ -62,7 +75,6 @@ lvlOption.forEach((lvl) => {
   selectLvl.append(lvlOption1);
 });
 
-
 const field = createElement({
   tag: "div",
   text: "",
@@ -72,7 +84,7 @@ const field = createElement({
 const keyboard = createElement({
   tag: "div",
   text: "",
-  classes: ["keyboard"],
+  classes: ["keyboard", "disable-all"],
 });
 
 wrapper.append(field, keyboard);
@@ -98,6 +110,14 @@ lvlEasy.forEach((key) => {
     tag: "button",
     text: key,
     classes: ["keyboard__btn", "keyboard__btn-numbers", "btn"],
+    att: ["type", "button"]
+  });
+  keyboardBtns.addEventListener('click', (event) => {
+    field.textContent += event.target.textContent
+    clickCount += 1;
+    if (clickCount === roundLength) {
+      keyboard.classList.add('disable-all')
+    }
   });
   keyboardNumbers.append(keyboardBtns);
 });
@@ -109,6 +129,10 @@ lvlMedium.forEach((key) => {
     tag: "button",
     text: key,
     classes: ["keyboard__btn", "keyboard__btn-letters", "btn"],
+    att: ["type", "button"]
+  });
+  keyboardBtns.addEventListener('click', () => {
+
   });
   keyboardLetters.append(keyboardBtns);
 });
@@ -136,17 +160,109 @@ function createElement(options) {
   return element;
 }
 
+function classToggle(element, name) {
+  return element.classList.toggle(`${name}`);
+}
+
 function clearChilds(element) {
   while(element.firstChild) {
     element.removeChild(element.firstChild);
   }
 }
 
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function random(arr) {
+  return arr.sort((a, b) => 0.5 - Math.random());
+}
+
+function getRandomNum(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function startGame() {
+  clickCount = 0;
+  lvlKeyIndex = [];
+  lvlKeyValue = [];
+
+  classToggle(btnStart, 'hide');
+  classToggle(btnRepeat, 'hide');
+  classToggle(btnNew, 'hide');
+  selectLvl.setAttribute('disabled', '');
+  classToggle(roundsCounter, 'hide');
+  //classToggle(keyboard, 'disable-all');
+
+
+  const keyboardBtns = document.querySelectorAll('.keyboard__btn');
+
+  startRound(`${selectLvl.selectedOptions[0].value}`)
+}
+
+async function startRound(lvl) {
+  classToggle(gameBtns, 'disable-all');
+  const keyboardBtns = document.querySelectorAll('.keyboard__btn');
+
+  for (let i = 0; i < roundLength; i += 1) {
+    let item = 0;
+    if (lvl === 'easy') item = getRandomNum(0, 9);
+    if (lvl === 'medium') item = getRandomNum(10, 36);
+    if (lvl === 'hard') item = getRandomNum(0, 36);
+
+    lvlKeyIndex.push(item);
+    lvlKeyValue.push(keyboardBtns[item].textContent);
+
+    classToggle(keyboardBtns[item], 'highlight')
+    await delay(1000);
+    classToggle(keyboardBtns[item], 'highlight')
+  }
+    console.log(lvlKeyValue);
+    classToggle(keyboard, 'disable-all');
+    classToggle(gameBtns, 'disable-all');
+}
+
+async function repeatRound() {
+  field.textContent = '';
+  clickCount = 0;
+  keyboard.classList.add('disable-all');
+  classToggle(gameBtns, 'disable-all');
+  const keyboardBtns = document.querySelectorAll('.keyboard__btn');
+
+  for (let i = 0; i < roundLength; i += 1) {
+    classToggle(keyboardBtns[lvlKeyIndex[i]], 'highlight')
+    await delay(1000);
+    classToggle(keyboardBtns[lvlKeyIndex[i]], 'highlight')
+  }
+ keyboard.classList.remove('disable-all');
+  classToggle(gameBtns, 'disable-all');
+}
+
 //////////////////////////////
 
 btnStart.addEventListener('click', () => {
+  startGame()
 
 });
+
+btnRepeat.addEventListener('click', () => {
+  repeatRound();
+  btnRepeat.setAttribute('disabled', '');
+
+});
+
+btnNew.addEventListener('click', () => {
+  classToggle(btnStart, 'hide');
+  classToggle(btnRepeat, 'hide');
+  btnRepeat.removeAttribute('disabled');
+  classToggle(btnNew, 'hide');
+  selectLvl.removeAttribute('disabled');
+  classToggle(roundsCounter, 'hide');
+  keyboard.classList.add('disable-all');
+  field.textContent = '';
+});
+
+// document.addEventListener('keydown', startGame());
 
 selectLvl.addEventListener('change', (event) => {
   if (event.target.selectedOptions[0].value === 'easy') {
