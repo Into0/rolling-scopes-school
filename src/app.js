@@ -270,16 +270,14 @@ async function repeatRound() {
 let correctCount = 0;
 function getCorrect() {
   if (lvlKeyValue[correctCount] !== event.target.textContent) {
-    modal.textContent = 'You Lose';
-    showModal();
+    showModal('Incorrect');
     correctCount = 0;
   }
 
   correctCount += 1;
 
   if (correctCount === lvlKeyValue.length) {
-    modal.textContent = 'You Win';
-    showModal();
+    showModal('Correct');
     correctCount = 0;
     btnRepeat.classList.add('hide');
     btnNext.classList.remove('hide');
@@ -288,6 +286,7 @@ function getCorrect() {
 }
 
 async function showModal(text) {
+  modal.textContent = text;
   keyboard.classList.add('disable-all');
   classToggle(overlay, 'overlay-show');
   classToggle(modal, 'modal-show');
@@ -307,8 +306,6 @@ function nextRound() {
   roundsCounter.textContent = `Round: ${round}`;
   field.textContent = '';
 }
-
-
 
 //////////////////////////////
 
@@ -339,7 +336,7 @@ btnNew.addEventListener('click', () => {
   round = 1;
 });
 
-// document.addEventListener('keydown', startGame());
+//document.addEventListener('keydown', keyboardKeyPresed);
 
 selectLvl.addEventListener('change', (event) => {
   if (event.target.selectedOptions[0].value === 'easy') {
