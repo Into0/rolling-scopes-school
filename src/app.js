@@ -3,6 +3,7 @@
 let round = 1;
 let roundLength = round * 2;
 let clickCount = 0;
+let incorrect = 0;
 
 let lvlKeyIndex = [];
 let lvlKeyValue = [];
@@ -16,6 +17,20 @@ const gameTag = createElement({
 });
 
 document.body.append(gameTag);
+
+const overlay = createElement({
+  tag: "div",
+  text: "",
+  classes: ["overlay"],
+});
+
+const modal = createElement({
+  tag: "div",
+  text: "",
+  classes: ["modal"],
+});
+
+overlay.append(modal);
 
 const gameBtns = createElement({
   tag: "div",
@@ -42,7 +57,7 @@ const wrapper = createElement({
   classes: ["wrapper"],
 });
 
-gameTag.append(gameBtns, selectLvl, roundsCounter, wrapper);
+gameTag.append(overlay, gameBtns, selectLvl, roundsCounter, wrapper);
 
 const btnStart = createElement({
   tag: "button",
@@ -50,19 +65,25 @@ const btnStart = createElement({
   classes: ["btn-start", "btn"],
 });
 
+const btnNext = createElement({
+  tag: "button",
+  text: "Next",
+  classes: ["btn-next", "btn", "hide"],
+});
+
 const btnRepeat = createElement({
   tag: "button",
   text: "Repeat",
-  classes: ["btn-start", "btn", "hide"],
+  classes: ["btn-repeat", "btn", "hide"],
 });
 
 const btnNew = createElement({
   tag: "button",
   text: "New",
-  classes: ["btn-start", "btn", "hide"],
+  classes: ["btn-new", "btn", "hide"],
 });
 
-gameBtns.append(btnStart, btnRepeat, btnNew);
+gameBtns.append(btnStart, btnNext, btnRepeat, btnNew);
 
 const lvlOption = ['easy', 'medium', 'hard'];
 
@@ -115,9 +136,10 @@ lvlEasy.forEach((key) => {
   keyboardBtns.addEventListener('click', (event) => {
     field.textContent += event.target.textContent
     clickCount += 1;
-    if (clickCount === roundLength) {
-      keyboard.classList.add('disable-all')
+    if (clickCount === round * 2) {
+      keyboard.classList.add('disable-all');
     }
+   getCorrect()
   });
   keyboardNumbers.append(keyboardBtns);
 });
@@ -132,7 +154,12 @@ lvlMedium.forEach((key) => {
     att: ["type", "button"]
   });
   keyboardBtns.addEventListener('click', () => {
-
+    field.textContent += event.target.textContent
+    clickCount += 1;
+    if (clickCount === round * 2) {
+      keyboard.classList.add('disable-all');
+    }
+   getCorrect()
   });
   keyboardLetters.append(keyboardBtns);
 });
@@ -192,19 +219,20 @@ function startGame() {
   classToggle(btnNew, 'hide');
   selectLvl.setAttribute('disabled', '');
   classToggle(roundsCounter, 'hide');
-  //classToggle(keyboard, 'disable-all');
 
-
-  const keyboardBtns = document.querySelectorAll('.keyboard__btn');
+  roundsCounter.textContent = `Round: ${round}`;
 
   startRound(`${selectLvl.selectedOptions[0].value}`)
 }
 
 async function startRound(lvl) {
+  clickCount = 0;
+  lvlKeyIndex = [];
+  lvlKeyValue = [];
   classToggle(gameBtns, 'disable-all');
   const keyboardBtns = document.querySelectorAll('.keyboard__btn');
 
-  for (let i = 0; i < roundLength; i += 1) {
+  for (let i = 0; i < round * 2; i += 1) {
     let item = 0;
     if (lvl === 'easy') item = getRandomNum(0, 9);
     if (lvl === 'medium') item = getRandomNum(10, 36);
@@ -225,11 +253,12 @@ async function startRound(lvl) {
 async function repeatRound() {
   field.textContent = '';
   clickCount = 0;
+  correctCount = 0;
   keyboard.classList.add('disable-all');
   classToggle(gameBtns, 'disable-all');
   const keyboardBtns = document.querySelectorAll('.keyboard__btn');
 
-  for (let i = 0; i < roundLength; i += 1) {
+  for (let i = 0; i < round * 2; i += 1) {
     classToggle(keyboardBtns[lvlKeyIndex[i]], 'highlight')
     await delay(1000);
     classToggle(keyboardBtns[lvlKeyIndex[i]], 'highlight')
@@ -238,28 +267,76 @@ async function repeatRound() {
   classToggle(gameBtns, 'disable-all');
 }
 
+let correctCount = 0;
+function getCorrect() {
+  if (lvlKeyValue[correctCount] !== event.target.textContent) {
+    modal.textContent = 'You Lose';
+    showModal();
+    correctCount = 0;
+  }
+
+  correctCount += 1;
+
+  if (correctCount === lvlKeyValue.length) {
+    modal.textContent = 'You Win';
+    showModal();
+    correctCount = 0;
+    btnRepeat.classList.add('hide');
+    btnNext.classList.remove('hide');
+    round += 1;
+  }
+}
+
+async function showModal(text) {
+  keyboard.classList.add('disable-all');
+  classToggle(overlay, 'overlay-show');
+  classToggle(modal, 'modal-show');
+  await delay(2000);
+  classToggle(overlay, 'overlay-show');
+  classToggle(modal, 'modal-show');
+  if (round > 5) {
+    btnNext.classList.add('hide');
+  }
+}
+
+function nextRound() {
+  startRound(`${selectLvl.selectedOptions[0].value}`);
+  btnNext.classList.add('hide');
+  btnRepeat.removeAttribute('disabled');
+  btnRepeat.classList.remove('hide');
+  roundsCounter.textContent = `Round: ${round}`;
+  field.textContent = '';
+}
+
+
+
 //////////////////////////////
 
 btnStart.addEventListener('click', () => {
   startGame()
-
 });
+
+btnNext.addEventListener('click', () => {
+  nextRound()
+})
 
 btnRepeat.addEventListener('click', () => {
   repeatRound();
   btnRepeat.setAttribute('disabled', '');
-
 });
 
 btnNew.addEventListener('click', () => {
   classToggle(btnStart, 'hide');
-  classToggle(btnRepeat, 'hide');
+  btnNext.classList.add('hide')
   btnRepeat.removeAttribute('disabled');
+  btnRepeat.classList.add('hide')
   classToggle(btnNew, 'hide');
   selectLvl.removeAttribute('disabled');
   classToggle(roundsCounter, 'hide');
   keyboard.classList.add('disable-all');
   field.textContent = '';
+  correctCount = 0;
+  round = 1;
 });
 
 // document.addEventListener('keydown', startGame());
