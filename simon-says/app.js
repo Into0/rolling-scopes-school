@@ -276,12 +276,18 @@ function getCorrect() {
 
   correctCount += 1;
 
-  if (correctCount === lvlKeyValue.length) {
+  if (correctCount === lvlKeyValue.length && round != 5) {
     showModal('Correct');
     correctCount = 0;
     btnRepeat.classList.add('hide');
     btnNext.classList.remove('hide');
     round += 1;
+  }
+
+  if (round === 5 && correctCount === lvlKeyValue.length) {
+    showModal('Your Complete All Rounds');
+    correctCount = 0;
+    btnRepeat.setAttribute('disabled', '');
   }
 }
 
