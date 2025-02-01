@@ -1,3 +1,6 @@
+import 'modern-normalize';
+import './style.css';
+
 function createElement(options) {
   const { tag = 'div', text = '', parent, classes = [], att = [] } = options;
 

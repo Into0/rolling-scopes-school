@@ -25,6 +25,7 @@ export default defineConfig({
         'index': resolve('src/index.html'),
         'style': resolve('src/style.css'),
         'script': resolve('src/script.js'),
+        'normalize': resolve('node_modules/modern-normalize/modern-normalize.css'),
       },
 
       output: {
