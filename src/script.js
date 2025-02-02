@@ -1,5 +1,10 @@
 import 'modern-normalize';
+
 import './style.css';
+
+const response = await fetch('/nonograms.json');
+const nonograms = await response.json();
+console.log(nonograms[1].nonogram);
 
 function createElement(options) {
   const { tag = 'div', text = '', parent, classes = [], att = [] } = options;

@@ -12,6 +12,12 @@ export default defineConfig({
 
   plugins: [eslint()],
 
+  esbuild: {
+    supported: {
+      'top-level-await': true
+    },
+  },
+
   base: './',
   root: './src',
   build: {
