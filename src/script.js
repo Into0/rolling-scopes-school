@@ -2,7 +2,7 @@ import 'modern-normalize';
 
 import './style.css';
 
-const response = await fetch('/nonograms.json');
+const response = await fetch('nonograms.json');
 const nonograms = await response.json();
 console.log(nonograms[1].nonogram);
 
