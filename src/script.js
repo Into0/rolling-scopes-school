@@ -193,12 +193,19 @@ function genNono(arr, id = 0) {
         }
         if (correct === arr[id].steps && incorrect === 0) {
           fieldTag.style.setProperty('pointer-events', 'none');
-          console.log('fdf');
+          console.log('Great! You have solved the nonogram!');
         }
+      });
+
+      cellTag.addEventListener('contextmenu', event => {
+        const cell = event.target;
+        event.preventDefault();
+        cell.classList.toggle('cell-cross');
       });
     });
   });
 }
+
 genNono(nonograms, 0);
 
 /// ///////////////////////////

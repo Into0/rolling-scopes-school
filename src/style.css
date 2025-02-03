@@ -90,6 +90,31 @@ input[type="checkbox"] {
   background-color: var(--Orange);
 }
 
+.cell-cross {
+  position: relative;
+  overflow: hidden;
+}
+
+.cell-cross:before, .cell-cross:after {
+  position: absolute;
+  content: '';
+  background: var(--Orange);
+  height: 2px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.cell-cross:after {
+  content: '';
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 .btns {
   position: absolute;
   z-index: 9;
