@@ -5,6 +5,8 @@ import './style.css';
 const response = await fetch('nonograms.json');
 const nonograms = await response.json();
 
+/// ///////////////////////////
+
 function createElement(options) {
   const { tag = 'div', text = '', parent, classes = [], att = [] } = options;
 
@@ -140,3 +142,21 @@ const soundInputTag = createElement({
 });
 
 soundMuteTag.append(soundInputTag);
+
+/// ///////////////////////////
+
+/// ///////////////////////////
+
+btnLightTag.addEventListener('click', () => {
+  document.documentElement.style.setProperty('--Orange', '#2d2d2d');
+  document.documentElement.style.setProperty('--Puter', '#dcdcdc');
+  document.documentElement.style.setProperty('--Shadow-Gray', '#C7C7C7');
+  document.documentElement.style.setProperty('--Davy-Grey', '#848484');
+});
+
+btnDarkTag.addEventListener('click', () => {
+  document.documentElement.style.setProperty('--Orange', '#d64937');
+  document.documentElement.style.setProperty('--Puter', '#2d2d2d');
+  document.documentElement.style.setProperty('--Shadow-Gray', '#3d3d3d');
+  document.documentElement.style.setProperty('--Davy-Grey', '#535353');
+});
