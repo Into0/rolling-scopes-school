@@ -5,6 +5,7 @@ import './style.css';
 const response = await fetch('nonograms.json');
 const nonograms = await response.json();
 
+/// ELEMENTS ///////////////////////////
 /// ///////////////////////////
 
 function createElement(options) {
@@ -156,6 +157,7 @@ const soundInputTag = createElement({
 
 soundMuteTag.append(soundInputTag);
 
+/// FUNCTIONS ///////////////////////////
 /// ///////////////////////////
 
 function showModal() {
@@ -175,6 +177,7 @@ function getRandomNum(min, max) {
 function genNono(arr, id = 0) {
   let correct = 0;
   let incorrect = 0;
+  fieldTag.style.setProperty('pointer-events', 'auto');
 
   arr[id].nonogram.forEach(element => {
     const rowTag = createElement({
@@ -245,15 +248,10 @@ function changeLvl(start, end) {
 }
 changeLvl(0, 5);
 
+/// EVENTS ///////////////////////////
 /// ///////////////////////////
 
-btnRandomTag.addEventListener('click', () => {
-  clearChilds(fieldTag);
-  genNono(nonograms, getRandomNum(0, 15));
-});
-
 selectLvlTag.addEventListener('change', event => {
-  fieldTag.style.setProperty('pointer-events', 'auto');
   clearChilds(selectGameTag);
   if (event.target.selectedOptions[0].value === 'easy') {
     changeLvl(0, 5);
@@ -275,6 +273,16 @@ selectLvlTag.addEventListener('change', event => {
 selectGameTag.addEventListener('change', event => {
   clearChilds(fieldTag);
   genNono(nonograms, event.target.selectedOptions[0].gameIndex);
+});
+
+btnRandomTag.addEventListener('click', () => {
+  clearChilds(fieldTag);
+  genNono(nonograms, getRandomNum(0, 15));
+});
+
+btnResetTag.addEventListener('click', () => {
+  clearChilds(fieldTag);
+  genNono(nonograms, selectGameTag.selectedOptions[0].gameIndex);
 });
 
 btnLightTag.addEventListener('click', () => {
