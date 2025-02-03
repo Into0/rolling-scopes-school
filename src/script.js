@@ -131,15 +131,6 @@ const selectGameTag = createElement({
   classes: ['select-game'],
 });
 
-nonograms.forEach(game => {
-  const element = createElement({
-    tag: 'option',
-    text: game.name,
-    classes: ['lvl-option'],
-  });
-  selectGameTag.append(element);
-});
-
 selectTag.append(selectLvlTag, selectGameTag);
 
 const btnLightTag = createElement({
@@ -229,10 +220,52 @@ function genNono(arr, id = 0) {
     });
   });
 }
-
 genNono(nonograms, 0);
 
+function clearChilds(element) {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+}
+
+function changeLvl(start, end) {
+  for (let i = start; i < end; i += 1) {
+    const lvl = createElement({
+      tag: 'option',
+      text: nonograms[i].name,
+      classes: ['game-option'],
+    });
+    Object.assign(lvl, { gameIndex: i });
+    selectGameTag.append(lvl);
+  }
+}
+changeLvl(0, 5);
+
 /// ///////////////////////////
+
+selectLvlTag.addEventListener('change', event => {
+  clearChilds(selectGameTag);
+  if (event.target.selectedOptions[0].value === 'easy') {
+    changeLvl(0, 5);
+    clearChilds(fieldTag);
+    genNono(nonograms, 0);
+  }
+  if (event.target.selectedOptions[0].value === 'medium') {
+    changeLvl(5, 10);
+    clearChilds(fieldTag);
+    genNono(nonograms, 5);
+  }
+  if (event.target.selectedOptions[0].value === 'hard') {
+    changeLvl(10, 15);
+    clearChilds(fieldTag);
+    genNono(nonograms, 10);
+  }
+});
+
+selectGameTag.addEventListener('change', event => {
+  clearChilds(fieldTag);
+  genNono(nonograms, event.target.selectedOptions[0].gameIndex);
+});
 
 btnLightTag.addEventListener('click', () => {
   document.documentElement.style.setProperty('--Orange', '#2d2d2d');
