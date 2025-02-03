@@ -285,6 +285,18 @@ btnResetTag.addEventListener('click', () => {
   genNono(nonograms, selectGameTag.selectedOptions[0].gameIndex);
 });
 
+btnSolutionTag.addEventListener('click', () => {
+  fieldTag.style.setProperty('pointer-events', 'none');
+  fieldTag.querySelectorAll('.cell').forEach(element => {
+    element.classList.remove('cell-cross');
+    if (element.secret) {
+      element.classList.add('cell-color');
+    } else {
+      element.classList.remove('cell-color');
+    }
+  });
+});
+
 btnLightTag.addEventListener('click', () => {
   document.documentElement.style.setProperty('--Orange', '#2d2d2d');
   document.documentElement.style.setProperty('--Puter', '#dcdcdc');
