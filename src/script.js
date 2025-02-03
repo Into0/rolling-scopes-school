@@ -66,6 +66,14 @@ document.body.append(
   soundMuteTag,
 );
 
+const fieldTag = createElement({
+  tag: 'div',
+  text: '',
+  classes: ['field'],
+});
+
+wrapperTag.append(fieldTag);
+
 const btnRandomTag = createElement({
   tag: 'button',
   text: 'random',
@@ -144,6 +152,54 @@ const soundInputTag = createElement({
 soundMuteTag.append(soundInputTag);
 
 /// ///////////////////////////
+
+function genNono(arr, id = 0) {
+  let correct = 0;
+  let incorrect = 0;
+
+  arr[id].nonogram.forEach(element => {
+    const rowTag = createElement({
+      tag: 'div',
+      text: '',
+      classes: ['row'],
+    });
+    fieldTag.append(rowTag);
+
+    element.forEach(data => {
+      const cellTag = createElement({
+        tag: 'div',
+        text: `${data}`,
+        classes: ['cell'],
+      });
+
+      Object.assign(cellTag, { secret: data });
+      rowTag.append(cellTag);
+
+      cellTag.addEventListener('click', event => {
+        const cell = event.target;
+
+        cell.classList.toggle('cell-color');
+        if (cell.secret && cell.classList.contains('cell-color')) {
+          correct += 1;
+        }
+        if (cell.secret && !cell.classList.contains('cell-color')) {
+          correct -= 1;
+        }
+        if (!cell.secret && cell.classList.contains('cell-color')) {
+          incorrect -= 1;
+        }
+        if (!cell.secret && !cell.classList.contains('cell-color')) {
+          incorrect += 1;
+        }
+        if (correct === arr[id].steps && incorrect === 0) {
+          fieldTag.style.setProperty('pointer-events', 'none');
+          console.log('fdf');
+        }
+      });
+    });
+  });
+}
+genNono(nonograms, 0);
 
 /// ///////////////////////////
 
