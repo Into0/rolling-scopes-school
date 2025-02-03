@@ -28,6 +28,18 @@ function createElement(options) {
   return element;
 }
 
+const overlayTag = createElement({
+  tag: 'div',
+  text: '',
+  classes: ['overlay'],
+});
+
+const modalTag = createElement({
+  tag: 'div',
+  text: 'Great! You have solved the nonogram!',
+  classes: ['modal'],
+});
+
 const wrapperTag = createElement({
   tag: 'div',
   text: '',
@@ -59,6 +71,8 @@ const soundMuteTag = createElement({
 });
 
 document.body.append(
+  overlayTag,
+  modalTag,
   wrapperTag,
   btnsTag,
   selectTag,
@@ -153,6 +167,16 @@ soundMuteTag.append(soundInputTag);
 
 /// ///////////////////////////
 
+function showModal() {
+  overlayTag.classList.add('overlay-show');
+  modalTag.classList.add('modal-show');
+
+  overlayTag.addEventListener('click', () => {
+    overlayTag.classList.remove('overlay-show');
+    modalTag.classList.remove('modal-show');
+  });
+}
+
 function genNono(arr, id = 0) {
   let correct = 0;
   let incorrect = 0;
@@ -193,7 +217,7 @@ function genNono(arr, id = 0) {
         }
         if (correct === arr[id].steps && incorrect === 0) {
           fieldTag.style.setProperty('pointer-events', 'none');
-          console.log('Great! You have solved the nonogram!');
+          showModal();
         }
       });
 
