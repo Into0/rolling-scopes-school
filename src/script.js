@@ -168,6 +168,10 @@ function showModal() {
   });
 }
 
+function getRandomNum(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 function genNono(arr, id = 0) {
   let correct = 0;
   let incorrect = 0;
@@ -243,7 +247,13 @@ changeLvl(0, 5);
 
 /// ///////////////////////////
 
+btnRandomTag.addEventListener('click', () => {
+  clearChilds(fieldTag);
+  genNono(nonograms, getRandomNum(0, 15));
+});
+
 selectLvlTag.addEventListener('change', event => {
+  fieldTag.style.setProperty('pointer-events', 'auto');
   clearChilds(selectGameTag);
   if (event.target.selectedOptions[0].value === 'easy') {
     changeLvl(0, 5);
