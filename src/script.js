@@ -267,18 +267,19 @@ function genNono(arr, id = 0) {
         const cell = event.target;
 
         cell.classList.toggle('cell-color');
-        if (cell.secret && cell.classList.contains('cell-color')) {
-          correct += 1;
+        cell.classList.remove('cell-cross');
+
+        if (cell.clicked) {
+          if (cell.secret) correct -= 1;
+          if (!cell.secret) incorrect -= 1;
+          Object.assign(cell, { clicked: false });
+        } else {
+          if (cell.secret) correct += 1;
+          if (!cell.secret) incorrect += 1;
+          Object.assign(cell, { clicked: true });
         }
-        if (cell.secret && !cell.classList.contains('cell-color')) {
-          correct -= 1;
-        }
-        if (!cell.secret && cell.classList.contains('cell-color')) {
-          incorrect -= 1;
-        }
-        if (!cell.secret && !cell.classList.contains('cell-color')) {
-          incorrect += 1;
-        }
+        console.log(correct);
+        console.log(incorrect);
         if (correct === arr[id].steps && incorrect === 0) {
           fieldTag.style.setProperty('pointer-events', 'none');
           showModal();
@@ -289,6 +290,13 @@ function genNono(arr, id = 0) {
         const cell = event.target;
         event.preventDefault();
         cell.classList.toggle('cell-cross');
+        cell.classList.remove('cell-color');
+
+        if (cell.clicked) {
+          if (cell.secret) correct -= 1;
+          if (!cell.secret) incorrect -= 1;
+          Object.assign(cellTag, { clicked: false });
+        }
       });
     });
   });
