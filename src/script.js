@@ -5,6 +5,8 @@ import './style.css';
 const response = await fetch('nonograms.json');
 const nonograms = await response.json();
 
+let sound = new Audio();
+
 /// ELEMENTS ///////////////////////////
 /// ///////////////////////////
 
@@ -180,9 +182,16 @@ soundMuteTag.append(soundInputTag);
 /// FUNCTIONS ///////////////////////////
 /// ///////////////////////////
 
+function playSound(file) {
+  sound = new Audio(file);
+  if (!soundInputTag.checked) sound.play();
+}
+
 function showModal() {
   overlayTag.classList.add('overlay-show');
   modalTag.classList.add('modal-show');
+
+  playSound('./assets/win.mp3');
 
   overlayTag.addEventListener('click', () => {
     overlayTag.classList.remove('overlay-show');
@@ -273,13 +282,13 @@ function genNono(arr, id = 0) {
           if (cell.secret) correct -= 1;
           if (!cell.secret) incorrect -= 1;
           Object.assign(cell, { clicked: false });
+          playSound('./assets/click.mp3');
         } else {
           if (cell.secret) correct += 1;
           if (!cell.secret) incorrect += 1;
           Object.assign(cell, { clicked: true });
+          playSound('./assets/click1.mp3');
         }
-        console.log(correct);
-        console.log(incorrect);
         if (correct === arr[id].steps && incorrect === 0) {
           fieldTag.style.setProperty('pointer-events', 'none');
           showModal();
@@ -291,6 +300,8 @@ function genNono(arr, id = 0) {
         event.preventDefault();
         cell.classList.toggle('cell-cross');
         cell.classList.remove('cell-color');
+
+        playSound('./assets/cross.mp3');
 
         if (cell.clicked) {
           if (cell.secret) correct -= 1;
