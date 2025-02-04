@@ -1,5 +1,6 @@
 /* empty css           *//* empty css       */const response = await fetch("nonograms.json");
 const nonograms = await response.json();
+let sound = new Audio();
 function createElement(options) {
   const { tag = "div", text = "", parent, classes = [], att = [] } = options;
   const element = document.createElement(tag);
@@ -135,9 +136,15 @@ const soundInputTag = createElement({
   att: ["type", "checkbox"]
 });
 soundMuteTag.append(soundInputTag);
+function playSound(file) {
+  sound = new Audio(file);
+  if (!soundInputTag.checked)
+    sound.play();
+}
 function showModal() {
   overlayTag.classList.add("overlay-show");
   modalTag.classList.add("modal-show");
+  playSound("./assets/win.mp3");
   overlayTag.addEventListener("click", () => {
     overlayTag.classList.remove("overlay-show");
     modalTag.classList.remove("modal-show");
@@ -209,17 +216,21 @@ function genNono(arr, id = 0) {
       cellTag.addEventListener("click", (event) => {
         const cell = event.target;
         cell.classList.toggle("cell-color");
-        if (cell.secret && cell.classList.contains("cell-color")) {
-          correct += 1;
-        }
-        if (cell.secret && !cell.classList.contains("cell-color")) {
-          correct -= 1;
-        }
-        if (!cell.secret && cell.classList.contains("cell-color")) {
-          incorrect -= 1;
-        }
-        if (!cell.secret && !cell.classList.contains("cell-color")) {
-          incorrect += 1;
+        cell.classList.remove("cell-cross");
+        if (cell.clicked) {
+          if (cell.secret)
+            correct -= 1;
+          if (!cell.secret)
+            incorrect -= 1;
+          Object.assign(cell, { clicked: false });
+          playSound("./assets/click.mp3");
+        } else {
+          if (cell.secret)
+            correct += 1;
+          if (!cell.secret)
+            incorrect += 1;
+          Object.assign(cell, { clicked: true });
+          playSound("./assets/click1.mp3");
         }
         if (correct === arr[id].steps && incorrect === 0) {
           fieldTag.style.setProperty("pointer-events", "none");
@@ -230,6 +241,15 @@ function genNono(arr, id = 0) {
         const cell = event.target;
         event.preventDefault();
         cell.classList.toggle("cell-cross");
+        cell.classList.remove("cell-color");
+        playSound("./assets/cross.mp3");
+        if (cell.clicked) {
+          if (cell.secret)
+            correct -= 1;
+          if (!cell.secret)
+            incorrect -= 1;
+          Object.assign(cellTag, { clicked: false });
+        }
       });
     });
   });
