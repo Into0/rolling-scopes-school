@@ -81,13 +81,33 @@ document.body.append(
   soundMuteTag,
 );
 
+const clueLeftTag = createElement({
+  tag: 'div',
+  text: '',
+  classes: ['clue-left'],
+});
+
+const nonoTag = createElement({
+  tag: 'div',
+  text: '',
+  classes: ['nono'],
+});
+
+wrapperTag.append(clueLeftTag, nonoTag);
+
+const clueTopTag = createElement({
+  tag: 'div',
+  text: '',
+  classes: ['clue-top'],
+});
+
 const fieldTag = createElement({
   tag: 'div',
   text: '',
   classes: ['field'],
 });
 
-wrapperTag.append(fieldTag);
+nonoTag.append(clueTopTag, fieldTag);
 
 const btnRandomTag = createElement({
   tag: 'button',
@@ -179,6 +199,46 @@ function genNono(arr, id = 0) {
   let incorrect = 0;
   fieldTag.style.setProperty('pointer-events', 'auto');
 
+  const { clue } = arr[id];
+  const clueTop = clue.slice(0, clue.length / 2);
+  const clueLeft = clue.slice(clue.length / 2, clue.length);
+
+  clueTop.forEach(element => {
+    const clueRow = createElement({
+      tag: 'div',
+      text: '',
+      classes: ['row'],
+    });
+    clueTopTag.append(clueRow);
+
+    element.forEach(data => {
+      const cellTag = createElement({
+        tag: 'div',
+        text: `${data}`,
+        classes: ['cell'],
+      });
+      clueRow.append(cellTag);
+    });
+  });
+
+  clueLeft.forEach(element => {
+    const clueColl = createElement({
+      tag: 'div',
+      text: '',
+      classes: ['coll'],
+    });
+    clueLeftTag.append(clueColl);
+
+    element.forEach(data => {
+      const cellTag = createElement({
+        tag: 'div',
+        text: `${data}`,
+        classes: ['cell'],
+      });
+      clueColl.append(cellTag);
+    });
+  });
+
   arr[id].nonogram.forEach(element => {
     const rowTag = createElement({
       tag: 'div',
@@ -190,7 +250,7 @@ function genNono(arr, id = 0) {
     element.forEach(data => {
       const cellTag = createElement({
         tag: 'div',
-        text: `${data}`,
+        text: '',
         classes: ['cell'],
       });
 
@@ -256,32 +316,44 @@ selectLvlTag.addEventListener('change', event => {
   if (event.target.selectedOptions[0].value === 'easy') {
     changeLvl(0, 5);
     clearChilds(fieldTag);
+    clearChilds(clueLeftTag);
+    clearChilds(clueTopTag);
     genNono(nonograms, 0);
   }
   if (event.target.selectedOptions[0].value === 'medium') {
     changeLvl(5, 10);
     clearChilds(fieldTag);
+    clearChilds(clueLeftTag);
+    clearChilds(clueTopTag);
     genNono(nonograms, 5);
   }
   if (event.target.selectedOptions[0].value === 'hard') {
     changeLvl(10, 15);
     clearChilds(fieldTag);
+    clearChilds(clueLeftTag);
+    clearChilds(clueTopTag);
     genNono(nonograms, 10);
   }
 });
 
 selectGameTag.addEventListener('change', event => {
   clearChilds(fieldTag);
+  clearChilds(clueLeftTag);
+  clearChilds(clueTopTag);
   genNono(nonograms, event.target.selectedOptions[0].gameIndex);
 });
 
 btnRandomTag.addEventListener('click', () => {
   clearChilds(fieldTag);
+  clearChilds(clueLeftTag);
+  clearChilds(clueTopTag);
   genNono(nonograms, getRandomNum(0, 15));
 });
 
 btnResetTag.addEventListener('click', () => {
   clearChilds(fieldTag);
+  clearChilds(clueLeftTag);
+  clearChilds(clueTopTag);
   genNono(nonograms, selectGameTag.selectedOptions[0].gameIndex);
 });
 

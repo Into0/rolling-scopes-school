@@ -99,6 +99,32 @@ input[type="checkbox"] {
   position: relative;
 }
 
+.clue-left {
+  display: flex;
+  margin-right: 5px;
+}
+
+.clue-left .cell {
+  border: none;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+}
+
+.nono {
+  display: flex;
+  flex-direction: column;
+}
+
+.clue-top {
+  margin-bottom: 5px;
+}
+
+.clue-top .cell {
+  border: none;
+  border-right: 1px solid;
+  border-left: 1px solid;
+}
+
 .field {
   #display: grid;
   #grid-template-rows: repeat(5, 1fr);
@@ -114,7 +140,7 @@ input[type="checkbox"] {
 }
 
 .row:nth-child(5n) {
-  border-bottom: 5px solid;
+  #border-bottom: 5px solid;
 }
 
 .cell {
