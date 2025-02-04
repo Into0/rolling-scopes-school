@@ -247,3 +247,36 @@ input[type="checkbox"] {
   }
 
 }
+
+@media screen and (max-width: 1200px) {
+  .cell {
+    width: 32px;
+  }
+
+}
+
+@media screen and (max-width: 960px) {
+  .cell {
+    width: 26px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  select {
+    width: 98px;
+    padding: 5px;
+    font-size: 1.14rem;
+  }
+
+  .btn {
+    height: 30px;
+    padding: 0 5px;
+    font-size: 1.4rem;
+  }
+
+  .cell {
+    width: 21px;
+  }
+
+}
