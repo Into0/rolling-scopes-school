@@ -228,6 +228,8 @@ function genNono(arr, id = 0) {
     clueTopTag.append(clueRow);
 
     element.forEach(data => {
+      if (!data) return;
+
       const cellTag = createElement({
         tag: 'div',
         text: `${data}`,
@@ -245,6 +247,7 @@ function genNono(arr, id = 0) {
     clueLeftTag.append(clueColl);
 
     element.forEach(data => {
+      if (!data) return;
       const cellTag = createElement({
         tag: 'div',
         text: `${data}`,

@@ -110,7 +110,7 @@ input[type="checkbox"] {
 .clue-left .cell {
   border: none;
   border-bottom: 1px solid;
-  border-top: 1px solid;
+  border-top: 0px solid;
 }
 
 .nono {
@@ -135,7 +135,7 @@ input[type="checkbox"] {
 .clue-top .cell {
   border: none;
   border-right: 1px solid;
-  border-left: 1px solid;
+  border-left: 0px solid;
 }
 
 .field {
