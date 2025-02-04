@@ -102,6 +102,9 @@ input[type="checkbox"] {
 .clue-left {
   display: flex;
   margin-right: 5px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .clue-left .cell {
@@ -115,8 +118,18 @@ input[type="checkbox"] {
   flex-direction: column;
 }
 
+.nono-name {
+  position: absolute;
+  left: 0;
+  top: 2%;
+  font-size: 1.6rem;
+}
+
 .clue-top {
   margin-bottom: 5px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .clue-top .cell {
@@ -133,6 +146,7 @@ input[type="checkbox"] {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 .row {
@@ -152,7 +166,6 @@ input[type="checkbox"] {
   aspect-ratio: 1;
   border: 1px solid var(--Orange);
   transition: 0.5s;
-  cursor: pointer;
 }
 
 .cell-color {

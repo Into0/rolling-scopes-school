@@ -203,6 +203,13 @@ function genNono(arr, id = 0) {
   const clueTop = clue.slice(0, clue.length / 2);
   const clueLeft = clue.slice(clue.length / 2, clue.length);
 
+  const clueName = createElement({
+    tag: 'div',
+    text: `${arr[id].name}`,
+    classes: ['nono-name'],
+  });
+  clueTopTag.append(clueName);
+
   clueTop.forEach(element => {
     const clueRow = createElement({
       tag: 'div',
@@ -220,7 +227,6 @@ function genNono(arr, id = 0) {
       clueRow.append(cellTag);
     });
   });
-
   clueLeft.forEach(element => {
     const clueColl = createElement({
       tag: 'div',
