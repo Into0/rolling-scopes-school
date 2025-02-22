@@ -1,8 +1,14 @@
+.news {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    margin: 20px 0 20px 0;
+}
+
 .news__item {
     display: flex;
     flex-direction: column;
-    margin: 1rem auto;
-    margin-bottom: 1.6%;
+    margin: 0 auto;
     background: #fff;
     color: #333;
     line-height: 1.4;
@@ -119,6 +125,12 @@
 
 .news__item:hover .news__meta-details {
     left: 0%;
+}
+
+@media (max-width: 640px) { 
+    .news {
+      grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
+    }
 }
 
 @media (min-width: 640px) {
