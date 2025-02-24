@@ -7,7 +7,7 @@ const EslingPlugin = require('eslint-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 
 const baseConfig = {
-    entry: path.resolve(__dirname, './src/index.js'),
+    entry: path.resolve(__dirname, './src/index'),
     mode: 'development',
     module: {
         rules: [
