@@ -32,7 +32,6 @@ export default [
     rules: {
       "@typescript-eslint/no-unused-vars": "warn",
       "no-console": "warn",
-      "quotes": ["error", "double"],
       "prettier/prettier": "error",
       "@typescript-eslint/consistent-type-assertions": ["error", { "assertionStyle": "never" }],
       "@typescript-eslint/consistent-type-imports": "error",
