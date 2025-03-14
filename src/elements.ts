@@ -1,6 +1,6 @@
-import { createElement_ } from './types/index';
+import type { createElement_ } from './types/index';
 
-function createElement(options:createElement_): HTMLElement {
+function createElement(options: createElement_): HTMLElement {
   const { tag = 'div', text = '', parent, classes = [], att = [] } = options;
 
   const element = document.createElement(tag);
@@ -10,14 +10,14 @@ function createElement(options:createElement_): HTMLElement {
     element.classList.add(...classes);
   }
 
-  if (parent != null) {
-    parent.appendChild(element);
+  if (parent != undefined) {
+    parent.append(element);
   }
 
   if (att.length > 0) {
-    att.forEach(([name, value]) => {
+    for (const [name, value] of att) {
       element.setAttribute(name, value);
-    });
+    }
   }
 
   return element;
@@ -25,10 +25,7 @@ function createElement(options:createElement_): HTMLElement {
 
 const mainElement = createElement({
   tag: 'main',
-  text: '',
   classes: ['main'],
 });
 
-document.body.append(
-  mainElement
-);
+document.body.append(mainElement);
