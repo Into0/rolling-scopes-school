@@ -7,8 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "format": "prettier src/ --check",
-    "lint": "eslint src/",
+    "format": "prettier ./src --check",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src",
     "stylelint": "stylelint **/*.css",
     "prepare": "husky"
   },
