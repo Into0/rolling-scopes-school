@@ -2,6 +2,6 @@ export interface createElement_ {
   tag: string;
   text?: string;
   parent?: HTMLElement;
-  classes: string[];
+  classes?: string[];
   att?: [string, string][];
 }
