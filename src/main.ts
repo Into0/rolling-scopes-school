@@ -1,2 +1,5 @@
 import './style.css';
-import './elements.ts';
+import App from './pages/app/app';
+
+const app = new App();
+app.run();
