@@ -1,7 +1,18 @@
-export interface createElement_ {
-  tag: string;
+export interface ButtonOptions {
+  className?: string;
   text?: string;
-  parent?: HTMLElement;
-  classes?: string[];
-  att?: [string, string][];
+  onClick?: (event: Event) => void;
+}
+
+export interface InputOptions {
+  className?: string;
+  type: string;
+  placeholder?: string;
+  name?: string;
+}
+
+// Define an interface for Label options
+export interface LabelOptions {
+  className?: string;
+  labelFor: string;
 }
