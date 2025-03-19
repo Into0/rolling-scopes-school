@@ -3,6 +3,7 @@ import Page from '../page';
 class NotFound extends Page {
   protected static textObject = {
     title: 'Something went wrong',
+    btnBack: 'Back',
   };
 
   constructor(id: string) {
@@ -11,7 +12,9 @@ class NotFound extends Page {
 
   public render(): HTMLElement {
     const title = NotFound.createTitle(NotFound.textObject.title);
-    this.container.append(title.getNode());
+    const buttonBack = NotFound.createBackButton(NotFound.textObject.btnBack);
+
+    this.container.append(title.getNode(), buttonBack.getNode());
     return this.container;
   }
 }

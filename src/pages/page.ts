@@ -1,11 +1,12 @@
 import Component from '../components/component';
+import Button from '../components/button';
 
 abstract class Page {
   protected static textObject = {};
   protected container: HTMLElement;
 
   constructor(id: string) {
-    this.container = document.body;
+    this.container = Page.createMain().getNode();
     this.container.id = id;
   }
 
@@ -20,6 +21,16 @@ abstract class Page {
       tag: 'h1',
       className: 'title',
       text: text,
+    });
+  }
+
+  protected static createBackButton(text: string): Component {
+    return new Button({
+      className: 'btn-back',
+      text: text,
+      onClick: (): void => {
+        globalThis.location.hash = '/';
+      },
     });
   }
 
