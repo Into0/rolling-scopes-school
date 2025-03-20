@@ -14,9 +14,11 @@ class Input extends Component {
 }
 
 export class Label extends Component {
-  constructor({ className, labelFor }: LabelOptions) {
-    super({ tag: 'label', className });
-    this.setAttribute('for', labelFor);
+  constructor({ className, text, labelFor }: LabelOptions) {
+    super({ tag: 'label', className, text });
+    if (labelFor) {
+      this.setAttribute('for', labelFor);
+    }
   }
   public destroy(): void {
     super.destroy();
