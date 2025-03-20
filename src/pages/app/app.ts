@@ -11,16 +11,16 @@ class App {
   public run(): void {
     this.locationChange();
     this.routeChange();
-    this.renderNewPage('');
+    this.renderNewPage('/');
   }
 
   private renderNewPage(pageId: string): void {
     this.container.replaceChildren();
     let page: Page | undefined = undefined;
 
-    if (pageId === '') {
+    if (pageId === '/') {
       page = new Init(pageId);
-    } else if (pageId === 'wheel') {
+    } else if (pageId === '/wheel') {
       page = new Wheel(pageId);
     } else {
       page = new NotFound(pageId);
@@ -34,13 +34,16 @@ class App {
 
   private routeChange(): void {
     globalThis.addEventListener('hashchange', () => {
-      const hash = globalThis.location.hash.slice(2);
+      let hash = globalThis.location.hash.slice(1);
+      if (hash === '') {
+        window.location.hash = '/'
+      }
       this.renderNewPage(hash);
     });
   }
   private locationChange(): this {
     globalThis.addEventListener('load', () => {
-      history.replaceState(undefined, '', '/#/');
+      history.replaceState(undefined, '', `${window.location.origin}#/`);
     });
     return this;
   }
