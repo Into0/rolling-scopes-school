@@ -11,8 +11,8 @@ export interface InputOptions {
   name?: string;
 }
 
-// Define an interface for Label options
 export interface LabelOptions {
   className?: string;
-  labelFor: string;
+  text?: string;
+  labelFor?: string;
 }
