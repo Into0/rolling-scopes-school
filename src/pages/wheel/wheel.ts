@@ -6,6 +6,7 @@ class Wheel extends Page {
     title: 'Decision Making Tool',
     btnBack: 'Back',
     paragraph: 'PRESS START BUTTON',
+    canvasTitle: 'Decision Picker Wheel',
   };
 
   constructor(id: string) {
@@ -18,13 +19,20 @@ class Wheel extends Page {
       text: text,
     });
   }
+  protected static createCanvas(text: string): Component {
+    return new Component({
+      className: 'wheel-canvas',
+      text: text,
+    });
+  }
 
   public render(): HTMLElement {
     const title = Wheel.createTitle(Wheel.textObject.title);
     const buttonBack = Wheel.createBackButton(Wheel.textObject.btnBack);
     const paragraph = Wheel.createParagraph(Wheel.textObject.paragraph);
+    const canvas = Wheel.createCanvas(Wheel.textObject.canvasTitle);
 
-    this.container.append(title.getNode(), buttonBack.getNode(), paragraph.getNode());
+    this.container.append(title.getNode(), buttonBack.getNode(), paragraph.getNode(), canvas.getNode());
     return this.container;
   }
 }
