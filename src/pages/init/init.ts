@@ -50,9 +50,9 @@ class Init extends Page {
           if (target instanceof HTMLElement && target.parentNode) {
             const parentNode = target.parentNode;
             if (parentNode instanceof HTMLElement) {
-            parentNode.remove();
+              parentNode.remove();
+            }
           }
-        }
         },
       }),
     );
