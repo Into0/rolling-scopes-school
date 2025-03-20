@@ -1,0 +1,47 @@
+{
+  "name": "decision-making-tool",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "format": "prettier ./src --check",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src",
+    "stylelint": "stylelint **/*.css",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "commitlint": "^19.8.0",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-unicorn": "^57.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.15.0",
+    "stylelint-config-clean-order": "^7.0.0",
+    "stylelint-config-standard": "^37.0.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1",
+    "vite": "^6.2.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
