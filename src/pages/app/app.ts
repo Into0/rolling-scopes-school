@@ -36,14 +36,14 @@ class App {
     globalThis.addEventListener('hashchange', () => {
       let hash = globalThis.location.hash.slice(1);
       if (hash === '') {
-        window.location.hash = '/'
+        globalThis.location.hash = '/';
       }
       this.renderNewPage(hash);
     });
   }
   private locationChange(): this {
     globalThis.addEventListener('load', () => {
-      history.replaceState(undefined, '', `${window.location.origin}#/`);
+      history.replaceState(undefined, '', `${globalThis.location.origin}#/`);
     });
     return this;
   }
