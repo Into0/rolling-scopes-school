@@ -8,7 +8,7 @@ class Init extends Page {
   protected static textObject = {
     title: 'Decision Making Tool',
   };
-
+  protected static list = Init.createList().getNode();
   constructor(id: string) {
     super(id);
   }
@@ -27,8 +27,8 @@ class Init extends Page {
         className: 'list-item',
       },
       new Label({
+        text: '#',
         className: 'list-item',
-        labelFor: 'option-#1',
       }),
       new Input({
         className: 'input',
@@ -42,10 +42,18 @@ class Init extends Page {
         placeholder: 'Weight',
         name: 'weight',
       }),
-      new Component({
-        tag: 'button',
+      new Button({
         className: 'list-item',
         text: 'Delete',
+        onClick: (event): void => {
+          const target = event.currentTarget;
+          if (target instanceof HTMLElement && target.parentNode) {
+            const parentNode = target.parentNode;
+            if (parentNode instanceof HTMLElement) {
+            parentNode.remove();
+          }
+        }
+        },
       }),
     );
   }
@@ -58,7 +66,9 @@ class Init extends Page {
       new Button({
         className: 'btn-add',
         text: 'Add option',
-        onClick: (): void => {},
+        onClick: (): void => {
+          Init.list.append(Init.createListItem().getNode());
+        },
       }),
       new Button({
         className: 'btn-paste',
@@ -68,7 +78,9 @@ class Init extends Page {
       new Button({
         className: 'btn-clear',
         text: 'Clear list',
-        onClick: (): void => {},
+        onClick: (): void => {
+          Init.list.replaceChildren();
+        },
       }),
       new Button({
         className: 'btn-save',
@@ -91,12 +103,11 @@ class Init extends Page {
   }
   public render(): HTMLElement {
     const title = Init.createTitle(Init.textObject.title);
-    const list = Init.createList();
-    const listItem = Init.createListItem();
+    const listItem = Init.createListItem().getNode();
     const buttons = Init.createListButtons();
 
-    this.container.append(buttons.getNode(), title.getNode(), list.getNode(), buttons.getNode());
-    list.append(listItem);
+    this.container.append(buttons.getNode(), title.getNode(), Init.list, buttons.getNode());
+    Init.list.append(listItem);
     return this.container;
   }
 }
