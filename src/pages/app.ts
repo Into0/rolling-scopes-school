@@ -10,17 +10,16 @@ class App {
   public run(): void {
     this.locationChange();
     this.routeChange();
-    this.renderNewPage('/');
   }
 
   private renderNewPage(pageId: string): void {
     this.container.replaceChildren();
     let page: Page | undefined = undefined;
 
-    if (pageId === '/winners') {
-      page = new Winners(pageId);
-    } else {
+    if (pageId === '/garage') {
       page = new Garage(pageId);
+    } else if (pageId === '/winners') {
+      page = new Winners(pageId);
     }
 
     if (page) {
