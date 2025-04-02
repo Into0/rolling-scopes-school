@@ -17,9 +17,7 @@ class App {
     this.container.replaceChildren();
     let page: Page | undefined = undefined;
 
-    if (pageId === '/garage') {
-      page = new Garage(pageId);
-    } else if (pageId === '/winners') {
+    if (pageId === '/winners') {
       page = new Winners(pageId);
     } else {
       page = new Garage(pageId);
@@ -42,7 +40,10 @@ class App {
   }
   private locationChange(): this {
     globalThis.addEventListener('load', () => {
-      history.replaceState(undefined, '', `${globalThis.location.origin}#/garage`);
+      if (globalThis.location.pathname.length > 0) {
+        globalThis.location.hash = '#/';
+      }
+      history.replaceState(undefined, '', `${globalThis.location.href}`);
     });
     return this;
   }
