@@ -1,4 +1,4 @@
-import Component from "./components";
+import Component from './components';
 
 interface ButtonOptions {
   className?: string;
