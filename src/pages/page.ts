@@ -3,16 +3,19 @@ import Ui from './ui';
 abstract class Page {
   protected container: HTMLElement;
   protected pageSwitch: HTMLElement;
-  protected textObject = {
-    garage: 'garage',
-    winners: 'winners',
-  };
-
+  protected pageTitle: HTMLElement;
   constructor(id: string) {
-    this.container = Ui.createMain().getNode();
+    this.container = Ui.createTag('main', 'main').getNode();
     this.container.id = id;
-
-    this.pageSwitch = Ui.createPageSwitch().getNode();
+    this.pageSwitch = Ui.createPageSwitch(
+      () => {
+        globalThis.location.hash = '/garage';
+      },
+      () => {
+        globalThis.location.hash = '/winners';
+      },
+    ).getNode();
+    this.pageTitle = Ui.createTitle('title').getNode();
   }
 
   public render(): HTMLElement {
