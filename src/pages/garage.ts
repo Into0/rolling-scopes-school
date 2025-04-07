@@ -1,41 +1,31 @@
 import Api from '../api/api';
 import Page from './page';
-import Ui from './ui';
+import { Car } from '../components/car';
+import { Controls, addCar, editCar } from '../components/controls';
+import Tag from '../components/tags';
+import { Modal } from '../components/modal';
 
 class Garage extends Page {
-  private carColor = '#000000';
-  private carName = '';
+
+  carList = Tag.div('car-list').getNode();
   public render(): HTMLElement {
+    const garage = Tag.div('car-list');
     this.pageTitle.textContent = 'garage';
-    this.container.append(this.pageSwitch, this.pageTitle);
-    this.getTotalCars();
-    this.createCar();
+    this.updateTotalCars(this.pageTitle);
+
+    Api.getCars().then((cars) => {
+      cars.forEach(element => {
+        this.carList.appendChild(Car(element.name, element.color, element.id))
+      });
+    })
+
+    this.container.append(Modal().getNode(),this.pageSwitch, addCar(this.carList), editCar('', ''), this.pageTitle, this.carList);
     return this.container;
   }
 
-  private async getTotalCars(): Promise<void> {
+  async updateTotalCars(elem): Promise<void>  {
     await Api.getCars();
-    this.pageTitle.textContent = `garage (${Api.totalCars})`;
-  }
-
-  private createCar(): void {
-    this.container.append(
-      Ui.createCar(
-        (textInput) => {
-          this.carName = (textInput.target as HTMLInputElement).value;
-        },
-        (colorInput) => {
-          this.carColor = (colorInput.target as HTMLInputElement).value;
-        },
-        () => {
-          Api.createCar({
-            name: `${this.carName}`,
-            color: `${this.carColor}`,
-          });
-          this.getTotalCars();
-        },
-      ).getNode(),
-    );
+    elem.textContent = `garage (${Api.totalCars})`;
   }
 
   private selectCar(): void {}
