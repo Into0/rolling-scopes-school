@@ -16,7 +16,7 @@ class Api {
   }
 
   public static async getCar(id: number): Promise<void> {
-    await fetch(`${this.garage}/${id}`, { method: 'GET' });
+    return (await fetch(`${this.garage}/${id}`, { method: 'GET' })).json();
   }
 
   public static async createCar(object: object): Promise<void> {
