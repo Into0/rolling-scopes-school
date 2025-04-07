@@ -12,13 +12,14 @@ class CarComponent extends Component {
     this.CarContent = Tag.div(
       'car-title',
       Tag.button('car-select', 'select', (event) => {
-        const carId = event.target.parentNode.parentNode;
+        const carId = event.target.parentNode.parentNode.dataset.id;
         console.log(carId);
       }),
-      Tag.button('car-remove', 'remove', () => {
-        this.removeCar();
+      Tag.button('car-remove', 'remove', (event) => {
+        const carId = event.target.parentNode.parentNode.dataset.id;
+        this.removeCar(carId);
       }),
-      Tag.h4('car-name', name)
+      Tag.h3('car-name', name)
     )
 
     this.CarRace = Tag.div(
@@ -34,7 +35,8 @@ class CarComponent extends Component {
 
   }
 
-  private removeCar(): void {
+  private removeCar(id: number): void {
+    Api.deleteCar(id);
     super.destroy();
   }
 
