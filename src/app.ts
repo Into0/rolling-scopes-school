@@ -1,4 +1,4 @@
-import LoginPage from './pages/login';
+import LoginPage from './pages/login/login';
 
 class App {
   private container = document.body;

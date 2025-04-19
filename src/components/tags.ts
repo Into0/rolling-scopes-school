@@ -1,13 +1,13 @@
-import ButtonComponent from './button';
+import ButtonComponent from './button/button';
 import Component from './component';
-import InputComponent from './input';
-import LinkComponent from './link';
+import InputComponent from './input/input';
+import LinkComponent from './link/link';
 
 export const main = (className: string, ...children: Component[]): Component =>
   new Component({ tag: 'main', className }, ...children);
 
 export const div = (className: string, ...children: Component[]): Component =>
-  new Component({ tag: 'div', className }, ...children);
+  new Component({ className }, ...children);
 
 export const h1 = (className: string, text: string): Component => new Component({ tag: 'h1', className, text });
 

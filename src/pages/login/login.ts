@@ -1,19 +1,25 @@
-import { button, div, fieldset, form, input, label } from '../components/tags';
-import Socket from '../socket/socket';
-import AboutPage from './about';
-import Page from './page';
+import './login.css';
+import { button, div, fieldset, form, input, label } from '../../components/tags';
+import AboutPage from '../about/about';
+import Page from '../page';
 
 let nameValue = '';
 let passValue = '';
 const uniqueId = Date.now().toString(36) + Math.random().toString(36).slice(2);
 
 class LoginPage extends Page {
+  constructor() {
+    super();
+    this.login = this.login.bind(this);
+    this.test = this.test.bind(this);
+  }
+
   login() {
-    new Socket().sendLoginRequest(uniqueId, nameValue, passValue);
+    this.socket.sendLoginRequest(uniqueId, nameValue, passValue);
   }
 
   test() {
-    new Socket().sendUsersRequest(uniqueId, 'USER_ACTIVE');
+    this.socket.sendUsersRequest(uniqueId, 'USER_INACTIVE');
     new AboutPage().render();
   }
 
@@ -46,7 +52,7 @@ class LoginPage extends Page {
         ),
       ),
       button('login-btn btn', 'login', 'button', this.login),
-      button('info-btn btn', 'about', 'button', this.test),
+      button('about-btn btn', 'about', 'button', this.test),
     );
 
     this.container.append(loginForm.getNode());

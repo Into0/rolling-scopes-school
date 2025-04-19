@@ -1,4 +1,5 @@
-import Component from './component';
+import './link.css';
+import Component from '../component';
 
 interface LinkOptions {
   className: string;

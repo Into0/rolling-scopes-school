@@ -1,4 +1,5 @@
-import Component from './component';
+import './input.css';
+import Component from '../component';
 
 interface InputOptions {
   className?: string;

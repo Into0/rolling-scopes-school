@@ -15,7 +15,7 @@ class Socket {
       });
 
       this.webSocket.addEventListener('message', (event) => {
-        this.handleServerResponse(event.data);
+        this.handleResponse(event.data);
       });
     });
   }
@@ -60,7 +60,7 @@ class Socket {
     this.webSocket.send(JSON.stringify(request));
   }
 
-  private handleServerResponse(data: string): void {
+  private handleResponse(data: string): void {
     const response = JSON.parse(data);
 
     if (response.type === 'USER_ACTIVE') {
