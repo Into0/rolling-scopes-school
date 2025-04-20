@@ -24,7 +24,6 @@
 
 .field-container {
   display: inline-flex;
-  align-items: center;
 
   width: 100%;
   margin: 2% 0;
@@ -44,6 +43,11 @@
 .input-container {
   display: flex;
   flex-direction: column;
+  text-transform: lowercase;
+}
+
+.input-container > label {
+  font-size: 1.1rem;
 }
 
 .field-input {
