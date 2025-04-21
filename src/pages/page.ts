@@ -1,12 +1,11 @@
 import { main } from '../components/tags';
-import Socket from '../socket/socket';
 
 class Page {
   public container = main('main').getNode();
-  public socket: Socket;
+  public socket;
 
-  constructor() {
-    this.socket = new Socket();
+  constructor(socket?) {
+    this.socket = socket;
   }
 
   public back(): void {
