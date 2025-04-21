@@ -13,5 +13,11 @@ button {
 
   background-color: var(--shadow-gray);
 
-  transition: background-color 0.5s;
+  transition: background-color color 0.5s;
+}
+
+button:disabled {
+  cursor: default;
+  pointer-events: none;
+  color: var(--steel-wool);
 }

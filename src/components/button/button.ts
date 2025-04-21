@@ -6,12 +6,13 @@ interface ButtonOptions {
   text?: string;
   type: string;
   onClick?: (event: Event) => void;
+  disabled?: string;
 }
 
 class ButtonComponent extends Component {
   private onClick;
 
-  constructor({ className, text, type, onClick }: ButtonOptions) {
+  constructor({ className, text, type, onClick, disabled }: ButtonOptions) {
     super({ tag: 'button', className, text });
     if (type) {
       this.setAttribute('type', type);
@@ -20,6 +21,10 @@ class ButtonComponent extends Component {
     if (onClick) {
       this.onClick = onClick;
       this.addListener('click', this.onClick);
+    }
+
+    if (disabled) {
+      this.setAttribute('disabled', '');
     }
   }
 
