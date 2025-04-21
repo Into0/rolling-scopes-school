@@ -65,12 +65,10 @@ class Socket {
 
     if (response.type === 'USER_ACTIVE') {
       const users = response.payload.users;
-      console.log(users);
     }
 
     if (response.type === 'USER_INACTIVE') {
       const users = response.payload.users;
-      console.log(users);
     }
   }
 }

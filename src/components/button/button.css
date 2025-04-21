@@ -17,7 +17,7 @@ button {
 }
 
 button:disabled {
-  cursor: default;
   pointer-events: none;
+  cursor: default;
   color: var(--steel-wool);
 }

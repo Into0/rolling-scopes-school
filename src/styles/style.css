@@ -25,14 +25,15 @@
 }
 
 main{
-  align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100svh;
+  align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  min-width: auto;
+
   width: 95svw;
+  min-width: auto;
+  height: 100svh;
+  margin: 0 auto;
 }
 
 @media (hover: hover) {
