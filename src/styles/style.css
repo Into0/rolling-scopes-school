@@ -24,6 +24,17 @@
   background-color: var(--puter);
 }
 
+main{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  justify-content: center;
+  margin: 0 auto;
+  min-width: auto;
+  width: 95svw;
+}
+
 @media (hover: hover) {
   button:hover {
     background-color: var(--davy-grey);
