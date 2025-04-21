@@ -20,7 +20,7 @@ class ChatPage extends Page {
       section(
         'header',
         article('header-wrapper', span('user', `user: ${globalState.username}`), span('title', 'fun chat')),
-        button('about-btn btn', 'about', 'button', () => {
+        button('header-about btn', 'about', 'button', () => {
           globalThis.location.hash = '/about';
         }),
         button('logout-btn btn', 'logout', 'button', this.sendLogout),

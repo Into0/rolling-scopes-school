@@ -40,4 +40,8 @@ main{
   button:hover {
     background-color: var(--davy-grey);
   }
+
+  a:hover {
+    color: var(--davy-grey);
+  }
 }
