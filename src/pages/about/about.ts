@@ -5,12 +5,12 @@ import Page from '../page';
 class AboutPage extends Page {
   public render(): HTMLElement {
     const aboutInfo = div(
-      '',
-      h3('title', 'fun chat'),
-      label(''),
-      label(''),
-      a('', '', ''),
-      button('back-btn btn', 'back', 'button', this.back),
+      'about',
+      h3('title', 'Fun Chat'),
+      label('The application is designed to demonstrate the Fun Chat task as part of the RSSchool course'),
+      a('footer-link', 'https://github.com/into0', 'github.com/into0'),
+      a('footer-link', 'https://rs.school/', 'RSSchool'),
+      button('about-btn back-btn btn', 'back', 'button', this.back),
     );
 
     this.container.append(aboutInfo.getNode());
