@@ -45,7 +45,7 @@ export const input = (
   className: string,
   type: string,
   placeholder: string,
-  onChange: (event: Event) => void,
+  onChange?: (event: Event) => void,
 ): Component => new InputComponent({ className, type, placeholder, onChange });
 
 export const button = (
