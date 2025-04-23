@@ -1,18 +1,21 @@
 import './chat.css';
-import { a, article, aside, button, div, input, section, span, ul } from '../../components/tags';
+import { a, article, aside, button, div, img, input, section, span, ul } from '../../components/tags';
 import Page from '../page';
 import { globalState } from '../../global-state';
+import type Socket from '../../socket/socket';
 
 class ChatPage extends Page {
-  constructor(socket) {
+  constructor(socket: Socket) {
     super(socket);
     this.logoutUser = this.logoutUser.bind(this);
   }
 
   public logoutUser(): void {
-    this.socket.sendLogoutRequest(globalState.uniqueId, globalState.username, globalState.password);
-    this.socket.userLogined = false;
-    globalThis.location.hash = '/login';
+    if (this.socket) {
+      this.socket.sendLogoutRequest(globalState.uniqueId, globalState.username, globalState.password);
+      this.socket.userLogined = false;
+      this.changeRoute(this.loginPage);
+    }
   }
 
   public render(): HTMLElement {
@@ -22,7 +25,7 @@ class ChatPage extends Page {
         'header',
         article('header-wrapper', span('user', `user: ${globalState.username}`), span('title', 'fun chat')),
         button('header-about btn', 'about', 'button', () => {
-          globalThis.location.hash = '/about';
+          this.changeRoute(this.aboutPage);
         }),
         button('logout-btn btn', 'logout', 'button', this.logoutUser),
       ),
@@ -33,7 +36,7 @@ class ChatPage extends Page {
       ),
       section(
         'footer',
-        span('footer-rss', 'RSSchool'),
+        div('rss', img('rss-logo', '/rss-logo.svg'), a('footer-rss', 'https://rs.school/', 'RSSchool')),
         a('footer-link', 'https://github.com/into0', 'into0'),
         span('footer-year', '2025'),
       ),

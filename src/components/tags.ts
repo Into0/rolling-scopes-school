@@ -2,6 +2,7 @@ import ButtonComponent from './button/button';
 import Component from './component';
 import InputComponent from './input/input';
 import LinkComponent from './link/link';
+import ImgComponent from './img/img';
 
 export const main = (className: string, ...children: Component[]): Component =>
   new Component({ tag: 'main', className }, ...children);
@@ -37,6 +38,8 @@ export const fieldset = (className: string, ...children: Component[]): Component
 
 export const label = (text: string, ...children: Component[]): Component =>
   new Component({ tag: 'label', text }, ...children);
+
+export const img = (className: string, source: string): Component => new ImgComponent({ className, source });
 
 export const ul = (className: string, ...children: Component[]): Component =>
   new Component({ tag: 'ul', className }, ...children);

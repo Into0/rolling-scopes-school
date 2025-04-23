@@ -1,11 +1,20 @@
 import { main } from '../components/tags';
+import type Socket from '../socket/socket';
 
 class Page {
   public container = main('main').getNode();
   public socket;
 
-  constructor(socket?) {
+  public loginPage = '/login';
+  public aboutPage = '/about';
+  public chatPage = '/chat';
+
+  constructor(socket?: Socket) {
     this.socket = socket;
+  }
+
+  public changeRoute(route: string): void {
+    globalThis.location.hash = route;
   }
 
   public back(): void {

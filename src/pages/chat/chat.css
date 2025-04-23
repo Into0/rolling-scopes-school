@@ -84,8 +84,6 @@
   height: 90%;
   margin: 1%;
   padding: 1%;
-
-  #overflow-y: scroll;
 }
 
 
@@ -115,4 +113,15 @@
   border-radius: 5px;
 
   background-color: var(--puter);
+}
+
+.rss {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.rss > img {
+  width: 32px;
+  height: 32px;
 }

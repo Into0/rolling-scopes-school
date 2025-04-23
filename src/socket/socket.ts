@@ -1,12 +1,14 @@
-class Socket {
+class Socket extends WebSocket {
   public lastError?: string;
   public userLogined?: boolean;
 
-  private url = 'ws://127.0.0.1:4000';
+  public url = 'ws://127.0.0.1:4000';
   private isConnected: Promise<void> | undefined;
   private webSocket: WebSocket | undefined;
 
-  constructor() {
+  constructor(url: string) {
+    super(url);
+    url = this.url;
     this.init();
   }
 
@@ -85,16 +87,6 @@ class Socket {
       case 'USER_LOGIN': {
         const isLogined = response.payload.user.isLogined;
         this.userLogined = isLogined;
-        break;
-      }
-
-      case 'USER_ACTIVE': {
-        const activeUsers = response.payload.users;
-        break;
-      }
-
-      case 'USER_INACTIVE': {
-        const inactiveUsers = response.payload.users;
         break;
       }
     }

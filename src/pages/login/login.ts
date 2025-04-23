@@ -3,15 +3,17 @@ import { button, div, fieldset, form, input, label } from '../../components/tags
 import Page from '../page';
 import { validateUsername, validatePassword } from '../../utils/validation';
 import { globalState } from '../../global-state';
+import type Component from '../../components/component';
+import type Socket from '../../socket/socket';
 
 let nameValue = '';
 let passValue = '';
 const uniqueId = Date.now().toString(36) + Math.random().toString(36).slice(2);
 
 class LoginPage extends Page {
-  private loginBtn?: HTMLElement;
+  private loginBtn?: Component;
 
-  constructor(socket) {
+  constructor(socket: Socket) {
     super(socket);
     this.loginUser = this.loginUser.bind(this);
   }
@@ -21,20 +23,22 @@ class LoginPage extends Page {
     globalState.password = passValue;
     globalState.uniqueId = uniqueId;
 
-    this.socket.sendLoginRequest(uniqueId, nameValue, passValue);
+    if (this.socket) {
+      this.socket.sendLoginRequest(uniqueId, nameValue, passValue);
+    }
 
     setTimeout(() => {
-      if (this.socket.lastError) {
+      if (this.socket?.lastError) {
         this.showError(this.socket.lastError);
         this.socket.lastError = undefined;
       } else {
-        globalThis.location.hash = '/chat';
+        this.changeRoute(this.chatPage);
       }
     }, 100);
   }
 
-  private showError(error) {
-    const remove = () => {
+  public showError(error: string): void {
+    const remove = (): void => {
       modalElement.destroy();
     };
     const modalElement = div(
@@ -58,7 +62,7 @@ class LoginPage extends Page {
     }
   }
 
-  public handleInputChange(event, inputType): void {
+  public handleInputChange(event: Event, inputType: string): void {
     const value = event.target.value;
     const inputContainer = event.target.parentElement;
     let result;
@@ -108,7 +112,7 @@ class LoginPage extends Page {
       ),
       (this.loginBtn = button('login-btn btn', 'login', 'button', this.loginUser, 'disabled')),
       button('about-btn btn', 'about', 'button', () => {
-        globalThis.location.hash = '/about';
+        this.changeRoute(this.aboutPage);
       }),
     );
 
