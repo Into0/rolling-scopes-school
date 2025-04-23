@@ -1,22 +1,34 @@
 class Socket {
+  public lastError?: string;
+  public userLogined?: boolean;
+
   private url = 'ws://127.0.0.1:4000';
-  private webSocket = new WebSocket(this.url);
   private isConnected: Promise<void> | undefined;
-  private lastError?: string;
-  public userLogined: boolean;
+  private webSocket: WebSocket | undefined;
 
   constructor() {
     this.init();
   }
 
   public init(): void {
+    this.webSocket = new WebSocket(this.url);
     this.isConnected = new Promise<void>((resolve) => {
-      this.webSocket.addEventListener('open', () => {
+      this.webSocket?.addEventListener('open', () => {
         resolve();
       });
 
-      this.webSocket.addEventListener('message', (event) => {
+      this.webSocket?.addEventListener('message', (event) => {
         this.handleResponse(event.data);
+      });
+
+      this.webSocket?.addEventListener('close', () => {
+        setTimeout(() => {
+          this.init();
+        }, 1000);
+      });
+
+      this.webSocket?.addEventListener('error', () => {
+        this.webSocket?.close();
       });
     });
   }
@@ -33,7 +45,7 @@ class Socket {
         },
       },
     };
-    this.webSocket.send(JSON.stringify(request));
+    this.webSocket?.send(JSON.stringify(request));
   }
 
   public async sendLogoutRequest(id: string, login: string, password: string): Promise<void> {
@@ -48,7 +60,7 @@ class Socket {
         },
       },
     };
-    this.webSocket.send(JSON.stringify(request));
+    this.webSocket?.send(JSON.stringify(request));
   }
 
   public async sendUsersRequest(id: string, type: string): Promise<void> {
@@ -58,7 +70,7 @@ class Socket {
       type: type,
       payload: {},
     };
-    this.webSocket.send(JSON.stringify(request));
+    this.webSocket?.send(JSON.stringify(request));
   }
 
   private handleResponse(data: string): void {
