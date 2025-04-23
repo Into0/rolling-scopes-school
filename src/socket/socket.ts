@@ -2,6 +2,8 @@ class Socket {
   private url = 'ws://127.0.0.1:4000';
   private webSocket = new WebSocket(this.url);
   private isConnected: Promise<void> | undefined;
+  private lastError?: string;
+  public userLogined: boolean;
 
   constructor() {
     this.init();
@@ -10,7 +12,6 @@ class Socket {
   public init(): void {
     this.isConnected = new Promise<void>((resolve) => {
       this.webSocket.addEventListener('open', () => {
-        console.log('WebSocket connection open.');
         resolve();
       });
 
@@ -63,12 +64,27 @@ class Socket {
   private handleResponse(data: string): void {
     const response = JSON.parse(data);
 
-    if (response.type === 'USER_ACTIVE') {
-      const users = response.payload.users;
-    }
+    switch (response.type) {
+      case 'ERROR': {
+        this.lastError = response.payload.error;
+        break;
+      }
 
-    if (response.type === 'USER_INACTIVE') {
-      const users = response.payload.users;
+      case 'USER_LOGIN': {
+        const isLogined = response.payload.user.isLogined;
+        this.userLogined = isLogined;
+        break;
+      }
+
+      case 'USER_ACTIVE': {
+        const activeUsers = response.payload.users;
+        break;
+      }
+
+      case 'USER_INACTIVE': {
+        const inactiveUsers = response.payload.users;
+        break;
+      }
     }
   }
 }

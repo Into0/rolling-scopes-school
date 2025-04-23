@@ -26,7 +26,12 @@ class App {
 
     switch (pageId) {
       case '/login': {
-        page = login;
+        if (this.socket.userLogined) {
+          page = chat;
+          globalThis.location.hash = '/chat';
+        } else {
+          page = login;
+        }
         break;
       }
       case '/about': {
@@ -34,7 +39,12 @@ class App {
         break;
       }
       case '/chat': {
-        page = chat;
+        if (this.socket.userLogined) {
+          page = chat;
+        } else {
+          page = login;
+          globalThis.location.hash = '/login';
+        }
         break;
       }
       default: {

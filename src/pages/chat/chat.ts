@@ -6,11 +6,12 @@ import { globalState } from '../../global-state';
 class ChatPage extends Page {
   constructor(socket) {
     super(socket);
-    this.sendLogout = this.sendLogout.bind(this);
+    this.logoutUser = this.logoutUser.bind(this);
   }
 
-  public sendLogout(): void {
+  public logoutUser(): void {
     this.socket.sendLogoutRequest(globalState.uniqueId, globalState.username, globalState.password);
+    this.socket.userLogined = false;
     globalThis.location.hash = '/login';
   }
 
@@ -23,7 +24,7 @@ class ChatPage extends Page {
         button('header-about btn', 'about', 'button', () => {
           globalThis.location.hash = '/about';
         }),
-        button('logout-btn btn', 'logout', 'button', this.sendLogout),
+        button('logout-btn btn', 'logout', 'button', this.logoutUser),
       ),
       section(
         'content',

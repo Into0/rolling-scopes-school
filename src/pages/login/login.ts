@@ -9,21 +9,42 @@ let passValue = '';
 const uniqueId = Date.now().toString(36) + Math.random().toString(36).slice(2);
 
 class LoginPage extends Page {
-  private loginBtn;
+  private loginBtn?: HTMLElement;
 
   constructor(socket) {
     super(socket);
-    this.sendLogin = this.sendLogin.bind(this);
-    this.loginBtn = this.loginBtn;
+    this.loginUser = this.loginUser.bind(this);
   }
 
-  public sendLogin(): void {
+  public loginUser(): void {
     globalState.username = nameValue;
     globalState.password = passValue;
     globalState.uniqueId = uniqueId;
 
     this.socket.sendLoginRequest(uniqueId, nameValue, passValue);
-    globalThis.location.hash = '/chat';
+
+    setTimeout(() => {
+      if (this.socket.lastError) {
+        this.showError(this.socket.lastError);
+        this.socket.lastError = undefined;
+      } else {
+        globalThis.location.hash = '/chat';
+      }
+    }, 100);
+  }
+
+  private showError(error) {
+    const remove = () => {
+      modalElement.destroy();
+    };
+    const modalElement = div(
+      'modal',
+      div('modal-wrapper', label(`${error}`), button('modal-button', 'OK', 'button', remove)),
+    );
+
+    if (error) {
+      this.container.append(modalElement.getNode());
+    }
   }
 
   public updateLoginButtonState(): void {
@@ -85,7 +106,7 @@ class LoginPage extends Page {
           ),
         ),
       ),
-      (this.loginBtn = button('login-btn btn', 'login', 'button', this.sendLogin, 'disabled')),
+      (this.loginBtn = button('login-btn btn', 'login', 'button', this.loginUser, 'disabled')),
       button('about-btn btn', 'about', 'button', () => {
         globalThis.location.hash = '/about';
       }),
