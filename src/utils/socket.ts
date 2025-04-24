@@ -2,13 +2,11 @@ class Socket extends WebSocket {
   public lastError?: string;
   public userLogined?: boolean;
 
-  public url = 'ws://127.0.0.1:4000';
   private isConnected: Promise<void> | undefined;
   private webSocket: WebSocket | undefined;
 
-  constructor(url: string) {
-    super(url);
-    url = this.url;
+  constructor() {
+    super('ws://127.0.0.1:4000');
     this.init();
   }
 

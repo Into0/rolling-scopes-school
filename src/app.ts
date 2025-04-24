@@ -9,7 +9,7 @@ class App {
   private socket: Socket;
 
   constructor() {
-    this.socket = new Socket('');
+    this.socket = new Socket();
   }
 
   public run(): void {
