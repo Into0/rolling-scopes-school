@@ -1,5 +1,5 @@
 import ButtonComponent from './button/button';
-import Component from './component';
+import Component from '../component';
 import InputComponent from './input/input';
 import LinkComponent from './link/link';
 import ImgComponent from './img/img';

@@ -1,10 +1,11 @@
 import './login.css';
-import { button, div, fieldset, form, input, label } from '../../components/tags';
+import { button, div, fieldset, form, input, label } from '../../components/elements/tags';
 import Page from '../page';
+import type { ValidationResult } from '../../utils/validation';
 import { validateUsername, validatePassword } from '../../utils/validation';
 import { globalState } from '../../global-state';
 import type Component from '../../components/component';
-import type Socket from '../../socket/socket';
+import type Socket from '../../utils/socket';
 
 let nameValue = '';
 let passValue = '';
@@ -63,25 +64,39 @@ class LoginPage extends Page {
   }
 
   public handleInputChange(event: Event, inputType: string): void {
-    const value = event.target.value;
-    const inputContainer = event.target.parentElement;
-    let result;
+    const target = event.target;
+    if (!(target instanceof HTMLInputElement)) return;
+    const value = target.value;
 
-    if (inputType === 'username') {
-      result = validateUsername(value);
-      nameValue = value;
+    const inputContainer = target.parentElement;
+    if (!inputContainer) return;
+    const lastChild = inputContainer.lastChild;
+
+    if (!(lastChild instanceof HTMLInputElement)) return;
+
+    let result: ValidationResult = { isValid: true };
+
+    switch (inputType) {
+      case 'username': {
+        result = validateUsername(value);
+        nameValue = value;
+        break;
+      }
+      case 'password': {
+        result = validatePassword(value);
+        passValue = value;
+        break;
+      }
+      default: {
+        break;
+      }
     }
 
-    if (inputType === 'password') {
-      result = validatePassword(value);
-      passValue = value;
+    if (lastChild.tagName === 'LABEL') {
+      lastChild.remove();
     }
 
-    if (inputContainer.lastChild.tagName === 'LABEL') {
-      inputContainer.lastChild.remove();
-    }
-
-    if (!result.isValid) {
+    if (!result.isValid && result.errorLabel) {
       inputContainer.append(result.errorLabel.getNode());
     }
 

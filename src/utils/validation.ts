@@ -1,6 +1,12 @@
-import { label } from '../components/tags';
+import type Component from '../components/component';
+import { label } from '../components/elements/tags';
 
-export const validateUsername = (value: string): object => {
+export interface ValidationResult {
+  isValid: boolean;
+  errorLabel?: Component;
+}
+
+export const validateUsername = (value: string): ValidationResult => {
   const regex = new RegExp(/[^a-zA-Z0-9]/g);
   let errorLabel;
 
@@ -24,7 +30,7 @@ export const validateUsername = (value: string): object => {
   return { isValid: true, errorLabel: undefined };
 };
 
-export const validatePassword = (value: string): object => {
+export const validatePassword = (value: string): ValidationResult => {
   const regex = new RegExp(/[^a-zA-Z0-9]/g);
   let errorLabel;
 

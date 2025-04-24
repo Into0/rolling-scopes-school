@@ -1,8 +1,8 @@
 import './chat.css';
-import { a, article, aside, button, div, img, input, section, span, ul } from '../../components/tags';
+import { a, article, aside, button, div, img, input, section, span, ul } from '../../components/elements/tags';
 import Page from '../page';
 import { globalState } from '../../global-state';
-import type Socket from '../../socket/socket';
+import type Socket from '../../utils/socket';
 
 class ChatPage extends Page {
   constructor(socket: Socket) {

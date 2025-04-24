@@ -1,5 +1,5 @@
 import './button.css';
-import Component from '../component';
+import Component from '../../component';
 
 interface ButtonOptions {
   className: string;

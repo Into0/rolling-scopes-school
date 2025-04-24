@@ -1,5 +1,5 @@
-import { main } from '../components/tags';
-import type Socket from '../socket/socket';
+import { main } from '../components/elements/tags';
+import type Socket from '../utils/socket';
 
 class Page {
   public container = main('main').getNode();

@@ -1,5 +1,5 @@
 import './img.css';
-import Component from '../component';
+import Component from '../../component';
 
 interface ImgOptions {
   className: string;

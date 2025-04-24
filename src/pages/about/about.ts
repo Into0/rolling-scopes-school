@@ -1,5 +1,5 @@
 import './about.css';
-import { a, button, div, h3, label } from '../../components/tags';
+import { a, button, div, h3, label } from '../../components/elements/tags';
 import Page from '../page';
 
 class AboutPage extends Page {

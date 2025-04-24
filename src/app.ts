@@ -2,7 +2,7 @@ import AboutPage from './pages/about/about';
 import ChatPage from './pages/chat/chat';
 import LoginPage from './pages/login/login';
 import type Page from './pages/page';
-import Socket from './socket/socket';
+import Socket from './utils/socket';
 
 class App {
   private container = document.body;
