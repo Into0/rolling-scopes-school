@@ -65,14 +65,9 @@ class LoginPage extends Page {
 
   public handleInputChange(event: Event, inputType: string): void {
     const target = event.target;
-    if (!(target instanceof HTMLInputElement)) return;
     const value = target.value;
-
     const inputContainer = target.parentElement;
-    if (!inputContainer) return;
     const lastChild = inputContainer.lastChild;
-
-    if (!(lastChild instanceof HTMLInputElement)) return;
 
     let result: ValidationResult = { isValid: true };
 
@@ -85,9 +80,6 @@ class LoginPage extends Page {
       case 'password': {
         result = validatePassword(value);
         passValue = value;
-        break;
-      }
-      default: {
         break;
       }
     }
