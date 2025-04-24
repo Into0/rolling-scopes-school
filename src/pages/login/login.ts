@@ -7,11 +7,10 @@ import { globalState } from '../../global-state';
 import type Component from '../../components/component';
 import type Socket from '../../utils/socket';
 
-let nameValue = '';
-let passValue = '';
-const uniqueId = Date.now().toString(36) + Math.random().toString(36).slice(2);
-
 class LoginPage extends Page {
+  public nameValue = '';
+  public passValue = '';
+  public uniqueId = Date.now().toString(36) + Math.random().toString(36).slice(2);
   private loginBtn?: Component;
 
   constructor(socket: Socket) {
@@ -20,12 +19,12 @@ class LoginPage extends Page {
   }
 
   public loginUser(): void {
-    globalState.username = nameValue;
-    globalState.password = passValue;
-    globalState.uniqueId = uniqueId;
+    globalState.username = this.nameValue;
+    globalState.password = this.passValue;
+    globalState.uniqueId = this.uniqueId;
 
     if (this.socket) {
-      this.socket.sendLoginRequest(uniqueId, nameValue, passValue);
+      this.socket.sendLoginRequest(this.uniqueId, this.nameValue, this.passValue);
     }
 
     setTimeout(() => {
@@ -53,8 +52,8 @@ class LoginPage extends Page {
   }
 
   public updateLoginButtonState(): void {
-    const isUsernameValid = validateUsername(nameValue).isValid;
-    const isPasswordValid = validatePassword(passValue).isValid;
+    const isUsernameValid = validateUsername(this.nameValue).isValid;
+    const isPasswordValid = validatePassword(this.passValue).isValid;
 
     if (isUsernameValid && isPasswordValid) {
       this.loginBtn?.removeAttribute('disabled');
@@ -64,27 +63,29 @@ class LoginPage extends Page {
   }
 
   public handleInputChange(event: Event, inputType: string): void {
-    const target = event.target;
+    const target = event.target as HTMLInputElement; // type assertion
     const value = target.value;
     const inputContainer = target.parentElement;
+    if (!inputContainer) return;
     const lastChild = inputContainer.lastChild;
+    if (!lastChild) return;
 
     let result: ValidationResult = { isValid: true };
 
     switch (inputType) {
       case 'username': {
         result = validateUsername(value);
-        nameValue = value;
+        this.nameValue = value;
         break;
       }
       case 'password': {
         result = validatePassword(value);
-        passValue = value;
+        this.passValue = value;
         break;
       }
     }
 
-    if (lastChild.tagName === 'LABEL') {
+    if (lastChild instanceof Element && lastChild?.tagName === 'LABEL') {
       lastChild.remove();
     }
 
