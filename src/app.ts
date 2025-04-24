@@ -48,7 +48,6 @@ class App {
         break;
       }
       default: {
-        page = login;
         break;
       }
     }
