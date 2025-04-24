@@ -1,0 +1,14 @@
+input {
+  height: 30px;
+  padding: 2% 4%;
+  border: 0;
+
+  font-size: 1.4rem;
+  color: var(--orange);
+
+  background-color: var(--shadow-gray);
+}
+
+input::placeholder {
+  color: var(--steel-wool);
+}

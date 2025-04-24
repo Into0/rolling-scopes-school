@@ -1,0 +1,23 @@
+button {
+  cursor: pointer;
+
+  height: 30px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 2px;
+
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--orange);
+  text-transform: capitalize;
+
+  background-color: var(--shadow-gray);
+
+  transition: background-color 0.5s;
+}
+
+button:disabled {
+  pointer-events: none;
+  cursor: default;
+  color: var(--steel-wool);
+}

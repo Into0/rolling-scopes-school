@@ -1,0 +1,19 @@
+.about {
+  position: absolute;
+  top: 20vh;
+  left: calc(50vw - 150px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  width: 300px;
+  margin: 0 auto;
+  padding: 1%;
+  border: 1px solid;
+
+  font-size: 1.5rem;
+
+  background-color: var(--puter);
+}
